@@ -1,0 +1,2245 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model.Store" Provider="FirebirdSql.Data.FirebirdClient" ProviderManifestToken="2.5" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityType Name="BARRIOS">
+    <Key>
+      <PropertyRef Name="BARRIO_ID" />
+    </Key>
+    <Property Name="BARRIO_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BARRIO" Type="varchar" MaxLength="120" Unicode="true" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="timestamp" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="varchar" MaxLength="20" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="timestamp" />
+  </EntityType>
+  <EntityType Name="BARRIOS_CIUDADES">
+    <Key>
+      <PropertyRef Name="BARRIO_CIUDAD_ID" />
+    </Key>
+    <Property Name="BARRIO_CIUDAD_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BARRIO_ID" Type="bigint" Nullable="false" />
+    <Property Name="CIUDAD_ID" Type="bigint" Nullable="false" />
+    <Property Name="CODIGO" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="timestamp" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="varchar" MaxLength="20" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="timestamp" />
+  </EntityType>
+  <EntityType Name="CIUDADES">
+    <Key>
+      <PropertyRef Name="CIUDAD_ID" />
+    </Key>
+    <Property Name="CIUDAD_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CIUDAD" Type="varchar" MaxLength="120" Unicode="true" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="timestamp" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="varchar" MaxLength="20" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="timestamp" />
+  </EntityType>
+  <EntityType Name="CIUDADES_DEPARTAMENTOS">
+    <Key>
+      <PropertyRef Name="CIUDAD_DEPARTAMENTO_ID" />
+    </Key>
+    <Property Name="CIUDAD_DEPARTAMENTO_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DEPARTAMENTO_ID" Type="bigint" Nullable="false" />
+    <Property Name="CIUDAD_ID" Type="bigint" Nullable="false" />
+    <Property Name="CODIGO" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="timestamp" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="varchar" MaxLength="20" Unicode="true" />
+    <Property Name="FECHA_MODIFCACION" Type="timestamp" />
+  </EntityType>
+  <EntityType Name="COBROS">
+    <Key>
+      <PropertyRef Name="COBRO_ID" />
+    </Key>
+    <Property Name="COBRO_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FECHA" Type="timestamp" Nullable="false" />
+    <Property Name="SOCIO_NEGOCIO_ID" Type="bigint" Nullable="false" />
+    <Property Name="ESTADO" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="TOTAL" Type="numeric" Precision="15" Scale="0" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="timestamp" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="varchar" MaxLength="20" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="timestamp" />
+    <Property Name="OBSERVACION" Type="varchar" MaxLength="250" Unicode="true" Nullable="false" />
+    <Property Name="NUMERO_FACTURA" Type="varchar" MaxLength="20" Unicode="true" />
+    <Property Name="FECHA_FACTURA" Type="timestamp" />
+    <Property Name="CONDICION" Type="varchar" MaxLength="20" Unicode="true" />
+    <Property Name="NUMERO_DOCUMENTO_COBRO" Type="varchar" MaxLength="20" Unicode="true" />
+  </EntityType>
+  <EntityType Name="COBROS_DETALLES">
+    <Key>
+      <PropertyRef Name="COBRO_DETALLE_ID" />
+    </Key>
+    <Property Name="COBRO_DETALLE_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="COBRO_ID" Type="bigint" Nullable="false" />
+    <Property Name="NUMERO_ITEM" Type="int" />
+    <Property Name="MONTO_DOCUMENTO" Type="numeric" Precision="15" Scale="0" Nullable="false" />
+    <Property Name="TIPO_DOCUMENTO" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="MONEDA_DOCUMENTO" Type="bigint" Nullable="false" />
+    <Property Name="MONTO_PAGADO" Type="numeric" Precision="15" Scale="0" Nullable="false" />
+    <Property Name="MONEDA_PAGO" Type="bigint" Nullable="false" />
+    <Property Name="FORMA_PAGO_ID" Type="bigint" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="timestamp" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="varchar" MaxLength="20" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="timestamp" />
+    <Property Name="OBSERVACION" Type="varchar" MaxLength="250" Unicode="true" />
+    <Property Name="TASA_CAMBIO" Type="numeric" Precision="15" Scale="2" Nullable="false" />
+    <Property Name="DOCUMENTO_ID" Type="bigint" />
+  </EntityType>
+  <EntityType Name="CRONOGRAMAS_CUOTAS">
+    <Key>
+      <PropertyRef Name="CRONOGRAMA_CUOTA_ID" />
+    </Key>
+    <Property Name="CRONOGRAMA_CUOTA_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NUMERO_CUOTA" Type="int" />
+    <Property Name="FECHA_VENCIMIENTO" Type="timestamp" Nullable="false" />
+    <Property Name="MONTO" Type="numeric" Precision="15" Scale="0" Nullable="false" />
+    <Property Name="OPERACION_PROPIEDAD_ID" Type="bigint" Nullable="false" />
+    <Property Name="ESTADO" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="timestamp" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="varchar" MaxLength="20" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="timestamp" />
+    <Property Name="MONEDA_ID" Type="bigint" Nullable="false" />
+    <Property Name="FECHA_CANCELACION" Type="timestamp" />
+  </EntityType>
+  <EntityType Name="DEPARTAMENTOS">
+    <Key>
+      <PropertyRef Name="DEPARTAMENTO_ID" />
+    </Key>
+    <Property Name="DEPARTAMENTO_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DEPARTAMENTO" Type="varchar" MaxLength="120" Unicode="true" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="timestamp" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="varchar" MaxLength="20" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="timestamp" />
+  </EntityType>
+  <EntityType Name="DEPARTAMENTOS_PAISES">
+    <Key>
+      <PropertyRef Name="DEPARTAMENTO_PAIS_ID" />
+    </Key>
+    <Property Name="DEPARTAMENTO_PAIS_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PAIS_ID" Type="bigint" Nullable="false" />
+    <Property Name="DEPARTAMENTO_ID" Type="bigint" Nullable="false" />
+    <Property Name="CODIGO" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="timestamp" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="varchar" MaxLength="20" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="timestamp" />
+  </EntityType>
+  <EntityType Name="DOMINIOS">
+    <Key>
+      <PropertyRef Name="DOMINIO_ID" />
+    </Key>
+    <Property Name="DOMINIO_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DOMINIO" Type="varchar" MaxLength="120" Unicode="true" Nullable="false" />
+    <Property Name="CODIGO_DOMINIO" Type="varchar" MaxLength="120" Unicode="true" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="varchar" MaxLength="180" Unicode="true" Nullable="false" />
+    <Property Name="VALOR_DOMINIO" Type="varchar" MaxLength="120" Unicode="true" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="timestamp" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="varchar" MaxLength="20" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="timestamp" />
+  </EntityType>
+  <EntityType Name="EMPRESAS">
+    <Key>
+      <PropertyRef Name="EMPRESA_ID" />
+    </Key>
+    <Property Name="EMPRESA_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SOCIO_NEGOCIO_ID" Type="bigint" />
+    <Property Name="RAZON_SOCIAL" Type="varchar" MaxLength="180" Unicode="true" Nullable="false" />
+    <Property Name="NOMBRE_CORTO" Type="varchar" MaxLength="120" Unicode="true" />
+    <Property Name="NUMERO_DOCUMENTO" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="DIGITO_VERIFICADOR" Type="varchar" MaxLength="1" Unicode="true" />
+    <Property Name="TIPO_PERSONERIA" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="TIPO_DOCUMENTO" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="DIRECCION" Type="varchar" MaxLength="180" Unicode="true" Nullable="false" />
+    <Property Name="TELEFONO" Type="varchar" MaxLength="120" Unicode="true" Nullable="false" />
+    <Property Name="ACTIVO" Type="varchar" MaxLength="2" Unicode="true" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="timestamp" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="varchar" MaxLength="20" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="timestamp" />
+  </EntityType>
+  <EntityType Name="ENTIDADES_INMOBILIARIAS">
+    <Key>
+      <PropertyRef Name="ENTIDAD_INMOBILIARIA_ID" />
+    </Key>
+    <Property Name="ENTIDAD_INMOBILIARIA_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NOMBRE" Type="varchar" MaxLength="180" Unicode="true" Nullable="false" />
+    <Property Name="EMPRESA_ID" Type="bigint" />
+    <Property Name="PAIS_ID" Type="bigint" />
+    <Property Name="DEPARTAMENTO_ID" Type="bigint" />
+    <Property Name="CIUDAD_ID" Type="bigint" />
+    <Property Name="BARRIO_ID" Type="bigint" />
+    <Property Name="TIPO" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="CUENTA_CATASTRAL" Type="varchar" MaxLength="120" Unicode="true" />
+    <Property Name="CANTIDAD_UNIDADES" Type="int" />
+    <Property Name="ANO_CONSTRUCCION" Type="int" />
+    <Property Name="M2_CONSTRUCCION" Type="int" />
+    <Property Name="MEDIDAS_LOTE" Type="varchar" MaxLength="120" Unicode="true" />
+    <Property Name="NUMERO_FINCA" Type="varchar" MaxLength="20" Unicode="true" />
+    <Property Name="CARACTERISTICA" Type="varchar" MaxLength="5000" Unicode="true" />
+    <Property Name="NATURALEZA" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="DIRECCION" Type="varchar" MaxLength="250" Unicode="true" />
+    <Property Name="ESTADO" Type="varchar" MaxLength="10" Unicode="true" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="timestamp" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="varchar" MaxLength="20" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="timestamp" />
+    <Property Name="OBSERVACION" Type="varchar" MaxLength="250" Unicode="true" />
+  </EntityType>
+  <EntityType Name="FORMAS_PAGOS">
+    <Key>
+      <PropertyRef Name="FORMA_PAGO_ID" />
+    </Key>
+    <Property Name="FORMA_PAGO_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FORMA_PAGO" Type="varchar" MaxLength="120" Unicode="true" Nullable="false" />
+    <Property Name="CODIGO" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="DIAS" Type="int" />
+    <Property Name="POR_DEFECTO" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="REQUERE_BANCO" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="timestamp" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="varchar" MaxLength="20" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="timestamp" />
+  </EntityType>
+  <EntityType Name="IBE$VERSION_HISTORY">
+    <Key>
+      <PropertyRef Name="IBE$VH_ID" />
+    </Key>
+    <Property Name="IBE$VH_ID" Type="int" Nullable="false" />
+    <Property Name="IBE$VH_MODIFY_DATE" Type="timestamp" Nullable="false" />
+    <Property Name="IBE$VH_USER_NAME" Type="varchar" MaxLength="67" Unicode="true" />
+    <Property Name="IBE$VH_OBJECT_TYPE" Type="smallint" Nullable="false" />
+    <Property Name="IBE$VH_OBJECT_NAME" Type="varchar" MaxLength="67" Unicode="true" Nullable="false" />
+    <Property Name="IBE$VH_HEADER" Type="blob" />
+    <Property Name="IBE$VH_BODY" Type="blob" />
+    <Property Name="IBE$VH_DESCRIPTION" Type="clob" Unicode="true" />
+  </EntityType>
+  <EntityType Name="IMAGENES_ENTIDAD_INMOBILIARIA">
+    <Key>
+      <PropertyRef Name="IMAGEN_ENTIDAD_INMOBILIARIA_ID" />
+    </Key>
+    <Property Name="IMAGEN_ENTIDAD_INMOBILIARIA_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FOTO" Type="blob" />
+    <Property Name="ENTIDAD_INMOBILIARIA_ID" Type="bigint" />
+    <Property Name="PROPIEDAD_ID" Type="bigint" />
+    <Property Name="USUARIO_CREACION" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="timestamp" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="varchar" MaxLength="20" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="timestamp" />
+    <Property Name="RUTA_IMAGEN" Type="varchar" MaxLength="5000" Unicode="true" />
+  </EntityType>
+  <EntityType Name="IMAGENES_OPERACIONES">
+    <Key>
+      <PropertyRef Name="IMAGEN_OPERACION_ID" />
+    </Key>
+    <Property Name="IMAGEN_OPERACION_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IMAGEN" Type="blob" />
+    <Property Name="OPERACION_ID" Type="bigint" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="timestamp" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="varchar" MaxLength="20" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="timestamp" />
+  </EntityType>
+  <EntityType Name="IMPUESTOS">
+    <Key>
+      <PropertyRef Name="IMPUESTO_ID" />
+    </Key>
+    <Property Name="IMPUESTO_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IMPUESTO" Type="varchar" MaxLength="120" Unicode="true" Nullable="false" />
+    <Property Name="PORCENTAJE_IMPUESTO" Type="numeric" Precision="5" Scale="2" Nullable="false" />
+    <Property Name="FACTOR_DISCRIMINADO" Type="numeric" Precision="15" Scale="2" Nullable="false" />
+    <Property Name="FACTOR_IMPUESTO" Type="numeric" Precision="15" Scale="2" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="timestamp" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="varchar" MaxLength="20" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="timestamp" />
+  </EntityType>
+  <EntityType Name="INGRESOS_EGRESOS">
+    <Key>
+      <PropertyRef Name="INGRESO_EGRESO_ID" />
+    </Key>
+    <Property Name="INGRESO_EGRESO_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FECHA" Type="timestamp" Nullable="false" />
+    <Property Name="MONTO" Type="numeric" Precision="15" Scale="0" Nullable="false" />
+    <Property Name="SOCIO_NEGOCIO_ID" Type="bigint" />
+    <Property Name="ESTADO" Type="varchar" MaxLength="20" Unicode="true" />
+    <Property Name="ENTIDAD_INMOBILIARIA_ID" Type="bigint" />
+    <Property Name="TIPO" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="PROPIEDAD_ID" Type="bigint" />
+    <Property Name="ITEM_INGRESO_EGRESO_ID" Type="bigint" Nullable="false" />
+    <Property Name="NUMERO_FACTURA" Type="varchar" MaxLength="20" Unicode="true" />
+    <Property Name="FECHA_FACTURA" Type="timestamp" />
+    <Property Name="SALDO" Type="numeric" Precision="15" Scale="0" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="timestamp" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="varchar" MaxLength="20" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="timestamp" />
+    <Property Name="OBSERVACION" Type="varchar" MaxLength="5000" Unicode="true" />
+    <Property Name="TIPO_IMPUTACION" Type="varchar" MaxLength="120" Unicode="true" />
+    <Property Name="FORMA_PAGO_ID" Type="bigint" />
+    <Property Name="NUMERO_DOCUMENTO_PAGO" Type="varchar" MaxLength="20" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ITEMS_INGRESOS_EGRESOS">
+    <Key>
+      <PropertyRef Name="ITEM_INGRESO_EGRESO_ID" />
+    </Key>
+    <Property Name="ITEM_INGRESO_EGRESO_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ITEM" Type="varchar" MaxLength="180" Unicode="true" Nullable="false" />
+    <Property Name="TIPO_ITEM" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="TIPO" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="timestamp" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="varchar" MaxLength="20" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="timestamp" />
+    <Property Name="MODIFICA_ESTADO" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="APLICACION" Type="varchar" MaxLength="20" Unicode="true" />
+  </EntityType>
+  <EntityType Name="LIQUIDACIONES">
+    <Key>
+      <PropertyRef Name="LIQUIDACION_ID" />
+    </Key>
+    <Property Name="LIQUIDACION_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FECHA" Type="timestamp" Nullable="false" />
+    <Property Name="FECHA_FISCALIZACION" Type="timestamp" Nullable="false" />
+    <Property Name="NUMERO" Type="varchar" MaxLength="20" Unicode="true" />
+    <Property Name="OPERACION_PROPIEDAD_ID" Type="bigint" Nullable="false" />
+    <Property Name="ENTREGO_LLAVES" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="TOTAL_GARANTIA" Type="numeric" Precision="15" Scale="0" Nullable="false" />
+    <Property Name="MOTIVO_LIQUIDACION" Type="varchar" MaxLength="180" Unicode="true" />
+    <Property Name="OBSERVACION" Type="varchar" MaxLength="180" Unicode="true" />
+    <Property Name="TOTAL_GASTOS" Type="numeric" Precision="15" Scale="0" Nullable="false" />
+    <Property Name="SALDO" Type="numeric" Precision="15" Scale="0" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="timestamp" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="varchar" MaxLength="20" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="timestamp" />
+  </EntityType>
+  <EntityType Name="LIQUIDACIONES_DETALLES">
+    <Key>
+      <PropertyRef Name="LIQUIDACION_DETALLE_ID" />
+    </Key>
+    <Property Name="LIQUIDACION_DETALLE_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LIQUIDACION_ID" Type="bigint" Nullable="false" />
+    <Property Name="NUMERO_ITEM" Type="int" />
+    <Property Name="ITEM_INGRESO_EGRESO_ID" Type="bigint" Nullable="false" />
+    <Property Name="MONTO" Type="numeric" Precision="15" Scale="0" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="timestamp" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="varchar" MaxLength="20" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="timestamp" />
+  </EntityType>
+  <EntityType Name="MONEDAS">
+    <Key>
+      <PropertyRef Name="MONEDA_ID" />
+    </Key>
+    <Property Name="MONEDA_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MONEDA" Type="varchar" MaxLength="120" Unicode="true" Nullable="false" />
+    <Property Name="SIMBOLO" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="SIMBOLO_SET" Type="varchar" MaxLength="20" Unicode="true" />
+    <Property Name="TIPO_MONEDA" Type="varchar" MaxLength="120" Unicode="true" Nullable="false" />
+    <Property Name="PRECISION_DECIMALES" Type="bigint" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="timestamp" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="varchar" MaxLength="20" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="timestamp" />
+  </EntityType>
+  <EntityType Name="OPERACIONES_PROPIEDADES">
+    <Key>
+      <PropertyRef Name="OPERACION_PROPIEDAD_ID" />
+    </Key>
+    <Property Name="OPERACION_PROPIEDAD_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FECHA_OPERACION" Type="timestamp" Nullable="false" />
+    <Property Name="TIPO_OPERACION" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="SOCIO_NEGOCIO_ID" Type="bigint" Nullable="false" />
+    <Property Name="PROPIEDAD_ID" Type="bigint" />
+    <Property Name="FECHA_FINALIZACION" Type="timestamp" />
+    <Property Name="ENTIDAD_INMOBILIARIA_ID" Type="bigint" />
+    <Property Name="FECHA_INICIO_CONTRATO" Type="timestamp" Nullable="false" />
+    <Property Name="FECHA_FIN_CONTRATO" Type="timestamp" />
+    <Property Name="PLAZO" Type="int" />
+    <Property Name="PRECIO" Type="numeric" Precision="15" Scale="0" Nullable="false" />
+    <Property Name="ESTADO" Type="varchar" MaxLength="10" Unicode="true" Nullable="false" />
+    <Property Name="GARANTIA" Type="numeric" Precision="15" Scale="0" Nullable="false" />
+    <Property Name="SUCURSAL_ID" Type="bigint" Nullable="false" />
+    <Property Name="MONEDA_ID" Type="bigint" Nullable="false" />
+    <Property Name="TIPO_ENTIDAD" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="TIPO_CONTRATO" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="CONDICION_OPERACION" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="AVISO_RENOVACION" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_RENOVACION" Type="timestamp" />
+    <Property Name="DIA_PAGO" Type="bigint" />
+    <Property Name="MONTO_MORA" Type="numeric" Precision="15" Scale="0" Nullable="false" />
+    <Property Name="DIAS_GRACIA" Type="bigint" />
+    <Property Name="USUARIO_CREACION" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="timestamp" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="varchar" MaxLength="20" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="timestamp" />
+    <Property Name="MONTO_TOTAL_OPERACION" Type="numeric" Precision="15" Scale="0" Nullable="false" />
+    <Property Name="MONTO_TOTAL_LETRAS" Type="varchar" MaxLength="5000" Unicode="true" />
+    <Property Name="VENDEDOR_ID" Type="bigint" />
+    <Property Name="TIPO_FINANCIACION" Type="varchar" MaxLength="120" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PAISES">
+    <Key>
+      <PropertyRef Name="PAIS_ID" />
+    </Key>
+    <Property Name="PAIS_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PAIS" Type="varchar" MaxLength="120" Unicode="true" Nullable="false" />
+    <Property Name="CODIGO_ISO_2" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="CODIGO_ISO_3" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="NACIONALIDAD" Type="varchar" MaxLength="120" Unicode="true" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="timestamp" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="varchar" MaxLength="20" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="timestamp" />
+  </EntityType>
+  <EntityType Name="PROPIEDADES">
+    <Key>
+      <PropertyRef Name="PROPIEDAD_ID" />
+    </Key>
+    <Property Name="PROPIEDAD_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NOMBRE" Type="varchar" MaxLength="180" Unicode="true" />
+    <Property Name="TIPO" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="CUENTA_CATASTRAL" Type="varchar" MaxLength="120" Unicode="true" />
+    <Property Name="ENTIDAD_INMOBILIARIA_ID" Type="bigint" />
+    <Property Name="EMPRESA_ID" Type="bigint" />
+    <Property Name="PAIS_ID" Type="bigint" Nullable="false" />
+    <Property Name="DEPARTAMENTO_ID" Type="bigint" Nullable="false" />
+    <Property Name="CIUDAD_ID" Type="bigint" Nullable="false" />
+    <Property Name="BARRIO_ID" Type="bigint" Nullable="false" />
+    <Property Name="DIRECCION" Type="varchar" MaxLength="180" Unicode="true" Nullable="false" />
+    <Property Name="CARACTERISTICAS" Type="varchar" MaxLength="5000" Unicode="true" />
+    <Property Name="TIENE_COCHERA" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="CANTIDAD_COCHERA" Type="int" />
+    <Property Name="M2_CONSTRUCCION" Type="int" />
+    <Property Name="ANO_CONSTRUCCION" Type="int" />
+    <Property Name="MEDIDA_LOTE" Type="varchar" MaxLength="20" Unicode="true" />
+    <Property Name="PRECIO_VENTA" Type="numeric" Precision="15" Scale="0" Nullable="false" />
+    <Property Name="COMISION_VENTA" Type="numeric" Precision="5" Scale="2" Nullable="false" />
+    <Property Name="PRECIO_ALQUILER" Type="numeric" Precision="15" Scale="0" Nullable="false" />
+    <Property Name="COMISION_ALQUILER" Type="numeric" Precision="5" Scale="2" Nullable="false" />
+    <Property Name="ALQUILADA" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="VENDIDA" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="ESTADO" Type="varchar" MaxLength="10" Unicode="true" Nullable="false" />
+    <Property Name="NUMERO_FINCA" Type="varchar" MaxLength="20" Unicode="true" />
+    <Property Name="NIS" Type="varchar" MaxLength="20" Unicode="true" />
+    <Property Name="NUMERO_MEDIDOR" Type="varchar" MaxLength="20" Unicode="true" />
+    <Property Name="SENADO" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="timestamp" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="varchar" MaxLength="20" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="timestamp" />
+    <Property Name="NUMERO_LOTE" Type="varchar" MaxLength="20" Unicode="true" />
+    <Property Name="NUMERO_MANZANA" Type="varchar" MaxLength="20" Unicode="true" />
+    <Property Name="DIMENSIONES" Type="varchar" MaxLength="5000" Unicode="true" />
+    <Property Name="PRECIO" Type="numeric" Precision="15" Scale="0" Nullable="false" />
+    <Property Name="COMISION" Type="numeric" Precision="5" Scale="2" Nullable="false" />
+    <Property Name="RESOLUCION" Type="varchar" MaxLength="20" Unicode="true" />
+    <Property Name="OBSERVACION" Type="varchar" MaxLength="250" Unicode="true" />
+    <Property Name="NUMERO_MEDIDOR_ESSAP" Type="varchar" MaxLength="20" Unicode="true" />
+    <Property Name="CTA_CTE_ESSAP" Type="varchar" MaxLength="20" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PROPIETARIOS_ENT_INMOB">
+    <Key>
+      <PropertyRef Name="PROPIETARIO_ENT_INMOB_ID" />
+    </Key>
+    <Property Name="PROPIETARIO_ENT_INMOB_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ENTIDAD_INMOBILIARIA_ID" Type="bigint" />
+    <Property Name="PROPIEDAD_ID" Type="bigint" />
+    <Property Name="PROPIETARIO_ID" Type="bigint" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="timestamp" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="varchar" MaxLength="20" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="timestamp" />
+  </EntityType>
+  <EntityType Name="RESCISIONES">
+    <Key>
+      <PropertyRef Name="RESCISION_ID" />
+    </Key>
+    <Property Name="RESCISION_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FECHA" Type="timestamp" Nullable="false" />
+    <Property Name="TIPO" Type="varchar" MaxLength="120" Unicode="true" Nullable="false" />
+    <Property Name="MONTO" Type="numeric" Precision="15" Scale="0" Nullable="false" />
+    <Property Name="OPERACION_ID" Type="bigint" Nullable="false" />
+    <Property Name="OBSERVACION" Type="varchar" MaxLength="5000" Unicode="true" />
+    <Property Name="USUARIO_CREACION" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="timestamp" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="varchar" MaxLength="20" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="timestamp" />
+  </EntityType>
+  <EntityType Name="RUC">
+    <Key>
+      <PropertyRef Name="RUC" />
+    </Key>
+    <Property Name="RUC" Type="varchar" MaxLength="120" Unicode="true" Nullable="false" />
+    <Property Name="RAZON_SOCIAL" Type="varchar" MaxLength="5000" Unicode="true" />
+    <Property Name="DV" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="RUC_V" Type="varchar" MaxLength="120" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SOCIOS_NEGOCIOS">
+    <Key>
+      <PropertyRef Name="SOCIO_NEGOCIO_ID" />
+    </Key>
+    <Property Name="SOCIO_NEGOCIO_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RAZON_SOCIAL" Type="varchar" MaxLength="180" Unicode="true" Nullable="false" />
+    <Property Name="NUMERO_DOCUMENTO" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="DIGITO_VERIFICADOR" Type="varchar" MaxLength="1" Unicode="true" />
+    <Property Name="CLASIFICACION_FISCAL" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="TIPO_DOCUMENTO" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="TIPO_PERSONERIA" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="ACTIVO" Type="varchar" MaxLength="2" Unicode="true" Nullable="false" />
+    <Property Name="DIRECCION" Type="varchar" MaxLength="180" Unicode="true" Nullable="false" />
+    <Property Name="TELEFONO" Type="varchar" MaxLength="120" Unicode="true" Nullable="false" />
+    <Property Name="ES_PROPIETARIO" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="ES_INQUILINO" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="ES_PORTERO" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="ES_ADMINISTRADOR" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="ES_CLIENTE" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="ES_PROVEEDOR" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="ES_EMPRESA" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="ES_VENDEDOR" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="EMAIL" Type="varchar" MaxLength="180" Unicode="true" />
+    <Property Name="UBICACION" Type="varchar" MaxLength="120" Unicode="true" />
+    <Property Name="ES_CONTRIBUYENTE" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="OBSERVACION" Type="varchar" MaxLength="5000" Unicode="true" />
+    <Property Name="USUARIO_CREACION" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="timestamp" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="varchar" MaxLength="20" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="timestamp" />
+    <Property Name="SEXO" Type="varchar" MaxLength="20" Unicode="true" />
+  </EntityType>
+  <EntityType Name="SUCURSALES">
+    <Key>
+      <PropertyRef Name="SUCURSAL_ID" />
+    </Key>
+    <Property Name="SUCURSAL_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SUCURSAL" Type="varchar" MaxLength="120" Unicode="true" Nullable="false" />
+    <Property Name="EMPRESA_ID" Type="bigint" Nullable="false" />
+    <Property Name="DIRECCION" Type="varchar" MaxLength="180" Unicode="true" Nullable="false" />
+    <Property Name="TELEFONO" Type="varchar" MaxLength="120" Unicode="true" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="timestamp" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="varchar" MaxLength="20" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="timestamp" />
+    <Property Name="POR_DEFECTO" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="USUARIOS">
+    <Key>
+      <PropertyRef Name="CODIGO_USUARIO" />
+    </Key>
+    <Property Name="CODIGO_USUARIO" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="PASSWORD" Type="varchar" MaxLength="120" Unicode="true" Nullable="false" />
+    <Property Name="ACTIVO" Type="varchar" MaxLength="2" Unicode="true" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="timestamp" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="varchar" MaxLength="20" Unicode="true" />
+    <Property Name="EMPRESA_ID" Type="bigint" Nullable="false" />
+    <Property Name="PERFIL" Type="varchar" MaxLength="120" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VARIABLES_ENTORNOS">
+    <Key>
+      <PropertyRef Name="VARIABLE_ENTORNO_ID" />
+    </Key>
+    <Property Name="VARIABLE_ENTORNO_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CODIGO_USUARIO" Type="varchar" MaxLength="120" Unicode="true" Nullable="false" />
+    <Property Name="CLAVE" Type="varchar" MaxLength="120" Unicode="true" Nullable="false" />
+    <Property Name="VALOR" Type="varchar" MaxLength="120" Unicode="true" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="varchar" MaxLength="120" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="timestamp" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="varchar" MaxLength="120" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="timestamp" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'Firebird.Firebird.BARRIOS_CIUDADES_VIEW' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="BARRIOS_CIUDADES_VIEW">
+    <Key>
+      <PropertyRef Name="BARRIO_CIUDAD_ID" />
+      <PropertyRef Name="CIUDAD_ID" />
+      <PropertyRef Name="CIUDAD" />
+      <PropertyRef Name="BARRIO_ID" />
+      <PropertyRef Name="BARRIO" />
+      <PropertyRef Name="CODIGO" />
+      <PropertyRef Name="USUARIO_CREACION" />
+      <PropertyRef Name="FECHA_CREACION" />
+    </Key>
+    <Property Name="BARRIO_CIUDAD_ID" Type="bigint" Nullable="false" />
+    <Property Name="CIUDAD_ID" Type="bigint" Nullable="false" />
+    <Property Name="CIUDAD" Type="varchar" MaxLength="120" Unicode="true" Nullable="false" />
+    <Property Name="BARRIO_ID" Type="bigint" Nullable="false" />
+    <Property Name="BARRIO" Type="varchar" MaxLength="120" Unicode="true" Nullable="false" />
+    <Property Name="CODIGO" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="timestamp" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="varchar" MaxLength="20" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="timestamp" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'Firebird.Firebird.BARRIOS_VIEW' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="BARRIOS_VIEW">
+    <Key>
+      <PropertyRef Name="BARRIO_ID" />
+      <PropertyRef Name="BARRIO" />
+      <PropertyRef Name="USUARIO_CREACION" />
+      <PropertyRef Name="FECHA_CREACION" />
+    </Key>
+    <Property Name="BARRIO_ID" Type="bigint" Nullable="false" />
+    <Property Name="BARRIO" Type="varchar" MaxLength="120" Unicode="true" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="timestamp" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="varchar" MaxLength="20" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="timestamp" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'Firebird.Firebird.CIUDADES_DEPARTAMENTOS_VIEW' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="CIUDADES_DEPARTAMENTOS_VIEW">
+    <Key>
+      <PropertyRef Name="CIUDAD_DEPARTAMENTO_ID" />
+      <PropertyRef Name="DEPARTAMENTO_ID" />
+      <PropertyRef Name="DEPARTAMENTO" />
+      <PropertyRef Name="CIUDAD_ID" />
+      <PropertyRef Name="CIUDAD" />
+      <PropertyRef Name="CODIGO" />
+      <PropertyRef Name="USUARIO_CREACION" />
+      <PropertyRef Name="FECHA_CREACION" />
+    </Key>
+    <Property Name="CIUDAD_DEPARTAMENTO_ID" Type="bigint" Nullable="false" />
+    <Property Name="DEPARTAMENTO_ID" Type="bigint" Nullable="false" />
+    <Property Name="DEPARTAMENTO" Type="varchar" MaxLength="120" Unicode="true" Nullable="false" />
+    <Property Name="CIUDAD_ID" Type="bigint" Nullable="false" />
+    <Property Name="CIUDAD" Type="varchar" MaxLength="120" Unicode="true" Nullable="false" />
+    <Property Name="CODIGO" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="timestamp" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="varchar" MaxLength="20" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="timestamp" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'Firebird.Firebird.CIUDADES_VIEW' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="CIUDADES_VIEW">
+    <Key>
+      <PropertyRef Name="CIUDAD_ID" />
+      <PropertyRef Name="CIUDAD" />
+      <PropertyRef Name="USUARIO_CREACION" />
+      <PropertyRef Name="FECHA_CREACION" />
+    </Key>
+    <Property Name="CIUDAD_ID" Type="bigint" Nullable="false" />
+    <Property Name="CIUDAD" Type="varchar" MaxLength="120" Unicode="true" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="timestamp" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="varchar" MaxLength="20" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="timestamp" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'Firebird.Firebird.COBROS_VIEW' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="COBROS_VIEW">
+    <Key>
+      <PropertyRef Name="COBRO_ID" />
+      <PropertyRef Name="FECHA" />
+      <PropertyRef Name="SOCIO_NEGOCIO_ID" />
+      <PropertyRef Name="SOCIO_NEGOCIO" />
+      <PropertyRef Name="ESTADO" />
+      <PropertyRef Name="TOTAL" />
+      <PropertyRef Name="OBSERVACION" />
+      <PropertyRef Name="USUARIO_CREACION" />
+      <PropertyRef Name="FECHA_CREACION" />
+    </Key>
+    <Property Name="COBRO_ID" Type="bigint" Nullable="false" />
+    <Property Name="FECHA" Type="timestamp" Nullable="false" />
+    <Property Name="NUMERO_FACTURA" Type="varchar" MaxLength="20" Unicode="true" />
+    <Property Name="SOCIO_NEGOCIO_ID" Type="bigint" Nullable="false" />
+    <Property Name="SOCIO_NEGOCIO" Type="varchar" MaxLength="180" Unicode="true" Nullable="false" />
+    <Property Name="RUC" Type="varchar" MaxLength="32765" Unicode="true" StoreGeneratedPattern="Computed" />
+    <Property Name="NUMERO_DOCUMENTO_COBRO" Type="varchar" MaxLength="20" Unicode="true" />
+    <Property Name="ESTADO" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="TOTAL" Type="numeric" Precision="15" Scale="0" Nullable="false" />
+    <Property Name="OBSERVACION" Type="varchar" MaxLength="250" Unicode="true" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="timestamp" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="varchar" MaxLength="20" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="timestamp" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'Firebird.Firebird.CRONOGRAMAS_CUOTAS_VIEW' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="CRONOGRAMAS_CUOTAS_VIEW">
+    <Key>
+      <PropertyRef Name="CRONOGRAMA_CUOTA_ID" />
+      <PropertyRef Name="MONTO" />
+      <PropertyRef Name="OPERACION_PROPIEDAD_ID" />
+      <PropertyRef Name="TIPO_OPERACION" />
+      <PropertyRef Name="SOCIO_NEGOCIO_ID" />
+      <PropertyRef Name="SOCIO_NEGOCIO" />
+      <PropertyRef Name="ESTADO" />
+      <PropertyRef Name="MONEDA_ID" />
+      <PropertyRef Name="MONEDA" />
+      <PropertyRef Name="USUARIO_CREACION" />
+      <PropertyRef Name="FECHA_CREACION" />
+      <PropertyRef Name="ENTIDAD_INMOBILIARIA_ID" />
+      <PropertyRef Name="ENTIDAD" />
+      <PropertyRef Name="PROPIEDAD_ID" />
+    </Key>
+    <Property Name="CRONOGRAMA_CUOTA_ID" Type="bigint" Nullable="false" />
+    <Property Name="NUMERO_CUOTA" Type="int" />
+    <Property Name="FECHA_VENCIMIENTO" Type="date" StoreGeneratedPattern="Computed" />
+    <Property Name="MONTO" Type="numeric" Precision="15" Scale="0" Nullable="false" />
+    <Property Name="OPERACION_PROPIEDAD_ID" Type="bigint" Nullable="false" />
+    <Property Name="TIPO_OPERACION" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="SOCIO_NEGOCIO_ID" Type="bigint" Nullable="false" />
+    <Property Name="SOCIO_NEGOCIO" Type="varchar" MaxLength="180" Unicode="true" Nullable="false" />
+    <Property Name="ESTADO" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="MONEDA_ID" Type="bigint" Nullable="false" />
+    <Property Name="MONEDA" Type="varchar" MaxLength="120" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CANCELACION" Type="timestamp" />
+    <Property Name="USUARIO_CREACION" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="timestamp" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="varchar" MaxLength="20" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="timestamp" />
+    <Property Name="ENTIDAD_INMOBILIARIA_ID" Type="bigint" Nullable="false" />
+    <Property Name="ENTIDAD" Type="varchar" MaxLength="180" Unicode="true" Nullable="false" />
+    <Property Name="PROPIEDAD_ID" Type="bigint" Nullable="false" />
+    <Property Name="PROPIEDAD" Type="varchar" MaxLength="180" Unicode="true" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'Firebird.Firebird.DEPARTAMENTOS_PAISES_VIEW' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="DEPARTAMENTOS_PAISES_VIEW">
+    <Key>
+      <PropertyRef Name="DEPARTAMENTO_PAIS_ID" />
+      <PropertyRef Name="PAIS_ID" />
+      <PropertyRef Name="PAIS" />
+      <PropertyRef Name="NACIONALIDAD" />
+      <PropertyRef Name="CODIGO_ISO2" />
+      <PropertyRef Name="CODIGO_ISO3" />
+      <PropertyRef Name="DEPARTAMENTO_ID" />
+      <PropertyRef Name="DEPARTAMENTO" />
+      <PropertyRef Name="CODIGO" />
+      <PropertyRef Name="USUARIO_CREACION" />
+      <PropertyRef Name="FECHA_CREACION" />
+    </Key>
+    <Property Name="DEPARTAMENTO_PAIS_ID" Type="bigint" Nullable="false" />
+    <Property Name="PAIS_ID" Type="bigint" Nullable="false" />
+    <Property Name="PAIS" Type="varchar" MaxLength="120" Unicode="true" Nullable="false" />
+    <Property Name="NACIONALIDAD" Type="varchar" MaxLength="120" Unicode="true" Nullable="false" />
+    <Property Name="CODIGO_ISO2" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="CODIGO_ISO3" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="DEPARTAMENTO_ID" Type="bigint" Nullable="false" />
+    <Property Name="DEPARTAMENTO" Type="varchar" MaxLength="120" Unicode="true" Nullable="false" />
+    <Property Name="CODIGO" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="timestamp" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="varchar" MaxLength="20" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="timestamp" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'Firebird.Firebird.DEPARTAMENTOS_VIEW' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="DEPARTAMENTOS_VIEW">
+    <Key>
+      <PropertyRef Name="DEPARTAMENTO_ID" />
+      <PropertyRef Name="DEPARTAMENTO" />
+      <PropertyRef Name="USUARIO_CREACION" />
+      <PropertyRef Name="FECHA_CREACION" />
+    </Key>
+    <Property Name="DEPARTAMENTO_ID" Type="bigint" Nullable="false" />
+    <Property Name="DEPARTAMENTO" Type="varchar" MaxLength="120" Unicode="true" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="timestamp" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="varchar" MaxLength="20" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="timestamp" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'Firebird.Firebird.EMPRESAS_VIEW' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="EMPRESAS_VIEW">
+    <Key>
+      <PropertyRef Name="EMPRESA_ID" />
+      <PropertyRef Name="EMPRESA" />
+      <PropertyRef Name="SOCIO_NEGOCIO" />
+      <PropertyRef Name="NUMERO_DOCUMENTO" />
+      <PropertyRef Name="TIPO_PERSONERIA" />
+      <PropertyRef Name="TIPO_DOCUMENTO" />
+      <PropertyRef Name="DIRECCION" />
+      <PropertyRef Name="TELEFONO" />
+      <PropertyRef Name="ACTIVO" />
+      <PropertyRef Name="USUARIO_CREACION" />
+      <PropertyRef Name="FECHA_CREACION" />
+    </Key>
+    <Property Name="EMPRESA_ID" Type="bigint" Nullable="false" />
+    <Property Name="EMPRESA" Type="varchar" MaxLength="180" Unicode="true" Nullable="false" />
+    <Property Name="NOMBRE_CORTO" Type="varchar" MaxLength="120" Unicode="true" />
+    <Property Name="SOCIO_NEGOCIO_ID" Type="bigint" />
+    <Property Name="SOCIO_NEGOCIO" Type="varchar" MaxLength="180" Unicode="true" Nullable="false" />
+    <Property Name="NUMERO_DOCUMENTO" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="DIGITO_VERIFICADOR" Type="varchar" MaxLength="1" Unicode="true" />
+    <Property Name="RUC" Type="varchar" MaxLength="32765" Unicode="true" StoreGeneratedPattern="Computed" />
+    <Property Name="TIPO_PERSONERIA" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="TIPO_DOCUMENTO" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="DIRECCION" Type="varchar" MaxLength="180" Unicode="true" Nullable="false" />
+    <Property Name="TELEFONO" Type="varchar" MaxLength="120" Unicode="true" Nullable="false" />
+    <Property Name="ACTIVO" Type="varchar" MaxLength="2" Unicode="true" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="timestamp" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="varchar" MaxLength="20" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="timestamp" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'Firebird.Firebird.ENTIDADES_INMOBILIARIAS_VIEW' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="ENTIDADES_INMOBILIARIAS_VIEW">
+    <Key>
+      <PropertyRef Name="ENTIDAD_INMOBILIARIA_ID" />
+      <PropertyRef Name="NOMBRE" />
+      <PropertyRef Name="PAIS_ID" />
+      <PropertyRef Name="PAIS" />
+      <PropertyRef Name="DEPARTAMENTO_ID" />
+      <PropertyRef Name="DEPARTAMENTO" />
+      <PropertyRef Name="CIUDAD_ID" />
+      <PropertyRef Name="CIUDAD" />
+      <PropertyRef Name="BARRIO_ID" />
+      <PropertyRef Name="BARRIO" />
+      <PropertyRef Name="USUARIO_CREACION" />
+      <PropertyRef Name="FECHA_CREACION" />
+    </Key>
+    <Property Name="ENTIDAD_INMOBILIARIA_ID" Type="bigint" Nullable="false" />
+    <Property Name="NOMBRE" Type="varchar" MaxLength="180" Unicode="true" Nullable="false" />
+    <Property Name="TIPO" Type="varchar" MaxLength="32765" Unicode="true" StoreGeneratedPattern="Computed" />
+    <Property Name="DIRECCION" Type="varchar" MaxLength="250" Unicode="true" />
+    <Property Name="CANTIDAD_UNIDADES" Type="int" />
+    <Property Name="ANO_CONSTRUCCION" Type="int" />
+    <Property Name="M2_CONSTRUCCION" Type="int" />
+    <Property Name="MEDIDAS_LOTE" Type="varchar" MaxLength="120" Unicode="true" />
+    <Property Name="CARACTERISTICAS" Type="varchar" MaxLength="5000" Unicode="true" />
+    <Property Name="NUMERO_FINCA" Type="varchar" MaxLength="20" Unicode="true" />
+    <Property Name="CUENTA_CATASTRAL" Type="varchar" MaxLength="120" Unicode="true" />
+    <Property Name="PAIS_ID" Type="bigint" Nullable="false" />
+    <Property Name="PAIS" Type="varchar" MaxLength="120" Unicode="true" Nullable="false" />
+    <Property Name="DEPARTAMENTO_ID" Type="bigint" Nullable="false" />
+    <Property Name="DEPARTAMENTO" Type="varchar" MaxLength="120" Unicode="true" Nullable="false" />
+    <Property Name="CIUDAD_ID" Type="bigint" Nullable="false" />
+    <Property Name="CIUDAD" Type="varchar" MaxLength="120" Unicode="true" Nullable="false" />
+    <Property Name="BARRIO_ID" Type="bigint" Nullable="false" />
+    <Property Name="BARRIO" Type="varchar" MaxLength="120" Unicode="true" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="timestamp" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="varchar" MaxLength="20" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="timestamp" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'Firebird.Firebird.FORMAS_PAGOS_VIEW' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="FORMAS_PAGOS_VIEW">
+    <Key>
+      <PropertyRef Name="FORMA_PAGO_ID" />
+      <PropertyRef Name="FORMA_PAGO" />
+      <PropertyRef Name="CODIGO" />
+      <PropertyRef Name="POR_DEFECTO" />
+      <PropertyRef Name="REQUERE_BANCO" />
+      <PropertyRef Name="USUARIO_CREACION" />
+      <PropertyRef Name="FECHA_CREACION" />
+    </Key>
+    <Property Name="FORMA_PAGO_ID" Type="bigint" Nullable="false" />
+    <Property Name="FORMA_PAGO" Type="varchar" MaxLength="120" Unicode="true" Nullable="false" />
+    <Property Name="CODIGO" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="DIAS" Type="int" />
+    <Property Name="POR_DEFECTO" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="REQUERE_BANCO" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="timestamp" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="varchar" MaxLength="20" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="timestamp" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'Firebird.Firebird.IMAGENES_ENTIDAD_INMOB_VIEW' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="IMAGENES_ENTIDAD_INMOB_VIEW">
+    <Key>
+      <PropertyRef Name="IMAGEN_ENTIDAD_INMOBILIARIA_ID" />
+      <PropertyRef Name="ENTIDAD_INMOBILIARIA" />
+      <PropertyRef Name="USUARIO_CREACION" />
+      <PropertyRef Name="FECHA_CREACION" />
+    </Key>
+    <Property Name="IMAGEN_ENTIDAD_INMOBILIARIA_ID" Type="bigint" Nullable="false" />
+    <Property Name="FOTO" Type="blob" />
+    <Property Name="RUTA_IMAGEN" Type="varchar" MaxLength="5000" Unicode="true" />
+    <Property Name="ENTIDAD_INMOBILIARIA_ID" Type="bigint" />
+    <Property Name="ENTIDAD_INMOBILIARIA" Type="varchar" MaxLength="180" Unicode="true" Nullable="false" />
+    <Property Name="PROPIEDAD_ID" Type="bigint" />
+    <Property Name="PROPIEDAD" Type="varchar" MaxLength="180" Unicode="true" />
+    <Property Name="USUARIO_CREACION" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="timestamp" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="varchar" MaxLength="20" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="timestamp" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'Firebird.Firebird.IMAGENES_OPERACIONES_VIEW' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="IMAGENES_OPERACIONES_VIEW">
+    <Key>
+      <PropertyRef Name="IMAGEN_OPERACION_ID" />
+      <PropertyRef Name="OPERACION_ID" />
+      <PropertyRef Name="FECHA_OPERACION" />
+      <PropertyRef Name="TIPO_OPERACION" />
+      <PropertyRef Name="SOCIO_NEGOCIO" />
+      <PropertyRef Name="USUARIO_CREACION" />
+      <PropertyRef Name="FECHA_CREACION" />
+    </Key>
+    <Property Name="IMAGEN_OPERACION_ID" Type="bigint" Nullable="false" />
+    <Property Name="IMAGEN" Type="blob" />
+    <Property Name="OPERACION_ID" Type="bigint" Nullable="false" />
+    <Property Name="FECHA_OPERACION" Type="timestamp" Nullable="false" />
+    <Property Name="TIPO_OPERACION" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="SOCIO_NEGOCIO" Type="varchar" MaxLength="180" Unicode="true" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="timestamp" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="varchar" MaxLength="20" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="timestamp" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'Firebird.Firebird.IMPUESTOS_VIEW' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="IMPUESTOS_VIEW">
+    <Key>
+      <PropertyRef Name="IMPUESTO_ID" />
+      <PropertyRef Name="IMPUESTO" />
+      <PropertyRef Name="PORCENTAJE_IMPUESTO" />
+      <PropertyRef Name="FACTOR_DISCRIMINADO" />
+      <PropertyRef Name="FACTOR_IMPUESTO" />
+      <PropertyRef Name="USUARIO_CREACION" />
+      <PropertyRef Name="FECHA_CREACION" />
+    </Key>
+    <Property Name="IMPUESTO_ID" Type="bigint" Nullable="false" />
+    <Property Name="IMPUESTO" Type="varchar" MaxLength="120" Unicode="true" Nullable="false" />
+    <Property Name="PORCENTAJE_IMPUESTO" Type="numeric" Precision="5" Scale="2" Nullable="false" />
+    <Property Name="FACTOR_DISCRIMINADO" Type="numeric" Precision="15" Scale="2" Nullable="false" />
+    <Property Name="FACTOR_IMPUESTO" Type="numeric" Precision="15" Scale="2" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="timestamp" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="varchar" MaxLength="20" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="timestamp" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'Firebird.Firebird.INGRESOS_EGRESOS_VIEW' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="INGRESOS_EGRESOS_VIEW">
+    <Key>
+      <PropertyRef Name="INGRESO_EGRESO_ID" />
+      <PropertyRef Name="FECHA" />
+      <PropertyRef Name="MONTO" />
+      <PropertyRef Name="TIPO" />
+      <PropertyRef Name="ITEM_INGRESO_EGRESO_ID" />
+      <PropertyRef Name="ITEM" />
+      <PropertyRef Name="SALDO" />
+      <PropertyRef Name="USUARIO_CREACION" />
+      <PropertyRef Name="FECHA_CREACION" />
+      <PropertyRef Name="ENTIDAD_INMOBILIARIA" />
+    </Key>
+    <Property Name="INGRESO_EGRESO_ID" Type="bigint" Nullable="false" />
+    <Property Name="FECHA" Type="timestamp" Nullable="false" />
+    <Property Name="MONTO" Type="numeric" Precision="15" Scale="0" Nullable="false" />
+    <Property Name="SOCIO_NEGOCIO_ID" Type="bigint" />
+    <Property Name="SOCIO_NEGOCIO" Type="varchar" MaxLength="32765" Unicode="true" StoreGeneratedPattern="Computed" />
+    <Property Name="ESTADO" Type="varchar" MaxLength="20" Unicode="true" />
+    <Property Name="ENTIDAD_INMOBILIARIA_ID" Type="bigint" />
+    <Property Name="ENTIDAD_INMOBILIARIA" Type="varchar" MaxLength="32765" Unicode="true" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="TIPO" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="PROPIEDAD_ID" Type="bigint" />
+    <Property Name="PROPIEDAD" Type="varchar" MaxLength="32765" Unicode="true" StoreGeneratedPattern="Computed" />
+    <Property Name="ITEM_INGRESO_EGRESO_ID" Type="bigint" Nullable="false" />
+    <Property Name="ITEM" Type="varchar" MaxLength="180" Unicode="true" Nullable="false" />
+    <Property Name="NUMERO_FACTURA" Type="varchar" MaxLength="20" Unicode="true" />
+    <Property Name="FECHA_FACTURA" Type="timestamp" />
+    <Property Name="SALDO" Type="numeric" Precision="15" Scale="0" Nullable="false" />
+    <Property Name="TIPO_IMPUTACION" Type="varchar" MaxLength="120" Unicode="true" />
+    <Property Name="USUARIO_CREACION" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="timestamp" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="varchar" MaxLength="20" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="timestamp" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'Firebird.Firebird.ITEMS_INGRESOS_EGRESOS_VIEW' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="ITEMS_INGRESOS_EGRESOS_VIEW">
+    <Key>
+      <PropertyRef Name="ITEM_INGRESO_EGRESO_ID" />
+      <PropertyRef Name="ITEM" />
+      <PropertyRef Name="TIPO_ITEM" />
+      <PropertyRef Name="TIPO" />
+      <PropertyRef Name="USUARIO_CREACION" />
+      <PropertyRef Name="FECHA_CREACION" />
+    </Key>
+    <Property Name="ITEM_INGRESO_EGRESO_ID" Type="bigint" Nullable="false" />
+    <Property Name="ITEM" Type="varchar" MaxLength="180" Unicode="true" Nullable="false" />
+    <Property Name="TIPO_ITEM" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="TIPO" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="timestamp" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="varchar" MaxLength="20" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="timestamp" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'Firebird.Firebird.LIQUIDACIONES_DETALLES_ITEMS' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="LIQUIDACIONES_DETALLES_ITEMS">
+    <Key>
+      <PropertyRef Name="LIQUIDACION_DETALLE_ID" />
+      <PropertyRef Name="LIQUIDACION_ID" />
+      <PropertyRef Name="MONTO" />
+      <PropertyRef Name="USUARIO_CREACION" />
+      <PropertyRef Name="FECHA_CREACION" />
+      <PropertyRef Name="ITEM_INGRESO_EGRESO_ID" />
+      <PropertyRef Name="ITEM" />
+    </Key>
+    <Property Name="LIQUIDACION_DETALLE_ID" Type="bigint" Nullable="false" />
+    <Property Name="LIQUIDACION_ID" Type="bigint" Nullable="false" />
+    <Property Name="NUMERO_ITEM" Type="int" />
+    <Property Name="MONTO" Type="numeric" Precision="15" Scale="0" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="timestamp" Nullable="false" />
+    <Property Name="ITEM_INGRESO_EGRESO_ID" Type="bigint" Nullable="false" />
+    <Property Name="ITEM" Type="varchar" MaxLength="180" Unicode="true" Nullable="false" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'Firebird.Firebird.LIQUIDACIONES_VIEW' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="LIQUIDACIONES_VIEW">
+    <Key>
+      <PropertyRef Name="LIQUIDACION_ID" />
+      <PropertyRef Name="FECHA" />
+      <PropertyRef Name="OPERACION_PROPIEDAD_ID" />
+      <PropertyRef Name="CLIENTE" />
+      <PropertyRef Name="ENTIDAD_INMOBILIARIA_ID" />
+      <PropertyRef Name="ENTIDAD_INMOBILIARIA" />
+      <PropertyRef Name="PROPIEDAD_ID" />
+    </Key>
+    <Property Name="LIQUIDACION_ID" Type="bigint" Nullable="false" />
+    <Property Name="FECHA" Type="timestamp" Nullable="false" />
+    <Property Name="NUMERO" Type="varchar" MaxLength="32765" Unicode="true" StoreGeneratedPattern="Computed" />
+    <Property Name="OPERACION_PROPIEDAD_ID" Type="bigint" Nullable="false" />
+    <Property Name="CLIENTE" Type="varchar" MaxLength="180" Unicode="true" Nullable="false" />
+    <Property Name="ENTIDAD_INMOBILIARIA_ID" Type="bigint" Nullable="false" />
+    <Property Name="ENTIDAD_INMOBILIARIA" Type="varchar" MaxLength="180" Unicode="true" Nullable="false" />
+    <Property Name="PROPIEDAD_ID" Type="bigint" Nullable="false" />
+    <Property Name="PROPIEDAD" Type="varchar" MaxLength="180" Unicode="true" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'Firebird.Firebird.MONEDAS_VIEW' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="MONEDAS_VIEW">
+    <Key>
+      <PropertyRef Name="MONEDA_ID" />
+      <PropertyRef Name="MONEDA" />
+      <PropertyRef Name="SIMBOLO" />
+      <PropertyRef Name="TIPO_MONEDA" />
+      <PropertyRef Name="PRECISION_DECIMALES" />
+      <PropertyRef Name="USUARIO_CREACION" />
+      <PropertyRef Name="FECHA_CREACION" />
+    </Key>
+    <Property Name="MONEDA_ID" Type="bigint" Nullable="false" />
+    <Property Name="MONEDA" Type="varchar" MaxLength="120" Unicode="true" Nullable="false" />
+    <Property Name="SIMBOLO" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="SIMBOLO_SET" Type="varchar" MaxLength="20" Unicode="true" />
+    <Property Name="TIPO_MONEDA" Type="varchar" MaxLength="120" Unicode="true" Nullable="false" />
+    <Property Name="PRECISION_DECIMALES" Type="bigint" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="timestamp" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="varchar" MaxLength="20" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="timestamp" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'Firebird.Firebird.OPERACIONES_CONTRATOS_VENCIDOS' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="OPERACIONES_CONTRATOS_VENCIDOS">
+    <Key>
+      <PropertyRef Name="OPERACION_PROPIEDAD_ID" />
+      <PropertyRef Name="FECHA_OPERACION" />
+      <PropertyRef Name="FECHA_INICIO_CONTRATO" />
+      <PropertyRef Name="ESTADO" />
+      <PropertyRef Name="ENTIDAD_INMOBILIARIA_ID" />
+      <PropertyRef Name="UNIDAD_NEGOCIO" />
+      <PropertyRef Name="PROPIEDAD_ID" />
+      <PropertyRef Name="LOCATARIO" />
+      <PropertyRef Name="RAZON_SOCIAL" />
+    </Key>
+    <Property Name="OPERACION_PROPIEDAD_ID" Type="bigint" Nullable="false" />
+    <Property Name="FECHA_OPERACION" Type="timestamp" Nullable="false" />
+    <Property Name="FECHA_INICIO_CONTRATO" Type="timestamp" Nullable="false" />
+    <Property Name="FECHA_FIN_CONTRATO" Type="timestamp" />
+    <Property Name="ESTADO" Type="varchar" MaxLength="10" Unicode="true" Nullable="false" />
+    <Property Name="ENTIDAD_INMOBILIARIA_ID" Type="bigint" Nullable="false" />
+    <Property Name="UNIDAD_NEGOCIO" Type="varchar" MaxLength="180" Unicode="true" Nullable="false" />
+    <Property Name="PROPIEDAD_ID" Type="bigint" Nullable="false" />
+    <Property Name="INMUEBLE" Type="varchar" MaxLength="180" Unicode="true" />
+    <Property Name="LOCATARIO" Type="bigint" Nullable="false" />
+    <Property Name="RAZON_SOCIAL" Type="varchar" MaxLength="180" Unicode="true" Nullable="false" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'Firebird.Firebird.OPERACIONES_PENDIENTES_VIEW' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="OPERACIONES_PENDIENTES_VIEW">
+    <Key>
+      <PropertyRef Name="SOCIO_NEGOCIO_ID" />
+      <PropertyRef Name="RAZON_SOCIAL" />
+      <PropertyRef Name="TIPO_DOCUMENTO" />
+      <PropertyRef Name="NUMERO_DOCUMENTO" />
+      <PropertyRef Name="OPERACION_PROPIEDAD_ID" />
+      <PropertyRef Name="FECHA_OPERACION" />
+      <PropertyRef Name="ENTIDAD_INMOBILIARIA_ID" />
+      <PropertyRef Name="ENTIDAD_INMOBILIARIA" />
+      <PropertyRef Name="PROPIEDAD_ID" />
+    </Key>
+    <Property Name="SOCIO_NEGOCIO_ID" Type="bigint" Nullable="false" />
+    <Property Name="RAZON_SOCIAL" Type="varchar" MaxLength="180" Unicode="true" Nullable="false" />
+    <Property Name="TIPO_DOCUMENTO" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="NUMERO_DOCUMENTO" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="RUC" Type="varchar" MaxLength="32765" Unicode="true" StoreGeneratedPattern="Computed" />
+    <Property Name="OPERACION_PROPIEDAD_ID" Type="bigint" Nullable="false" />
+    <Property Name="FECHA_OPERACION" Type="timestamp" Nullable="false" />
+    <Property Name="ENTIDAD_INMOBILIARIA_ID" Type="bigint" Nullable="false" />
+    <Property Name="ENTIDAD_INMOBILIARIA" Type="varchar" MaxLength="180" Unicode="true" Nullable="false" />
+    <Property Name="PROPIEDAD_ID" Type="bigint" Nullable="false" />
+    <Property Name="INMUEBLE" Type="varchar" MaxLength="180" Unicode="true" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'Firebird.Firebird.OPERACIONES_PROPIEDADES_VIEW' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="OPERACIONES_PROPIEDADES_VIEW">
+    <Key>
+      <PropertyRef Name="OPERACION_PROPIEDAD_ID" />
+      <PropertyRef Name="FECHA_OPERACION" />
+      <PropertyRef Name="TIPO_OPERACION" />
+      <PropertyRef Name="SOCIO_NEGOCIO_ID" />
+      <PropertyRef Name="SOCIO_NEGOCIO" />
+      <PropertyRef Name="FECHA_INICIO_CONTRATO" />
+      <PropertyRef Name="PRECIO" />
+      <PropertyRef Name="ESTADO" />
+      <PropertyRef Name="GARANTIA" />
+      <PropertyRef Name="SUCURSAL_ID" />
+      <PropertyRef Name="SUCURSAL" />
+      <PropertyRef Name="MONEDA_ID" />
+      <PropertyRef Name="MONEDA" />
+      <PropertyRef Name="TIPO_ENTIDAD" />
+      <PropertyRef Name="TIPO_CONTRATO" />
+      <PropertyRef Name="CONDICION_OPERACION" />
+      <PropertyRef Name="AVISO_RENOVACION" />
+      <PropertyRef Name="USUARIO_CREACION" />
+      <PropertyRef Name="FECHA_CREACION" />
+    </Key>
+    <Property Name="OPERACION_PROPIEDAD_ID" Type="bigint" Nullable="false" />
+    <Property Name="FECHA_OPERACION" Type="timestamp" Nullable="false" />
+    <Property Name="TIPO_OPERACION" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="SOCIO_NEGOCIO_ID" Type="bigint" Nullable="false" />
+    <Property Name="SOCIO_NEGOCIO" Type="varchar" MaxLength="180" Unicode="true" Nullable="false" />
+    <Property Name="PROPIEDAD_ID" Type="bigint" />
+    <Property Name="PROPIEDAD" Type="varchar" MaxLength="180" Unicode="true" />
+    <Property Name="FECHA_FINALIZACION" Type="timestamp" />
+    <Property Name="ENTIDAD_INMOBILIARIA_ID" Type="bigint" StoreGeneratedPattern="Computed" />
+    <Property Name="ENTIDAD_INMOBILIARIA" Type="varchar" MaxLength="32765" Unicode="true" StoreGeneratedPattern="Computed" />
+    <Property Name="FECHA_INICIO_CONTRATO" Type="timestamp" Nullable="false" />
+    <Property Name="FECHA_FIN_CONTRATO" Type="timestamp" />
+    <Property Name="PLAZO" Type="int" />
+    <Property Name="PRECIO" Type="numeric" Precision="15" Scale="0" Nullable="false" />
+    <Property Name="ESTADO" Type="varchar" MaxLength="10" Unicode="true" Nullable="false" />
+    <Property Name="GARANTIA" Type="numeric" Precision="15" Scale="0" Nullable="false" />
+    <Property Name="SUCURSAL_ID" Type="bigint" Nullable="false" />
+    <Property Name="SUCURSAL" Type="varchar" MaxLength="120" Unicode="true" Nullable="false" />
+    <Property Name="MONEDA_ID" Type="bigint" Nullable="false" />
+    <Property Name="MONEDA" Type="varchar" MaxLength="120" Unicode="true" Nullable="false" />
+    <Property Name="TIPO_ENTIDAD" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="TIPO_CONTRATO" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="CONDICION_OPERACION" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="AVISO_RENOVACION" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_RENOVACION" Type="timestamp" />
+    <Property Name="USUARIO_CREACION" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="timestamp" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="varchar" MaxLength="20" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="timestamp" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'Firebird.Firebird.PAISES_VIEW' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="PAISES_VIEW">
+    <Key>
+      <PropertyRef Name="PAIS_ID" />
+      <PropertyRef Name="PAIS" />
+      <PropertyRef Name="CODIGO_ISO_2" />
+      <PropertyRef Name="CODIGO_ISO_3" />
+      <PropertyRef Name="NACIONALIDAD" />
+      <PropertyRef Name="USUARIO_CREACION" />
+      <PropertyRef Name="FECHA_CREACION" />
+    </Key>
+    <Property Name="PAIS_ID" Type="bigint" Nullable="false" />
+    <Property Name="PAIS" Type="varchar" MaxLength="120" Unicode="true" Nullable="false" />
+    <Property Name="CODIGO_ISO_2" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="CODIGO_ISO_3" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="NACIONALIDAD" Type="varchar" MaxLength="120" Unicode="true" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="timestamp" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="varchar" MaxLength="20" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="timestamp" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'Firebird.Firebird.PROPIEDADES_VIEW' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="PROPIEDADES_VIEW">
+    <Key>
+      <PropertyRef Name="PROPIEDAD_ID" />
+      <PropertyRef Name="TIPO" />
+      <PropertyRef Name="PAIS_ID" />
+      <PropertyRef Name="PAIS" />
+      <PropertyRef Name="DEPARTAMENTO_ID" />
+      <PropertyRef Name="DEPARTAMENTO" />
+      <PropertyRef Name="CIUDAD_ID" />
+      <PropertyRef Name="CIUDAD" />
+      <PropertyRef Name="BARRIO_ID" />
+      <PropertyRef Name="BARRIO" />
+      <PropertyRef Name="DIRECCION" />
+      <PropertyRef Name="TIENE_COCHERA" />
+      <PropertyRef Name="COMISION" />
+      <PropertyRef Name="COMISION_VENTA" />
+      <PropertyRef Name="COMISION_ALQUILER" />
+      <PropertyRef Name="PRECIO" />
+      <PropertyRef Name="PRECIO_VENTA" />
+      <PropertyRef Name="PRECIO_ALQUILER" />
+      <PropertyRef Name="ALQUILADA" />
+      <PropertyRef Name="VENDIDA" />
+      <PropertyRef Name="ESTADO" />
+      <PropertyRef Name="SENADO" />
+      <PropertyRef Name="USUARIO_CREACION" />
+      <PropertyRef Name="FECHA_CREACION" />
+    </Key>
+    <Property Name="PROPIEDAD_ID" Type="bigint" Nullable="false" />
+    <Property Name="PROPIEDAD" Type="varchar" MaxLength="180" Unicode="true" />
+    <Property Name="TIPO" Type="varchar" MaxLength="120" Unicode="true" Nullable="false" />
+    <Property Name="CUENTA_CATASTRAL" Type="varchar" MaxLength="120" Unicode="true" />
+    <Property Name="ENTIDAD_INMOBILIARIA_ID" Type="bigint" StoreGeneratedPattern="Computed" />
+    <Property Name="ENTIDAD_INMOBILIARIA" Type="varchar" MaxLength="32765" Unicode="true" StoreGeneratedPattern="Computed" />
+    <Property Name="PAIS_ID" Type="bigint" Nullable="false" />
+    <Property Name="PAIS" Type="varchar" MaxLength="120" Unicode="true" Nullable="false" />
+    <Property Name="DEPARTAMENTO_ID" Type="bigint" Nullable="false" />
+    <Property Name="DEPARTAMENTO" Type="varchar" MaxLength="120" Unicode="true" Nullable="false" />
+    <Property Name="CIUDAD_ID" Type="bigint" Nullable="false" />
+    <Property Name="CIUDAD" Type="varchar" MaxLength="120" Unicode="true" Nullable="false" />
+    <Property Name="BARRIO_ID" Type="bigint" Nullable="false" />
+    <Property Name="BARRIO" Type="varchar" MaxLength="120" Unicode="true" Nullable="false" />
+    <Property Name="DIRECCION" Type="varchar" MaxLength="180" Unicode="true" Nullable="false" />
+    <Property Name="CARACTERISTICAS" Type="varchar" MaxLength="5000" Unicode="true" />
+    <Property Name="TIENE_COCHERA" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="CANTIDAD_COCHERA" Type="int" />
+    <Property Name="M2_CONSTRUCCION" Type="int" />
+    <Property Name="ANO_CONSTRUCCION" Type="int" />
+    <Property Name="MEDIDA_LOTE" Type="varchar" MaxLength="20" Unicode="true" />
+    <Property Name="COMISION" Type="numeric" Precision="5" Scale="2" Nullable="false" />
+    <Property Name="COMISION_VENTA" Type="numeric" Precision="5" Scale="2" Nullable="false" />
+    <Property Name="COMISION_ALQUILER" Type="numeric" Precision="5" Scale="2" Nullable="false" />
+    <Property Name="PRECIO" Type="numeric" Precision="15" Scale="0" Nullable="false" />
+    <Property Name="PRECIO_VENTA" Type="numeric" Precision="15" Scale="0" Nullable="false" />
+    <Property Name="PRECIO_ALQUILER" Type="numeric" Precision="15" Scale="0" Nullable="false" />
+    <Property Name="ALQUILADA" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="VENDIDA" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="ESTADO" Type="varchar" MaxLength="10" Unicode="true" Nullable="false" />
+    <Property Name="NUMERO_FINCA" Type="varchar" MaxLength="20" Unicode="true" />
+    <Property Name="NIS" Type="varchar" MaxLength="20" Unicode="true" />
+    <Property Name="NUMERO_MEDIDOR" Type="varchar" MaxLength="20" Unicode="true" />
+    <Property Name="SENADO" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="NUMERO_LOTE" Type="varchar" MaxLength="20" Unicode="true" />
+    <Property Name="NUMERO_MANZANA" Type="varchar" MaxLength="20" Unicode="true" />
+    <Property Name="DIMENSIONES" Type="varchar" MaxLength="5000" Unicode="true" />
+    <Property Name="OBSERVACION" Type="varchar" MaxLength="250" Unicode="true" />
+    <Property Name="RESOLUCION" Type="varchar" MaxLength="20" Unicode="true" />
+    <Property Name="USUARIO_CREACION" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="varchar" MaxLength="20" Unicode="true" />
+    <Property Name="FECHA_CREACION" Type="timestamp" Nullable="false" />
+    <Property Name="FECHA_MODIFICACION" Type="timestamp" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'Firebird.Firebird.PROPIETARIOS_ENT_INMOB_VIEW' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="PROPIETARIOS_ENT_INMOB_VIEW">
+    <Key>
+      <PropertyRef Name="PROPIETARIO_ENT_INMOB_ID" />
+      <PropertyRef Name="ENTIDAD_INMOBILIARIA" />
+      <PropertyRef Name="PROPIETARIO_ID" />
+      <PropertyRef Name="PROPIETARIO" />
+      <PropertyRef Name="USUARIO_CREACION" />
+      <PropertyRef Name="FECHA_CREACION" />
+    </Key>
+    <Property Name="PROPIETARIO_ENT_INMOB_ID" Type="bigint" Nullable="false" />
+    <Property Name="ENTIDAD_INMOBILIARIA_ID" Type="bigint" />
+    <Property Name="ENTIDAD_INMOBILIARIA" Type="varchar" MaxLength="180" Unicode="true" Nullable="false" />
+    <Property Name="PROPIEDAD_ID" Type="bigint" />
+    <Property Name="PROPIEDAD" Type="varchar" MaxLength="180" Unicode="true" />
+    <Property Name="PROPIETARIO_ID" Type="bigint" Nullable="false" />
+    <Property Name="PROPIETARIO" Type="varchar" MaxLength="180" Unicode="true" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="timestamp" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="varchar" MaxLength="20" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="timestamp" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'Firebird.Firebird.RESCISIONES_VIEW' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="RESCISIONES_VIEW">
+    <Key>
+      <PropertyRef Name="RESCISION_ID" />
+      <PropertyRef Name="FECHA" />
+      <PropertyRef Name="TIPO" />
+      <PropertyRef Name="MONTO" />
+      <PropertyRef Name="TIPO_OPERACION" />
+      <PropertyRef Name="OPERACION_ID" />
+      <PropertyRef Name="PROPIEDAD_ID" />
+      <PropertyRef Name="SOCIO_NEGOCIO_ID" />
+      <PropertyRef Name="SOCIO_NEGOCIO" />
+      <PropertyRef Name="USUARIO_CREACION" />
+      <PropertyRef Name="FECHA_CREACION" />
+    </Key>
+    <Property Name="RESCISION_ID" Type="bigint" Nullable="false" />
+    <Property Name="FECHA" Type="timestamp" Nullable="false" />
+    <Property Name="TIPO" Type="varchar" MaxLength="120" Unicode="true" Nullable="false" />
+    <Property Name="MONTO" Type="numeric" Precision="15" Scale="0" Nullable="false" />
+    <Property Name="TIPO_OPERACION" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="OBSERVACION" Type="varchar" MaxLength="5000" Unicode="true" />
+    <Property Name="OPERACION_ID" Type="bigint" Nullable="false" />
+    <Property Name="PROPIEDAD_ID" Type="bigint" Nullable="false" />
+    <Property Name="SOCIO_NEGOCIO_ID" Type="bigint" Nullable="false" />
+    <Property Name="SOCIO_NEGOCIO" Type="varchar" MaxLength="180" Unicode="true" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="timestamp" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="varchar" MaxLength="20" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="timestamp" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'Firebird.Firebird.SOCIOS_NEGOCIOS_VIEW' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="SOCIOS_NEGOCIOS_VIEW">
+    <Key>
+      <PropertyRef Name="SOCIO_NEGOCIO_ID" />
+      <PropertyRef Name="SOCIO_NEGOCIO" />
+      <PropertyRef Name="NUMERO_DOCUMENTO" />
+      <PropertyRef Name="CLASIFICACION_FISCAL" />
+      <PropertyRef Name="TIPO_DOCUMENTO" />
+      <PropertyRef Name="TIPO_PERSONERIA" />
+      <PropertyRef Name="ACTIVO" />
+      <PropertyRef Name="DIRECCION" />
+      <PropertyRef Name="TELEFONO" />
+      <PropertyRef Name="ES_PROPIETARIO" />
+      <PropertyRef Name="ES_INQUILINO" />
+      <PropertyRef Name="ES_PORTERO" />
+      <PropertyRef Name="ES_ADMINISTRADOR" />
+      <PropertyRef Name="ES_CLIENTE" />
+      <PropertyRef Name="ES_PROVEEDOR" />
+      <PropertyRef Name="ES_EMPRESA" />
+      <PropertyRef Name="ES_VENDEDOR" />
+      <PropertyRef Name="USUARIO_CREACION" />
+      <PropertyRef Name="FECHA_CREACION" />
+    </Key>
+    <Property Name="SOCIO_NEGOCIO_ID" Type="bigint" Nullable="false" />
+    <Property Name="SOCIO_NEGOCIO" Type="varchar" MaxLength="180" Unicode="true" Nullable="false" />
+    <Property Name="NUMERO_DOCUMENTO" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="DIGITO_VERIFICADOR" Type="varchar" MaxLength="1" Unicode="true" />
+    <Property Name="RUC" Type="varchar" MaxLength="32765" Unicode="true" StoreGeneratedPattern="Computed" />
+    <Property Name="CLASIFICACION_FISCAL" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="TIPO_DOCUMENTO" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="TIPO_PERSONERIA" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="ACTIVO" Type="varchar" MaxLength="2" Unicode="true" Nullable="false" />
+    <Property Name="DIRECCION" Type="varchar" MaxLength="180" Unicode="true" Nullable="false" />
+    <Property Name="TELEFONO" Type="varchar" MaxLength="120" Unicode="true" Nullable="false" />
+    <Property Name="ES_PROPIETARIO" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="ES_INQUILINO" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="ES_PORTERO" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="ES_ADMINISTRADOR" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="ES_CLIENTE" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="ES_PROVEEDOR" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="ES_EMPRESA" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="ES_VENDEDOR" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="timestamp" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="varchar" MaxLength="20" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="timestamp" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'Firebird.Firebird.SUCURSALES_VIEW' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="SUCURSALES_VIEW">
+    <Key>
+      <PropertyRef Name="SUCURSAL_ID" />
+      <PropertyRef Name="SUCURSAL" />
+      <PropertyRef Name="DIRECCION" />
+      <PropertyRef Name="TELEFONO" />
+      <PropertyRef Name="EMPRESA_ID" />
+      <PropertyRef Name="EMPRESA" />
+      <PropertyRef Name="USUARIO_CREACION" />
+      <PropertyRef Name="FECHA_CREACION" />
+    </Key>
+    <Property Name="SUCURSAL_ID" Type="bigint" Nullable="false" />
+    <Property Name="SUCURSAL" Type="varchar" MaxLength="120" Unicode="true" Nullable="false" />
+    <Property Name="DIRECCION" Type="varchar" MaxLength="180" Unicode="true" Nullable="false" />
+    <Property Name="TELEFONO" Type="varchar" MaxLength="120" Unicode="true" Nullable="false" />
+    <Property Name="EMPRESA_ID" Type="bigint" Nullable="false" />
+    <Property Name="EMPRESA" Type="varchar" MaxLength="180" Unicode="true" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="timestamp" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="varchar" MaxLength="20" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="timestamp" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'Firebird.Firebird.USUARIOS_VIEW' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="USUARIOS_VIEW">
+    <Key>
+      <PropertyRef Name="CODIGO_USUARIO" />
+      <PropertyRef Name="PASSWORD" />
+      <PropertyRef Name="ACTIVO" />
+      <PropertyRef Name="USUARIO_CREACION" />
+      <PropertyRef Name="FECHA_CREACION" />
+      <PropertyRef Name="EMPRESA_ID" />
+      <PropertyRef Name="PERFIL" />
+    </Key>
+    <Property Name="CODIGO_USUARIO" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="PASSWORD" Type="varchar" MaxLength="120" Unicode="true" Nullable="false" />
+    <Property Name="ACTIVO" Type="varchar" MaxLength="2" Unicode="true" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="varchar" MaxLength="20" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="timestamp" Nullable="false" />
+    <Property Name="EMPRESA_ID" Type="bigint" Nullable="false" />
+    <Property Name="PERFIL" Type="varchar" MaxLength="120" Unicode="true" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_BARRIOS_CIUDADES_BARRIOS">
+    <End Role="BARRIOS" Type="Self.BARRIOS" Multiplicity="1" />
+    <End Role="BARRIOS_CIUDADES" Type="Self.BARRIOS_CIUDADES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BARRIOS">
+        <PropertyRef Name="BARRIO_ID" />
+      </Principal>
+      <Dependent Role="BARRIOS_CIUDADES">
+        <PropertyRef Name="BARRIO_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BARRIOS_CIUDADES_CIUDAD">
+    <End Role="CIUDADES" Type="Self.CIUDADES" Multiplicity="1" />
+    <End Role="BARRIOS_CIUDADES" Type="Self.BARRIOS_CIUDADES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CIUDADES">
+        <PropertyRef Name="CIUDAD_ID" />
+      </Principal>
+      <Dependent Role="BARRIOS_CIUDADES">
+        <PropertyRef Name="CIUDAD_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CIUDADES_DEPARTAMENTOS_CIUDA">
+    <End Role="CIUDADES" Type="Self.CIUDADES" Multiplicity="1" />
+    <End Role="CIUDADES_DEPARTAMENTOS" Type="Self.CIUDADES_DEPARTAMENTOS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CIUDADES">
+        <PropertyRef Name="CIUDAD_ID" />
+      </Principal>
+      <Dependent Role="CIUDADES_DEPARTAMENTOS">
+        <PropertyRef Name="CIUDAD_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CIUDADES_DEPARTAMENTOS_DEPAR">
+    <End Role="DEPARTAMENTOS" Type="Self.DEPARTAMENTOS" Multiplicity="1" />
+    <End Role="CIUDADES_DEPARTAMENTOS" Type="Self.CIUDADES_DEPARTAMENTOS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DEPARTAMENTOS">
+        <PropertyRef Name="DEPARTAMENTO_ID" />
+      </Principal>
+      <Dependent Role="CIUDADES_DEPARTAMENTOS">
+        <PropertyRef Name="DEPARTAMENTO_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DEPARTAMENTOS_PAISES_DEPARTA">
+    <End Role="DEPARTAMENTOS" Type="Self.DEPARTAMENTOS" Multiplicity="1" />
+    <End Role="DEPARTAMENTOS_PAISES" Type="Self.DEPARTAMENTOS_PAISES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DEPARTAMENTOS">
+        <PropertyRef Name="DEPARTAMENTO_ID" />
+      </Principal>
+      <Dependent Role="DEPARTAMENTOS_PAISES">
+        <PropertyRef Name="DEPARTAMENTO_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DEPARTAMENTOS_PAISES_PAIS">
+    <End Role="PAISES" Type="Self.PAISES" Multiplicity="1" />
+    <End Role="DEPARTAMENTOS_PAISES" Type="Self.DEPARTAMENTOS_PAISES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PAISES">
+        <PropertyRef Name="PAIS_ID" />
+      </Principal>
+      <Dependent Role="DEPARTAMENTOS_PAISES">
+        <PropertyRef Name="PAIS_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EMPRESAS_SOCIO_NEGOCIO">
+    <End Role="SOCIOS_NEGOCIOS" Type="Self.SOCIOS_NEGOCIOS" Multiplicity="0..1" />
+    <End Role="EMPRESAS" Type="Self.EMPRESAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SOCIOS_NEGOCIOS">
+        <PropertyRef Name="SOCIO_NEGOCIO_ID" />
+      </Principal>
+      <Dependent Role="EMPRESAS">
+        <PropertyRef Name="SOCIO_NEGOCIO_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ENTIDADES_INMOBILIARIAS_1">
+    <End Role="BARRIOS" Type="Self.BARRIOS" Multiplicity="0..1" />
+    <End Role="ENTIDADES_INMOBILIARIAS" Type="Self.ENTIDADES_INMOBILIARIAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BARRIOS">
+        <PropertyRef Name="BARRIO_ID" />
+      </Principal>
+      <Dependent Role="ENTIDADES_INMOBILIARIAS">
+        <PropertyRef Name="BARRIO_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ENTIDADES_INMOBILIARIAS_CIUD">
+    <End Role="CIUDADES" Type="Self.CIUDADES" Multiplicity="0..1" />
+    <End Role="ENTIDADES_INMOBILIARIAS" Type="Self.ENTIDADES_INMOBILIARIAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CIUDADES">
+        <PropertyRef Name="CIUDAD_ID" />
+      </Principal>
+      <Dependent Role="ENTIDADES_INMOBILIARIAS">
+        <PropertyRef Name="CIUDAD_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ENTIDADES_INMOBILIARIAS_DEPA">
+    <End Role="DEPARTAMENTOS" Type="Self.DEPARTAMENTOS" Multiplicity="0..1" />
+    <End Role="ENTIDADES_INMOBILIARIAS" Type="Self.ENTIDADES_INMOBILIARIAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DEPARTAMENTOS">
+        <PropertyRef Name="DEPARTAMENTO_ID" />
+      </Principal>
+      <Dependent Role="ENTIDADES_INMOBILIARIAS">
+        <PropertyRef Name="DEPARTAMENTO_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ENTIDADES_INMOBILIARIAS_EMPR">
+    <End Role="EMPRESAS" Type="Self.EMPRESAS" Multiplicity="0..1" />
+    <End Role="ENTIDADES_INMOBILIARIAS" Type="Self.ENTIDADES_INMOBILIARIAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EMPRESAS">
+        <PropertyRef Name="EMPRESA_ID" />
+      </Principal>
+      <Dependent Role="ENTIDADES_INMOBILIARIAS">
+        <PropertyRef Name="EMPRESA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ENTIDADES_INMOBILIARIAS_PAIS">
+    <End Role="PAISES" Type="Self.PAISES" Multiplicity="0..1" />
+    <End Role="ENTIDADES_INMOBILIARIAS" Type="Self.ENTIDADES_INMOBILIARIAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PAISES">
+        <PropertyRef Name="PAIS_ID" />
+      </Principal>
+      <Dependent Role="ENTIDADES_INMOBILIARIAS">
+        <PropertyRef Name="PAIS_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PROPIEDADES_BARRIOS">
+    <End Role="BARRIOS" Type="Self.BARRIOS" Multiplicity="1" />
+    <End Role="PROPIEDADES" Type="Self.PROPIEDADES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BARRIOS">
+        <PropertyRef Name="BARRIO_ID" />
+      </Principal>
+      <Dependent Role="PROPIEDADES">
+        <PropertyRef Name="BARRIO_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PROPIEDADES_CIUDADES">
+    <End Role="CIUDADES" Type="Self.CIUDADES" Multiplicity="1" />
+    <End Role="PROPIEDADES" Type="Self.PROPIEDADES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CIUDADES">
+        <PropertyRef Name="CIUDAD_ID" />
+      </Principal>
+      <Dependent Role="PROPIEDADES">
+        <PropertyRef Name="CIUDAD_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PROPIEDADES_DEPARTAMENTO">
+    <End Role="DEPARTAMENTOS" Type="Self.DEPARTAMENTOS" Multiplicity="1" />
+    <End Role="PROPIEDADES" Type="Self.PROPIEDADES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DEPARTAMENTOS">
+        <PropertyRef Name="DEPARTAMENTO_ID" />
+      </Principal>
+      <Dependent Role="PROPIEDADES">
+        <PropertyRef Name="DEPARTAMENTO_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PROPIEDADES_EMPRESA">
+    <End Role="EMPRESAS" Type="Self.EMPRESAS" Multiplicity="0..1" />
+    <End Role="PROPIEDADES" Type="Self.PROPIEDADES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EMPRESAS">
+        <PropertyRef Name="EMPRESA_ID" />
+      </Principal>
+      <Dependent Role="PROPIEDADES">
+        <PropertyRef Name="EMPRESA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PROPIEDADES_ENTIDADES_INMOBI">
+    <End Role="ENTIDADES_INMOBILIARIAS" Type="Self.ENTIDADES_INMOBILIARIAS" Multiplicity="0..1" />
+    <End Role="PROPIEDADES" Type="Self.PROPIEDADES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ENTIDADES_INMOBILIARIAS">
+        <PropertyRef Name="ENTIDAD_INMOBILIARIA_ID" />
+      </Principal>
+      <Dependent Role="PROPIEDADES">
+        <PropertyRef Name="ENTIDAD_INMOBILIARIA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PROPIEDADES_PAIS">
+    <End Role="PAISES" Type="Self.PAISES" Multiplicity="1" />
+    <End Role="PROPIEDADES" Type="Self.PROPIEDADES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PAISES">
+        <PropertyRef Name="PAIS_ID" />
+      </Principal>
+      <Dependent Role="PROPIEDADES">
+        <PropertyRef Name="PAIS_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SUCURSALES_EMPRESA">
+    <End Role="EMPRESAS" Type="Self.EMPRESAS" Multiplicity="1" />
+    <End Role="SUCURSALES" Type="Self.SUCURSALES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EMPRESAS">
+        <PropertyRef Name="EMPRESA_ID" />
+      </Principal>
+      <Dependent Role="SUCURSALES">
+        <PropertyRef Name="EMPRESA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_USUARIOS_EMPRESA">
+    <End Role="EMPRESAS" Type="Self.EMPRESAS" Multiplicity="1" />
+    <End Role="USUARIOS" Type="Self.USUARIOS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EMPRESAS">
+        <PropertyRef Name="EMPRESA_ID" />
+      </Principal>
+      <Dependent Role="USUARIOS">
+        <PropertyRef Name="EMPRESA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="BARRIOS" EntityType="Self.BARRIOS" Schema="Firebird" store:Type="Tables" />
+    <EntitySet Name="BARRIOS_CIUDADES" EntityType="Self.BARRIOS_CIUDADES" Schema="Firebird" store:Type="Tables" />
+    <EntitySet Name="CIUDADES" EntityType="Self.CIUDADES" Schema="Firebird" store:Type="Tables" />
+    <EntitySet Name="CIUDADES_DEPARTAMENTOS" EntityType="Self.CIUDADES_DEPARTAMENTOS" Schema="Firebird" store:Type="Tables" />
+    <EntitySet Name="COBROS" EntityType="Self.COBROS" Schema="Firebird" store:Type="Tables" />
+    <EntitySet Name="COBROS_DETALLES" EntityType="Self.COBROS_DETALLES" Schema="Firebird" store:Type="Tables" />
+    <EntitySet Name="CRONOGRAMAS_CUOTAS" EntityType="Self.CRONOGRAMAS_CUOTAS" Schema="Firebird" store:Type="Tables" />
+    <EntitySet Name="DEPARTAMENTOS" EntityType="Self.DEPARTAMENTOS" Schema="Firebird" store:Type="Tables" />
+    <EntitySet Name="DEPARTAMENTOS_PAISES" EntityType="Self.DEPARTAMENTOS_PAISES" Schema="Firebird" store:Type="Tables" />
+    <EntitySet Name="DOMINIOS" EntityType="Self.DOMINIOS" Schema="Firebird" store:Type="Tables" />
+    <EntitySet Name="EMPRESAS" EntityType="Self.EMPRESAS" Schema="Firebird" store:Type="Tables" />
+    <EntitySet Name="ENTIDADES_INMOBILIARIAS" EntityType="Self.ENTIDADES_INMOBILIARIAS" Schema="Firebird" store:Type="Tables" />
+    <EntitySet Name="FORMAS_PAGOS" EntityType="Self.FORMAS_PAGOS" Schema="Firebird" store:Type="Tables" />
+    <EntitySet Name="IBE$VERSION_HISTORY" EntityType="Self.IBE$VERSION_HISTORY" Schema="Firebird" store:Type="Tables" />
+    <EntitySet Name="IMAGENES_ENTIDAD_INMOBILIARIA" EntityType="Self.IMAGENES_ENTIDAD_INMOBILIARIA" Schema="Firebird" store:Type="Tables" />
+    <EntitySet Name="IMAGENES_OPERACIONES" EntityType="Self.IMAGENES_OPERACIONES" Schema="Firebird" store:Type="Tables" />
+    <EntitySet Name="IMPUESTOS" EntityType="Self.IMPUESTOS" Schema="Firebird" store:Type="Tables" />
+    <EntitySet Name="INGRESOS_EGRESOS" EntityType="Self.INGRESOS_EGRESOS" Schema="Firebird" store:Type="Tables" />
+    <EntitySet Name="ITEMS_INGRESOS_EGRESOS" EntityType="Self.ITEMS_INGRESOS_EGRESOS" Schema="Firebird" store:Type="Tables" />
+    <EntitySet Name="LIQUIDACIONES" EntityType="Self.LIQUIDACIONES" Schema="Firebird" store:Type="Tables" />
+    <EntitySet Name="LIQUIDACIONES_DETALLES" EntityType="Self.LIQUIDACIONES_DETALLES" Schema="Firebird" store:Type="Tables" />
+    <EntitySet Name="MONEDAS" EntityType="Self.MONEDAS" Schema="Firebird" store:Type="Tables" />
+    <EntitySet Name="OPERACIONES_PROPIEDADES" EntityType="Self.OPERACIONES_PROPIEDADES" Schema="Firebird" store:Type="Tables" />
+    <EntitySet Name="PAISES" EntityType="Self.PAISES" Schema="Firebird" store:Type="Tables" />
+    <EntitySet Name="PROPIEDADES" EntityType="Self.PROPIEDADES" Schema="Firebird" store:Type="Tables" />
+    <EntitySet Name="PROPIETARIOS_ENT_INMOB" EntityType="Self.PROPIETARIOS_ENT_INMOB" Schema="Firebird" store:Type="Tables" />
+    <EntitySet Name="RESCISIONES" EntityType="Self.RESCISIONES" Schema="Firebird" store:Type="Tables" />
+    <EntitySet Name="RUC" EntityType="Self.RUC" Schema="Firebird" store:Type="Tables" />
+    <EntitySet Name="SOCIOS_NEGOCIOS" EntityType="Self.SOCIOS_NEGOCIOS" Schema="Firebird" store:Type="Tables" />
+    <EntitySet Name="SUCURSALES" EntityType="Self.SUCURSALES" Schema="Firebird" store:Type="Tables" />
+    <EntitySet Name="USUARIOS" EntityType="Self.USUARIOS" Schema="Firebird" store:Type="Tables" />
+    <EntitySet Name="VARIABLES_ENTORNOS" EntityType="Self.VARIABLES_ENTORNOS" Schema="Firebird" store:Type="Tables" />
+    <EntitySet Name="BARRIOS_CIUDADES_VIEW" EntityType="Self.BARRIOS_CIUDADES_VIEW" store:Type="Views" store:Schema="Firebird">
+      <DefiningQuery>SELECT 
+"A"."BARRIO_CIUDAD_ID" AS "BARRIO_CIUDAD_ID", 
+"A"."CIUDAD_ID" AS "CIUDAD_ID", 
+"A"."CIUDAD" AS "CIUDAD", 
+"A"."BARRIO_ID" AS "BARRIO_ID", 
+"A"."BARRIO" AS "BARRIO", 
+"A"."CODIGO" AS "CODIGO", 
+"A"."USUARIO_CREACION" AS "USUARIO_CREACION", 
+"A"."FECHA_CREACION" AS "FECHA_CREACION", 
+"A"."USUARIO_MODIFICACION" AS "USUARIO_MODIFICACION", 
+"A"."FECHA_MODIFICACION" AS "FECHA_MODIFICACION"
+FROM "BARRIOS_CIUDADES_VIEW" AS "A"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="BARRIOS_VIEW" EntityType="Self.BARRIOS_VIEW" store:Type="Views" store:Schema="Firebird">
+      <DefiningQuery>SELECT 
+"A"."BARRIO_ID" AS "BARRIO_ID", 
+"A"."BARRIO" AS "BARRIO", 
+"A"."USUARIO_CREACION" AS "USUARIO_CREACION", 
+"A"."FECHA_CREACION" AS "FECHA_CREACION", 
+"A"."USUARIO_MODIFICACION" AS "USUARIO_MODIFICACION", 
+"A"."FECHA_MODIFICACION" AS "FECHA_MODIFICACION"
+FROM "BARRIOS_VIEW" AS "A"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="CIUDADES_DEPARTAMENTOS_VIEW" EntityType="Self.CIUDADES_DEPARTAMENTOS_VIEW" store:Type="Views" store:Schema="Firebird">
+      <DefiningQuery>SELECT 
+"A"."CIUDAD_DEPARTAMENTO_ID" AS "CIUDAD_DEPARTAMENTO_ID", 
+"A"."DEPARTAMENTO_ID" AS "DEPARTAMENTO_ID", 
+"A"."DEPARTAMENTO" AS "DEPARTAMENTO", 
+"A"."CIUDAD_ID" AS "CIUDAD_ID", 
+"A"."CIUDAD" AS "CIUDAD", 
+"A"."CODIGO" AS "CODIGO", 
+"A"."USUARIO_CREACION" AS "USUARIO_CREACION", 
+"A"."FECHA_CREACION" AS "FECHA_CREACION", 
+"A"."USUARIO_MODIFICACION" AS "USUARIO_MODIFICACION", 
+"A"."FECHA_MODIFICACION" AS "FECHA_MODIFICACION"
+FROM "CIUDADES_DEPARTAMENTOS_VIEW" AS "A"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="CIUDADES_VIEW" EntityType="Self.CIUDADES_VIEW" store:Type="Views" store:Schema="Firebird">
+      <DefiningQuery>SELECT 
+"A"."CIUDAD_ID" AS "CIUDAD_ID", 
+"A"."CIUDAD" AS "CIUDAD", 
+"A"."USUARIO_CREACION" AS "USUARIO_CREACION", 
+"A"."FECHA_CREACION" AS "FECHA_CREACION", 
+"A"."USUARIO_MODIFICACION" AS "USUARIO_MODIFICACION", 
+"A"."FECHA_MODIFICACION" AS "FECHA_MODIFICACION"
+FROM "CIUDADES_VIEW" AS "A"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="COBROS_VIEW" EntityType="Self.COBROS_VIEW" store:Type="Views" store:Schema="Firebird">
+      <DefiningQuery>SELECT 
+"A"."COBRO_ID" AS "COBRO_ID", 
+"A"."FECHA" AS "FECHA", 
+"A"."NUMERO_FACTURA" AS "NUMERO_FACTURA", 
+"A"."SOCIO_NEGOCIO_ID" AS "SOCIO_NEGOCIO_ID", 
+"A"."SOCIO_NEGOCIO" AS "SOCIO_NEGOCIO", 
+"A"."RUC" AS "RUC", 
+"A"."NUMERO_DOCUMENTO_COBRO" AS "NUMERO_DOCUMENTO_COBRO", 
+"A"."ESTADO" AS "ESTADO", 
+"A"."TOTAL" AS "TOTAL", 
+"A"."OBSERVACION" AS "OBSERVACION", 
+"A"."USUARIO_CREACION" AS "USUARIO_CREACION", 
+"A"."FECHA_CREACION" AS "FECHA_CREACION", 
+"A"."USUARIO_MODIFICACION" AS "USUARIO_MODIFICACION", 
+"A"."FECHA_MODIFICACION" AS "FECHA_MODIFICACION"
+FROM "COBROS_VIEW" AS "A"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="CRONOGRAMAS_CUOTAS_VIEW" EntityType="Self.CRONOGRAMAS_CUOTAS_VIEW" store:Type="Views" store:Schema="Firebird">
+      <DefiningQuery>SELECT 
+"A"."CRONOGRAMA_CUOTA_ID" AS "CRONOGRAMA_CUOTA_ID", 
+"A"."NUMERO_CUOTA" AS "NUMERO_CUOTA", 
+"A"."FECHA_VENCIMIENTO" AS "FECHA_VENCIMIENTO", 
+"A"."MONTO" AS "MONTO", 
+"A"."OPERACION_PROPIEDAD_ID" AS "OPERACION_PROPIEDAD_ID", 
+"A"."TIPO_OPERACION" AS "TIPO_OPERACION", 
+"A"."SOCIO_NEGOCIO_ID" AS "SOCIO_NEGOCIO_ID", 
+"A"."SOCIO_NEGOCIO" AS "SOCIO_NEGOCIO", 
+"A"."ESTADO" AS "ESTADO", 
+"A"."MONEDA_ID" AS "MONEDA_ID", 
+"A"."MONEDA" AS "MONEDA", 
+"A"."FECHA_CANCELACION" AS "FECHA_CANCELACION", 
+"A"."USUARIO_CREACION" AS "USUARIO_CREACION", 
+"A"."FECHA_CREACION" AS "FECHA_CREACION", 
+"A"."USUARIO_MODIFICACION" AS "USUARIO_MODIFICACION", 
+"A"."FECHA_MODIFICACION" AS "FECHA_MODIFICACION", 
+"A"."ENTIDAD_INMOBILIARIA_ID" AS "ENTIDAD_INMOBILIARIA_ID", 
+"A"."ENTIDAD" AS "ENTIDAD", 
+"A"."PROPIEDAD_ID" AS "PROPIEDAD_ID", 
+"A"."PROPIEDAD" AS "PROPIEDAD"
+FROM "CRONOGRAMAS_CUOTAS_VIEW" AS "A"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="DEPARTAMENTOS_PAISES_VIEW" EntityType="Self.DEPARTAMENTOS_PAISES_VIEW" store:Type="Views" store:Schema="Firebird">
+      <DefiningQuery>SELECT 
+"A"."DEPARTAMENTO_PAIS_ID" AS "DEPARTAMENTO_PAIS_ID", 
+"A"."PAIS_ID" AS "PAIS_ID", 
+"A"."PAIS" AS "PAIS", 
+"A"."NACIONALIDAD" AS "NACIONALIDAD", 
+"A"."CODIGO_ISO2" AS "CODIGO_ISO2", 
+"A"."CODIGO_ISO3" AS "CODIGO_ISO3", 
+"A"."DEPARTAMENTO_ID" AS "DEPARTAMENTO_ID", 
+"A"."DEPARTAMENTO" AS "DEPARTAMENTO", 
+"A"."CODIGO" AS "CODIGO", 
+"A"."USUARIO_CREACION" AS "USUARIO_CREACION", 
+"A"."FECHA_CREACION" AS "FECHA_CREACION", 
+"A"."USUARIO_MODIFICACION" AS "USUARIO_MODIFICACION", 
+"A"."FECHA_MODIFICACION" AS "FECHA_MODIFICACION"
+FROM "DEPARTAMENTOS_PAISES_VIEW" AS "A"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="DEPARTAMENTOS_VIEW" EntityType="Self.DEPARTAMENTOS_VIEW" store:Type="Views" store:Schema="Firebird">
+      <DefiningQuery>SELECT 
+"A"."DEPARTAMENTO_ID" AS "DEPARTAMENTO_ID", 
+"A"."DEPARTAMENTO" AS "DEPARTAMENTO", 
+"A"."USUARIO_CREACION" AS "USUARIO_CREACION", 
+"A"."FECHA_CREACION" AS "FECHA_CREACION", 
+"A"."USUARIO_MODIFICACION" AS "USUARIO_MODIFICACION", 
+"A"."FECHA_MODIFICACION" AS "FECHA_MODIFICACION"
+FROM "DEPARTAMENTOS_VIEW" AS "A"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="EMPRESAS_VIEW" EntityType="Self.EMPRESAS_VIEW" store:Type="Views" store:Schema="Firebird">
+      <DefiningQuery>SELECT 
+"A"."EMPRESA_ID" AS "EMPRESA_ID", 
+"A"."EMPRESA" AS "EMPRESA", 
+"A"."NOMBRE_CORTO" AS "NOMBRE_CORTO", 
+"A"."SOCIO_NEGOCIO_ID" AS "SOCIO_NEGOCIO_ID", 
+"A"."SOCIO_NEGOCIO" AS "SOCIO_NEGOCIO", 
+"A"."NUMERO_DOCUMENTO" AS "NUMERO_DOCUMENTO", 
+"A"."DIGITO_VERIFICADOR" AS "DIGITO_VERIFICADOR", 
+"A"."RUC" AS "RUC", 
+"A"."TIPO_PERSONERIA" AS "TIPO_PERSONERIA", 
+"A"."TIPO_DOCUMENTO" AS "TIPO_DOCUMENTO", 
+"A"."DIRECCION" AS "DIRECCION", 
+"A"."TELEFONO" AS "TELEFONO", 
+"A"."ACTIVO" AS "ACTIVO", 
+"A"."USUARIO_CREACION" AS "USUARIO_CREACION", 
+"A"."FECHA_CREACION" AS "FECHA_CREACION", 
+"A"."USUARIO_MODIFICACION" AS "USUARIO_MODIFICACION", 
+"A"."FECHA_MODIFICACION" AS "FECHA_MODIFICACION"
+FROM "EMPRESAS_VIEW" AS "A"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ENTIDADES_INMOBILIARIAS_VIEW" EntityType="Self.ENTIDADES_INMOBILIARIAS_VIEW" store:Type="Views" store:Schema="Firebird">
+      <DefiningQuery>SELECT 
+"A"."ENTIDAD_INMOBILIARIA_ID" AS "ENTIDAD_INMOBILIARIA_ID", 
+"A"."NOMBRE" AS "NOMBRE", 
+"A"."TIPO" AS "TIPO", 
+"A"."DIRECCION" AS "DIRECCION", 
+"A"."CANTIDAD_UNIDADES" AS "CANTIDAD_UNIDADES", 
+"A"."ANO_CONSTRUCCION" AS "ANO_CONSTRUCCION", 
+"A"."M2_CONSTRUCCION" AS "M2_CONSTRUCCION", 
+"A"."MEDIDAS_LOTE" AS "MEDIDAS_LOTE", 
+"A"."CARACTERISTICAS" AS "CARACTERISTICAS", 
+"A"."NUMERO_FINCA" AS "NUMERO_FINCA", 
+"A"."CUENTA_CATASTRAL" AS "CUENTA_CATASTRAL", 
+"A"."PAIS_ID" AS "PAIS_ID", 
+"A"."PAIS" AS "PAIS", 
+"A"."DEPARTAMENTO_ID" AS "DEPARTAMENTO_ID", 
+"A"."DEPARTAMENTO" AS "DEPARTAMENTO", 
+"A"."CIUDAD_ID" AS "CIUDAD_ID", 
+"A"."CIUDAD" AS "CIUDAD", 
+"A"."BARRIO_ID" AS "BARRIO_ID", 
+"A"."BARRIO" AS "BARRIO", 
+"A"."USUARIO_CREACION" AS "USUARIO_CREACION", 
+"A"."FECHA_CREACION" AS "FECHA_CREACION", 
+"A"."USUARIO_MODIFICACION" AS "USUARIO_MODIFICACION", 
+"A"."FECHA_MODIFICACION" AS "FECHA_MODIFICACION"
+FROM "ENTIDADES_INMOBILIARIAS_VIEW" AS "A"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="FORMAS_PAGOS_VIEW" EntityType="Self.FORMAS_PAGOS_VIEW" store:Type="Views" store:Schema="Firebird">
+      <DefiningQuery>SELECT 
+"A"."FORMA_PAGO_ID" AS "FORMA_PAGO_ID", 
+"A"."FORMA_PAGO" AS "FORMA_PAGO", 
+"A"."CODIGO" AS "CODIGO", 
+"A"."DIAS" AS "DIAS", 
+"A"."POR_DEFECTO" AS "POR_DEFECTO", 
+"A"."REQUERE_BANCO" AS "REQUERE_BANCO", 
+"A"."USUARIO_CREACION" AS "USUARIO_CREACION", 
+"A"."FECHA_CREACION" AS "FECHA_CREACION", 
+"A"."USUARIO_MODIFICACION" AS "USUARIO_MODIFICACION", 
+"A"."FECHA_MODIFICACION" AS "FECHA_MODIFICACION"
+FROM "FORMAS_PAGOS_VIEW" AS "A"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="IMAGENES_ENTIDAD_INMOB_VIEW" EntityType="Self.IMAGENES_ENTIDAD_INMOB_VIEW" store:Type="Views" store:Schema="Firebird">
+      <DefiningQuery>SELECT 
+"A"."IMAGEN_ENTIDAD_INMOBILIARIA_ID" AS "IMAGEN_ENTIDAD_INMOBILIARIA_ID", 
+"A"."FOTO" AS "FOTO", 
+"A"."RUTA_IMAGEN" AS "RUTA_IMAGEN", 
+"A"."ENTIDAD_INMOBILIARIA_ID" AS "ENTIDAD_INMOBILIARIA_ID", 
+"A"."ENTIDAD_INMOBILIARIA" AS "ENTIDAD_INMOBILIARIA", 
+"A"."PROPIEDAD_ID" AS "PROPIEDAD_ID", 
+"A"."PROPIEDAD" AS "PROPIEDAD", 
+"A"."USUARIO_CREACION" AS "USUARIO_CREACION", 
+"A"."FECHA_CREACION" AS "FECHA_CREACION", 
+"A"."USUARIO_MODIFICACION" AS "USUARIO_MODIFICACION", 
+"A"."FECHA_MODIFICACION" AS "FECHA_MODIFICACION"
+FROM "IMAGENES_ENTIDAD_INMOB_VIEW" AS "A"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="IMAGENES_OPERACIONES_VIEW" EntityType="Self.IMAGENES_OPERACIONES_VIEW" store:Type="Views" store:Schema="Firebird">
+      <DefiningQuery>SELECT 
+"A"."IMAGEN_OPERACION_ID" AS "IMAGEN_OPERACION_ID", 
+"A"."IMAGEN" AS "IMAGEN", 
+"A"."OPERACION_ID" AS "OPERACION_ID", 
+"A"."FECHA_OPERACION" AS "FECHA_OPERACION", 
+"A"."TIPO_OPERACION" AS "TIPO_OPERACION", 
+"A"."SOCIO_NEGOCIO" AS "SOCIO_NEGOCIO", 
+"A"."USUARIO_CREACION" AS "USUARIO_CREACION", 
+"A"."FECHA_CREACION" AS "FECHA_CREACION", 
+"A"."USUARIO_MODIFICACION" AS "USUARIO_MODIFICACION", 
+"A"."FECHA_MODIFICACION" AS "FECHA_MODIFICACION"
+FROM "IMAGENES_OPERACIONES_VIEW" AS "A"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="IMPUESTOS_VIEW" EntityType="Self.IMPUESTOS_VIEW" store:Type="Views" store:Schema="Firebird">
+      <DefiningQuery>SELECT 
+"A"."IMPUESTO_ID" AS "IMPUESTO_ID", 
+"A"."IMPUESTO" AS "IMPUESTO", 
+"A"."PORCENTAJE_IMPUESTO" AS "PORCENTAJE_IMPUESTO", 
+"A"."FACTOR_DISCRIMINADO" AS "FACTOR_DISCRIMINADO", 
+"A"."FACTOR_IMPUESTO" AS "FACTOR_IMPUESTO", 
+"A"."USUARIO_CREACION" AS "USUARIO_CREACION", 
+"A"."FECHA_CREACION" AS "FECHA_CREACION", 
+"A"."USUARIO_MODIFICACION" AS "USUARIO_MODIFICACION", 
+"A"."FECHA_MODIFICACION" AS "FECHA_MODIFICACION"
+FROM "IMPUESTOS_VIEW" AS "A"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="INGRESOS_EGRESOS_VIEW" EntityType="Self.INGRESOS_EGRESOS_VIEW" store:Type="Views" store:Schema="Firebird">
+      <DefiningQuery>SELECT 
+"A"."INGRESO_EGRESO_ID" AS "INGRESO_EGRESO_ID", 
+"A"."FECHA" AS "FECHA", 
+"A"."MONTO" AS "MONTO", 
+"A"."SOCIO_NEGOCIO_ID" AS "SOCIO_NEGOCIO_ID", 
+"A"."SOCIO_NEGOCIO" AS "SOCIO_NEGOCIO", 
+"A"."ESTADO" AS "ESTADO", 
+"A"."ENTIDAD_INMOBILIARIA_ID" AS "ENTIDAD_INMOBILIARIA_ID", 
+"A"."ENTIDAD_INMOBILIARIA" AS "ENTIDAD_INMOBILIARIA", 
+"A"."TIPO" AS "TIPO", 
+"A"."PROPIEDAD_ID" AS "PROPIEDAD_ID", 
+"A"."PROPIEDAD" AS "PROPIEDAD", 
+"A"."ITEM_INGRESO_EGRESO_ID" AS "ITEM_INGRESO_EGRESO_ID", 
+"A"."ITEM" AS "ITEM", 
+"A"."NUMERO_FACTURA" AS "NUMERO_FACTURA", 
+"A"."FECHA_FACTURA" AS "FECHA_FACTURA", 
+"A"."SALDO" AS "SALDO", 
+"A"."TIPO_IMPUTACION" AS "TIPO_IMPUTACION", 
+"A"."USUARIO_CREACION" AS "USUARIO_CREACION", 
+"A"."FECHA_CREACION" AS "FECHA_CREACION", 
+"A"."USUARIO_MODIFICACION" AS "USUARIO_MODIFICACION", 
+"A"."FECHA_MODIFICACION" AS "FECHA_MODIFICACION"
+FROM "INGRESOS_EGRESOS_VIEW" AS "A"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ITEMS_INGRESOS_EGRESOS_VIEW" EntityType="Self.ITEMS_INGRESOS_EGRESOS_VIEW" store:Type="Views" store:Schema="Firebird">
+      <DefiningQuery>SELECT 
+"A"."ITEM_INGRESO_EGRESO_ID" AS "ITEM_INGRESO_EGRESO_ID", 
+"A"."ITEM" AS "ITEM", 
+"A"."TIPO_ITEM" AS "TIPO_ITEM", 
+"A"."TIPO" AS "TIPO", 
+"A"."USUARIO_CREACION" AS "USUARIO_CREACION", 
+"A"."FECHA_CREACION" AS "FECHA_CREACION", 
+"A"."USUARIO_MODIFICACION" AS "USUARIO_MODIFICACION", 
+"A"."FECHA_MODIFICACION" AS "FECHA_MODIFICACION"
+FROM "ITEMS_INGRESOS_EGRESOS_VIEW" AS "A"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="LIQUIDACIONES_DETALLES_ITEMS" EntityType="Self.LIQUIDACIONES_DETALLES_ITEMS" store:Type="Views" store:Schema="Firebird">
+      <DefiningQuery>SELECT 
+"A"."LIQUIDACION_DETALLE_ID" AS "LIQUIDACION_DETALLE_ID", 
+"A"."LIQUIDACION_ID" AS "LIQUIDACION_ID", 
+"A"."NUMERO_ITEM" AS "NUMERO_ITEM", 
+"A"."MONTO" AS "MONTO", 
+"A"."USUARIO_CREACION" AS "USUARIO_CREACION", 
+"A"."FECHA_CREACION" AS "FECHA_CREACION", 
+"A"."ITEM_INGRESO_EGRESO_ID" AS "ITEM_INGRESO_EGRESO_ID", 
+"A"."ITEM" AS "ITEM"
+FROM "LIQUIDACIONES_DETALLES_ITEMS" AS "A"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="LIQUIDACIONES_VIEW" EntityType="Self.LIQUIDACIONES_VIEW" store:Type="Views" store:Schema="Firebird">
+      <DefiningQuery>SELECT 
+"A"."LIQUIDACION_ID" AS "LIQUIDACION_ID", 
+"A"."FECHA" AS "FECHA", 
+"A"."NUMERO" AS "NUMERO", 
+"A"."OPERACION_PROPIEDAD_ID" AS "OPERACION_PROPIEDAD_ID", 
+"A"."CLIENTE" AS "CLIENTE", 
+"A"."ENTIDAD_INMOBILIARIA_ID" AS "ENTIDAD_INMOBILIARIA_ID", 
+"A"."ENTIDAD_INMOBILIARIA" AS "ENTIDAD_INMOBILIARIA", 
+"A"."PROPIEDAD_ID" AS "PROPIEDAD_ID", 
+"A"."PROPIEDAD" AS "PROPIEDAD"
+FROM "LIQUIDACIONES_VIEW" AS "A"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="MONEDAS_VIEW" EntityType="Self.MONEDAS_VIEW" store:Type="Views" store:Schema="Firebird">
+      <DefiningQuery>SELECT 
+"A"."MONEDA_ID" AS "MONEDA_ID", 
+"A"."MONEDA" AS "MONEDA", 
+"A"."SIMBOLO" AS "SIMBOLO", 
+"A"."SIMBOLO_SET" AS "SIMBOLO_SET", 
+"A"."TIPO_MONEDA" AS "TIPO_MONEDA", 
+"A"."PRECISION_DECIMALES" AS "PRECISION_DECIMALES", 
+"A"."USUARIO_CREACION" AS "USUARIO_CREACION", 
+"A"."FECHA_CREACION" AS "FECHA_CREACION", 
+"A"."USUARIO_MODIFICACION" AS "USUARIO_MODIFICACION", 
+"A"."FECHA_MODIFICACION" AS "FECHA_MODIFICACION"
+FROM "MONEDAS_VIEW" AS "A"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="OPERACIONES_CONTRATOS_VENCIDOS" EntityType="Self.OPERACIONES_CONTRATOS_VENCIDOS" store:Type="Views" store:Schema="Firebird">
+      <DefiningQuery>SELECT 
+"A"."OPERACION_PROPIEDAD_ID" AS "OPERACION_PROPIEDAD_ID", 
+"A"."FECHA_OPERACION" AS "FECHA_OPERACION", 
+"A"."FECHA_INICIO_CONTRATO" AS "FECHA_INICIO_CONTRATO", 
+"A"."FECHA_FIN_CONTRATO" AS "FECHA_FIN_CONTRATO", 
+"A"."ESTADO" AS "ESTADO", 
+"A"."ENTIDAD_INMOBILIARIA_ID" AS "ENTIDAD_INMOBILIARIA_ID", 
+"A"."UNIDAD_NEGOCIO" AS "UNIDAD_NEGOCIO", 
+"A"."PROPIEDAD_ID" AS "PROPIEDAD_ID", 
+"A"."INMUEBLE" AS "INMUEBLE", 
+"A"."LOCATARIO" AS "LOCATARIO", 
+"A"."RAZON_SOCIAL" AS "RAZON_SOCIAL"
+FROM "OPERACIONES_CONTRATOS_VENCIDOS" AS "A"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="OPERACIONES_PENDIENTES_VIEW" EntityType="Self.OPERACIONES_PENDIENTES_VIEW" store:Type="Views" store:Schema="Firebird">
+      <DefiningQuery>SELECT 
+"A"."SOCIO_NEGOCIO_ID" AS "SOCIO_NEGOCIO_ID", 
+"A"."RAZON_SOCIAL" AS "RAZON_SOCIAL", 
+"A"."TIPO_DOCUMENTO" AS "TIPO_DOCUMENTO", 
+"A"."NUMERO_DOCUMENTO" AS "NUMERO_DOCUMENTO", 
+"A"."RUC" AS "RUC", 
+"A"."OPERACION_PROPIEDAD_ID" AS "OPERACION_PROPIEDAD_ID", 
+"A"."FECHA_OPERACION" AS "FECHA_OPERACION", 
+"A"."ENTIDAD_INMOBILIARIA_ID" AS "ENTIDAD_INMOBILIARIA_ID", 
+"A"."ENTIDAD_INMOBILIARIA" AS "ENTIDAD_INMOBILIARIA", 
+"A"."PROPIEDAD_ID" AS "PROPIEDAD_ID", 
+"A"."INMUEBLE" AS "INMUEBLE"
+FROM "OPERACIONES_PENDIENTES_VIEW" AS "A"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="OPERACIONES_PROPIEDADES_VIEW" EntityType="Self.OPERACIONES_PROPIEDADES_VIEW" store:Type="Views" store:Schema="Firebird">
+      <DefiningQuery>SELECT 
+"A"."OPERACION_PROPIEDAD_ID" AS "OPERACION_PROPIEDAD_ID", 
+"A"."FECHA_OPERACION" AS "FECHA_OPERACION", 
+"A"."TIPO_OPERACION" AS "TIPO_OPERACION", 
+"A"."SOCIO_NEGOCIO_ID" AS "SOCIO_NEGOCIO_ID", 
+"A"."SOCIO_NEGOCIO" AS "SOCIO_NEGOCIO", 
+"A"."PROPIEDAD_ID" AS "PROPIEDAD_ID", 
+"A"."PROPIEDAD" AS "PROPIEDAD", 
+"A"."FECHA_FINALIZACION" AS "FECHA_FINALIZACION", 
+"A"."ENTIDAD_INMOBILIARIA_ID" AS "ENTIDAD_INMOBILIARIA_ID", 
+"A"."ENTIDAD_INMOBILIARIA" AS "ENTIDAD_INMOBILIARIA", 
+"A"."FECHA_INICIO_CONTRATO" AS "FECHA_INICIO_CONTRATO", 
+"A"."FECHA_FIN_CONTRATO" AS "FECHA_FIN_CONTRATO", 
+"A"."PLAZO" AS "PLAZO", 
+"A"."PRECIO" AS "PRECIO", 
+"A"."ESTADO" AS "ESTADO", 
+"A"."GARANTIA" AS "GARANTIA", 
+"A"."SUCURSAL_ID" AS "SUCURSAL_ID", 
+"A"."SUCURSAL" AS "SUCURSAL", 
+"A"."MONEDA_ID" AS "MONEDA_ID", 
+"A"."MONEDA" AS "MONEDA", 
+"A"."TIPO_ENTIDAD" AS "TIPO_ENTIDAD", 
+"A"."TIPO_CONTRATO" AS "TIPO_CONTRATO", 
+"A"."CONDICION_OPERACION" AS "CONDICION_OPERACION", 
+"A"."AVISO_RENOVACION" AS "AVISO_RENOVACION", 
+"A"."FECHA_RENOVACION" AS "FECHA_RENOVACION", 
+"A"."USUARIO_CREACION" AS "USUARIO_CREACION", 
+"A"."FECHA_CREACION" AS "FECHA_CREACION", 
+"A"."USUARIO_MODIFICACION" AS "USUARIO_MODIFICACION", 
+"A"."FECHA_MODIFICACION" AS "FECHA_MODIFICACION"
+FROM "OPERACIONES_PROPIEDADES_VIEW" AS "A"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="PAISES_VIEW" EntityType="Self.PAISES_VIEW" store:Type="Views" store:Schema="Firebird">
+      <DefiningQuery>SELECT 
+"A"."PAIS_ID" AS "PAIS_ID", 
+"A"."PAIS" AS "PAIS", 
+"A"."CODIGO_ISO_2" AS "CODIGO_ISO_2", 
+"A"."CODIGO_ISO_3" AS "CODIGO_ISO_3", 
+"A"."NACIONALIDAD" AS "NACIONALIDAD", 
+"A"."USUARIO_CREACION" AS "USUARIO_CREACION", 
+"A"."FECHA_CREACION" AS "FECHA_CREACION", 
+"A"."USUARIO_MODIFICACION" AS "USUARIO_MODIFICACION", 
+"A"."FECHA_MODIFICACION" AS "FECHA_MODIFICACION"
+FROM "PAISES_VIEW" AS "A"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="PROPIEDADES_VIEW" EntityType="Self.PROPIEDADES_VIEW" store:Type="Views" store:Schema="Firebird">
+      <DefiningQuery>SELECT 
+"A"."PROPIEDAD_ID" AS "PROPIEDAD_ID", 
+"A"."PROPIEDAD" AS "PROPIEDAD", 
+"A"."TIPO" AS "TIPO", 
+"A"."CUENTA_CATASTRAL" AS "CUENTA_CATASTRAL", 
+"A"."ENTIDAD_INMOBILIARIA_ID" AS "ENTIDAD_INMOBILIARIA_ID", 
+"A"."ENTIDAD_INMOBILIARIA" AS "ENTIDAD_INMOBILIARIA", 
+"A"."PAIS_ID" AS "PAIS_ID", 
+"A"."PAIS" AS "PAIS", 
+"A"."DEPARTAMENTO_ID" AS "DEPARTAMENTO_ID", 
+"A"."DEPARTAMENTO" AS "DEPARTAMENTO", 
+"A"."CIUDAD_ID" AS "CIUDAD_ID", 
+"A"."CIUDAD" AS "CIUDAD", 
+"A"."BARRIO_ID" AS "BARRIO_ID", 
+"A"."BARRIO" AS "BARRIO", 
+"A"."DIRECCION" AS "DIRECCION", 
+"A"."CARACTERISTICAS" AS "CARACTERISTICAS", 
+"A"."TIENE_COCHERA" AS "TIENE_COCHERA", 
+"A"."CANTIDAD_COCHERA" AS "CANTIDAD_COCHERA", 
+"A"."M2_CONSTRUCCION" AS "M2_CONSTRUCCION", 
+"A"."ANO_CONSTRUCCION" AS "ANO_CONSTRUCCION", 
+"A"."MEDIDA_LOTE" AS "MEDIDA_LOTE", 
+"A"."COMISION" AS "COMISION", 
+"A"."COMISION_VENTA" AS "COMISION_VENTA", 
+"A"."COMISION_ALQUILER" AS "COMISION_ALQUILER", 
+"A"."PRECIO" AS "PRECIO", 
+"A"."PRECIO_VENTA" AS "PRECIO_VENTA", 
+"A"."PRECIO_ALQUILER" AS "PRECIO_ALQUILER", 
+"A"."ALQUILADA" AS "ALQUILADA", 
+"A"."VENDIDA" AS "VENDIDA", 
+"A"."ESTADO" AS "ESTADO", 
+"A"."NUMERO_FINCA" AS "NUMERO_FINCA", 
+"A"."NIS" AS "NIS", 
+"A"."NUMERO_MEDIDOR" AS "NUMERO_MEDIDOR", 
+"A"."SENADO" AS "SENADO", 
+"A"."NUMERO_LOTE" AS "NUMERO_LOTE", 
+"A"."NUMERO_MANZANA" AS "NUMERO_MANZANA", 
+"A"."DIMENSIONES" AS "DIMENSIONES", 
+"A"."OBSERVACION" AS "OBSERVACION", 
+"A"."RESOLUCION" AS "RESOLUCION", 
+"A"."USUARIO_CREACION" AS "USUARIO_CREACION", 
+"A"."USUARIO_MODIFICACION" AS "USUARIO_MODIFICACION", 
+"A"."FECHA_CREACION" AS "FECHA_CREACION", 
+"A"."FECHA_MODIFICACION" AS "FECHA_MODIFICACION"
+FROM "PROPIEDADES_VIEW" AS "A"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="PROPIETARIOS_ENT_INMOB_VIEW" EntityType="Self.PROPIETARIOS_ENT_INMOB_VIEW" store:Type="Views" store:Schema="Firebird">
+      <DefiningQuery>SELECT 
+"A"."PROPIETARIO_ENT_INMOB_ID" AS "PROPIETARIO_ENT_INMOB_ID", 
+"A"."ENTIDAD_INMOBILIARIA_ID" AS "ENTIDAD_INMOBILIARIA_ID", 
+"A"."ENTIDAD_INMOBILIARIA" AS "ENTIDAD_INMOBILIARIA", 
+"A"."PROPIEDAD_ID" AS "PROPIEDAD_ID", 
+"A"."PROPIEDAD" AS "PROPIEDAD", 
+"A"."PROPIETARIO_ID" AS "PROPIETARIO_ID", 
+"A"."PROPIETARIO" AS "PROPIETARIO", 
+"A"."USUARIO_CREACION" AS "USUARIO_CREACION", 
+"A"."FECHA_CREACION" AS "FECHA_CREACION", 
+"A"."USUARIO_MODIFICACION" AS "USUARIO_MODIFICACION", 
+"A"."FECHA_MODIFICACION" AS "FECHA_MODIFICACION"
+FROM "PROPIETARIOS_ENT_INMOB_VIEW" AS "A"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="RESCISIONES_VIEW" EntityType="Self.RESCISIONES_VIEW" store:Type="Views" store:Schema="Firebird">
+      <DefiningQuery>SELECT 
+"A"."RESCISION_ID" AS "RESCISION_ID", 
+"A"."FECHA" AS "FECHA", 
+"A"."TIPO" AS "TIPO", 
+"A"."MONTO" AS "MONTO", 
+"A"."TIPO_OPERACION" AS "TIPO_OPERACION", 
+"A"."OBSERVACION" AS "OBSERVACION", 
+"A"."OPERACION_ID" AS "OPERACION_ID", 
+"A"."PROPIEDAD_ID" AS "PROPIEDAD_ID", 
+"A"."SOCIO_NEGOCIO_ID" AS "SOCIO_NEGOCIO_ID", 
+"A"."SOCIO_NEGOCIO" AS "SOCIO_NEGOCIO", 
+"A"."USUARIO_CREACION" AS "USUARIO_CREACION", 
+"A"."FECHA_CREACION" AS "FECHA_CREACION", 
+"A"."USUARIO_MODIFICACION" AS "USUARIO_MODIFICACION", 
+"A"."FECHA_MODIFICACION" AS "FECHA_MODIFICACION"
+FROM "RESCISIONES_VIEW" AS "A"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="SOCIOS_NEGOCIOS_VIEW" EntityType="Self.SOCIOS_NEGOCIOS_VIEW" store:Type="Views" store:Schema="Firebird">
+      <DefiningQuery>SELECT 
+"A"."SOCIO_NEGOCIO_ID" AS "SOCIO_NEGOCIO_ID", 
+"A"."SOCIO_NEGOCIO" AS "SOCIO_NEGOCIO", 
+"A"."NUMERO_DOCUMENTO" AS "NUMERO_DOCUMENTO", 
+"A"."DIGITO_VERIFICADOR" AS "DIGITO_VERIFICADOR", 
+"A"."RUC" AS "RUC", 
+"A"."CLASIFICACION_FISCAL" AS "CLASIFICACION_FISCAL", 
+"A"."TIPO_DOCUMENTO" AS "TIPO_DOCUMENTO", 
+"A"."TIPO_PERSONERIA" AS "TIPO_PERSONERIA", 
+"A"."ACTIVO" AS "ACTIVO", 
+"A"."DIRECCION" AS "DIRECCION", 
+"A"."TELEFONO" AS "TELEFONO", 
+"A"."ES_PROPIETARIO" AS "ES_PROPIETARIO", 
+"A"."ES_INQUILINO" AS "ES_INQUILINO", 
+"A"."ES_PORTERO" AS "ES_PORTERO", 
+"A"."ES_ADMINISTRADOR" AS "ES_ADMINISTRADOR", 
+"A"."ES_CLIENTE" AS "ES_CLIENTE", 
+"A"."ES_PROVEEDOR" AS "ES_PROVEEDOR", 
+"A"."ES_EMPRESA" AS "ES_EMPRESA", 
+"A"."ES_VENDEDOR" AS "ES_VENDEDOR", 
+"A"."USUARIO_CREACION" AS "USUARIO_CREACION", 
+"A"."FECHA_CREACION" AS "FECHA_CREACION", 
+"A"."USUARIO_MODIFICACION" AS "USUARIO_MODIFICACION", 
+"A"."FECHA_MODIFICACION" AS "FECHA_MODIFICACION"
+FROM "SOCIOS_NEGOCIOS_VIEW" AS "A"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="SUCURSALES_VIEW" EntityType="Self.SUCURSALES_VIEW" store:Type="Views" store:Schema="Firebird">
+      <DefiningQuery>SELECT 
+"A"."SUCURSAL_ID" AS "SUCURSAL_ID", 
+"A"."SUCURSAL" AS "SUCURSAL", 
+"A"."DIRECCION" AS "DIRECCION", 
+"A"."TELEFONO" AS "TELEFONO", 
+"A"."EMPRESA_ID" AS "EMPRESA_ID", 
+"A"."EMPRESA" AS "EMPRESA", 
+"A"."USUARIO_CREACION" AS "USUARIO_CREACION", 
+"A"."FECHA_CREACION" AS "FECHA_CREACION", 
+"A"."USUARIO_MODIFICACION" AS "USUARIO_MODIFICACION", 
+"A"."FECHA_MODIFICACION" AS "FECHA_MODIFICACION"
+FROM "SUCURSALES_VIEW" AS "A"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="USUARIOS_VIEW" EntityType="Self.USUARIOS_VIEW" store:Type="Views" store:Schema="Firebird">
+      <DefiningQuery>SELECT 
+"A"."CODIGO_USUARIO" AS "CODIGO_USUARIO", 
+"A"."PASSWORD" AS "PASSWORD", 
+"A"."ACTIVO" AS "ACTIVO", 
+"A"."USUARIO_CREACION" AS "USUARIO_CREACION", 
+"A"."FECHA_CREACION" AS "FECHA_CREACION", 
+"A"."EMPRESA_ID" AS "EMPRESA_ID", 
+"A"."PERFIL" AS "PERFIL"
+FROM "USUARIOS_VIEW" AS "A"</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_BARRIOS_CIUDADES_BARRIOS" Association="Self.FK_BARRIOS_CIUDADES_BARRIOS">
+      <End Role="BARRIOS" EntitySet="BARRIOS" />
+      <End Role="BARRIOS_CIUDADES" EntitySet="BARRIOS_CIUDADES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BARRIOS_CIUDADES_CIUDAD" Association="Self.FK_BARRIOS_CIUDADES_CIUDAD">
+      <End Role="CIUDADES" EntitySet="CIUDADES" />
+      <End Role="BARRIOS_CIUDADES" EntitySet="BARRIOS_CIUDADES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CIUDADES_DEPARTAMENTOS_CIUDA" Association="Self.FK_CIUDADES_DEPARTAMENTOS_CIUDA">
+      <End Role="CIUDADES" EntitySet="CIUDADES" />
+      <End Role="CIUDADES_DEPARTAMENTOS" EntitySet="CIUDADES_DEPARTAMENTOS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CIUDADES_DEPARTAMENTOS_DEPAR" Association="Self.FK_CIUDADES_DEPARTAMENTOS_DEPAR">
+      <End Role="DEPARTAMENTOS" EntitySet="DEPARTAMENTOS" />
+      <End Role="CIUDADES_DEPARTAMENTOS" EntitySet="CIUDADES_DEPARTAMENTOS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DEPARTAMENTOS_PAISES_DEPARTA" Association="Self.FK_DEPARTAMENTOS_PAISES_DEPARTA">
+      <End Role="DEPARTAMENTOS" EntitySet="DEPARTAMENTOS" />
+      <End Role="DEPARTAMENTOS_PAISES" EntitySet="DEPARTAMENTOS_PAISES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DEPARTAMENTOS_PAISES_PAIS" Association="Self.FK_DEPARTAMENTOS_PAISES_PAIS">
+      <End Role="PAISES" EntitySet="PAISES" />
+      <End Role="DEPARTAMENTOS_PAISES" EntitySet="DEPARTAMENTOS_PAISES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EMPRESAS_SOCIO_NEGOCIO" Association="Self.FK_EMPRESAS_SOCIO_NEGOCIO">
+      <End Role="SOCIOS_NEGOCIOS" EntitySet="SOCIOS_NEGOCIOS" />
+      <End Role="EMPRESAS" EntitySet="EMPRESAS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ENTIDADES_INMOBILIARIAS_1" Association="Self.FK_ENTIDADES_INMOBILIARIAS_1">
+      <End Role="BARRIOS" EntitySet="BARRIOS" />
+      <End Role="ENTIDADES_INMOBILIARIAS" EntitySet="ENTIDADES_INMOBILIARIAS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ENTIDADES_INMOBILIARIAS_CIUD" Association="Self.FK_ENTIDADES_INMOBILIARIAS_CIUD">
+      <End Role="CIUDADES" EntitySet="CIUDADES" />
+      <End Role="ENTIDADES_INMOBILIARIAS" EntitySet="ENTIDADES_INMOBILIARIAS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ENTIDADES_INMOBILIARIAS_DEPA" Association="Self.FK_ENTIDADES_INMOBILIARIAS_DEPA">
+      <End Role="DEPARTAMENTOS" EntitySet="DEPARTAMENTOS" />
+      <End Role="ENTIDADES_INMOBILIARIAS" EntitySet="ENTIDADES_INMOBILIARIAS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ENTIDADES_INMOBILIARIAS_EMPR" Association="Self.FK_ENTIDADES_INMOBILIARIAS_EMPR">
+      <End Role="EMPRESAS" EntitySet="EMPRESAS" />
+      <End Role="ENTIDADES_INMOBILIARIAS" EntitySet="ENTIDADES_INMOBILIARIAS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ENTIDADES_INMOBILIARIAS_PAIS" Association="Self.FK_ENTIDADES_INMOBILIARIAS_PAIS">
+      <End Role="PAISES" EntitySet="PAISES" />
+      <End Role="ENTIDADES_INMOBILIARIAS" EntitySet="ENTIDADES_INMOBILIARIAS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PROPIEDADES_BARRIOS" Association="Self.FK_PROPIEDADES_BARRIOS">
+      <End Role="BARRIOS" EntitySet="BARRIOS" />
+      <End Role="PROPIEDADES" EntitySet="PROPIEDADES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PROPIEDADES_CIUDADES" Association="Self.FK_PROPIEDADES_CIUDADES">
+      <End Role="CIUDADES" EntitySet="CIUDADES" />
+      <End Role="PROPIEDADES" EntitySet="PROPIEDADES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PROPIEDADES_DEPARTAMENTO" Association="Self.FK_PROPIEDADES_DEPARTAMENTO">
+      <End Role="DEPARTAMENTOS" EntitySet="DEPARTAMENTOS" />
+      <End Role="PROPIEDADES" EntitySet="PROPIEDADES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PROPIEDADES_EMPRESA" Association="Self.FK_PROPIEDADES_EMPRESA">
+      <End Role="EMPRESAS" EntitySet="EMPRESAS" />
+      <End Role="PROPIEDADES" EntitySet="PROPIEDADES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PROPIEDADES_ENTIDADES_INMOBI" Association="Self.FK_PROPIEDADES_ENTIDADES_INMOBI">
+      <End Role="ENTIDADES_INMOBILIARIAS" EntitySet="ENTIDADES_INMOBILIARIAS" />
+      <End Role="PROPIEDADES" EntitySet="PROPIEDADES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PROPIEDADES_PAIS" Association="Self.FK_PROPIEDADES_PAIS">
+      <End Role="PAISES" EntitySet="PAISES" />
+      <End Role="PROPIEDADES" EntitySet="PROPIEDADES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SUCURSALES_EMPRESA" Association="Self.FK_SUCURSALES_EMPRESA">
+      <End Role="EMPRESAS" EntitySet="EMPRESAS" />
+      <End Role="SUCURSALES" EntitySet="SUCURSALES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_USUARIOS_EMPRESA" Association="Self.FK_USUARIOS_EMPRESA">
+      <End Role="EMPRESAS" EntitySet="EMPRESAS" />
+      <End Role="USUARIOS" EntitySet="USUARIOS" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

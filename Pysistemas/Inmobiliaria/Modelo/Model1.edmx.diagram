@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="09eb641b19f54c80a97188ab7cf06556" Name="Diagram1" ZoomLevel="79">
+        <EntityTypeShape EntityType="Model.BARRIOS" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.BARRIOS_CIUDADES" Width="1.5" PointX="3" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.CIUDADES" Width="1.5" PointX="0.75" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.CIUDADES_DEPARTAMENTOS" Width="1.5" PointX="6" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.COBROS" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.COBROS_DETALLES" Width="1.5" PointX="10.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.CRONOGRAMAS_CUOTAS" Width="1.5" PointX="10.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.DEPARTAMENTOS" Width="1.5" PointX="0.75" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.DEPARTAMENTOS_PAISES" Width="1.5" PointX="4" PointY="22.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.DOMINIOS" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.EMPRESAS" Width="1.5" PointX="0.75" PointY="17.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ENTIDADES_INMOBILIARIAS" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.FORMAS_PAGOS" Width="1.5" PointX="12.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.IBE_VERSION_HISTORY" Width="1.5" PointX="5.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.IMAGENES_ENTIDAD_INMOBILIARIA" Width="1.5" PointX="7.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.IMAGENES_OPERACIONES" Width="1.5" PointX="12.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.IMPUESTOS" Width="1.5" PointX="12.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.INGRESOS_EGRESOS" Width="1.5" PointX="14.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ITEMS_INGRESOS_EGRESOS" Width="1.5" PointX="14.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.LIQUIDACIONES" Width="1.5" PointX="14.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.LIQUIDACIONES_DETALLES" Width="1.5" PointX="9.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.MONEDAS" Width="1.5" PointX="14.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.OPERACIONES_PROPIEDADES" Width="1.5" PointX="16.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.PAISES" Width="1.5" PointX="0.75" PointY="31.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.PROPIEDADES" Width="1.5" PointX="8.25" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.PROPIETARIOS_ENT_INMOB" Width="1.5" PointX="5.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.RESCISIONES" Width="1.5" PointX="16.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.RUC" Width="1.5" PointX="11.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.SOCIOS_NEGOCIOS" Width="1.5" PointX="1.5" PointY="24.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.SUCURSALES" Width="1.5" PointX="3" PointY="17.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.USUARIOS" Width="1.5" PointX="3" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.VARIABLES_ENTORNOS" Width="1.5" PointX="16.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.BARRIOS_CIUDADES_VIEW" Width="1.5" PointX="16.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.BARRIOS_VIEW" Width="1.5" PointX="18.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.CIUDADES_DEPARTAMENTOS_VIEW" Width="1.5" PointX="18.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.CIUDADES_VIEW" Width="1.5" PointX="18.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.COBROS_VIEW" Width="1.5" PointX="18.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.CRONOGRAMAS_CUOTAS_VIEW" Width="1.5" PointX="18.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.DEPARTAMENTOS_PAISES_VIEW" Width="1.5" PointX="7.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.DEPARTAMENTOS_VIEW" Width="1.5" PointX="9.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.EMPRESAS_VIEW" Width="1.5" PointX="11.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ENTIDADES_INMOBILIARIAS_VIEW" Width="1.5" PointX="13.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.FORMAS_PAGOS_VIEW" Width="1.5" PointX="20.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.IMAGENES_ENTIDAD_INMOB_VIEW" Width="1.5" PointX="20.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.IMAGENES_OPERACIONES_VIEW" Width="1.5" PointX="20.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.IMPUESTOS_VIEW" Width="1.5" PointX="20.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.INGRESOS_EGRESOS_VIEW" Width="1.5" PointX="15.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ITEMS_INGRESOS_EGRESOS_VIEW" Width="1.5" PointX="20.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.LIQUIDACIONES_DETALLES_ITEMS" Width="1.5" PointX="20.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.LIQUIDACIONES_VIEW" Width="1.5" PointX="17.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.MONEDAS_VIEW" Width="1.5" PointX="22.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.OPERACIONES_CONTRATOS_VENCIDOS" Width="1.5" PointX="22.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.OPERACIONES_PENDIENTES_VIEW" Width="1.5" PointX="22.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.OPERACIONES_PROPIEDADES_VIEW" Width="1.5" PointX="22.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.PAISES_VIEW" Width="1.5" PointX="22.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.PROPIEDADES_VIEW" Width="1.5" PointX="24.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.PROPIETARIOS_ENT_INMOB_VIEW" Width="1.5" PointX="6.75" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.RESCISIONES_VIEW" Width="1.5" PointX="8.75" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.SOCIOS_NEGOCIOS_VIEW" Width="1.5" PointX="24.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.SUCURSALES_VIEW" Width="1.5" PointX="24.75" PointY="18.75" IsExpanded="true" />
+        <AssociationConnector Association="Model.FK_BARRIOS_CIUDADES_BARRIOS" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_ENTIDADES_INMOBILIARIAS_1" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_PROPIEDADES_BARRIOS" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_BARRIOS_CIUDADES_CIUDAD" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_CIUDADES_DEPARTAMENTOS_CIUDA" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_ENTIDADES_INMOBILIARIAS_CIUD" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_PROPIEDADES_CIUDADES" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_CIUDADES_DEPARTAMENTOS_DEPAR" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_DEPARTAMENTOS_PAISES_DEPARTA" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_ENTIDADES_INMOBILIARIAS_DEPA" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_PROPIEDADES_DEPARTAMENTO" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_DEPARTAMENTOS_PAISES_PAIS" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_EMPRESAS_SOCIO_NEGOCIO" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_ENTIDADES_INMOBILIARIAS_EMPR" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_PROPIEDADES_EMPRESA" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_SUCURSALES_EMPRESA" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_USUARIOS_EMPRESA" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_ENTIDADES_INMOBILIARIAS_PAIS" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_PROPIEDADES_ENTIDADES_INMOBI" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_PROPIEDADES_PAIS" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="Model.USUARIOS_VIEW" Width="1.5" PointX="5.375" PointY="0.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

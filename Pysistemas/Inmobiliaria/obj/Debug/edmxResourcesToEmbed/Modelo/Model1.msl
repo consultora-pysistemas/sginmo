@@ -1,0 +1,1154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="InmobiliariaEntities">
+    <EntitySetMapping Name="BARRIOS">
+      <EntityTypeMapping TypeName="Model.BARRIOS">
+        <MappingFragment StoreEntitySet="BARRIOS">
+          <ScalarProperty Name="BARRIO_ID" ColumnName="BARRIO_ID" />
+          <ScalarProperty Name="BARRIO" ColumnName="BARRIO" />
+          <ScalarProperty Name="USUARIO_CREACION" ColumnName="USUARIO_CREACION" />
+          <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+          <ScalarProperty Name="USUARIO_MODIFICACION" ColumnName="USUARIO_MODIFICACION" />
+          <ScalarProperty Name="FECHA_MODIFICACION" ColumnName="FECHA_MODIFICACION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BARRIOS_CIUDADES">
+      <EntityTypeMapping TypeName="Model.BARRIOS_CIUDADES">
+        <MappingFragment StoreEntitySet="BARRIOS_CIUDADES">
+          <ScalarProperty Name="BARRIO_CIUDAD_ID" ColumnName="BARRIO_CIUDAD_ID" />
+          <ScalarProperty Name="BARRIO_ID" ColumnName="BARRIO_ID" />
+          <ScalarProperty Name="CIUDAD_ID" ColumnName="CIUDAD_ID" />
+          <ScalarProperty Name="CODIGO" ColumnName="CODIGO" />
+          <ScalarProperty Name="USUARIO_CREACION" ColumnName="USUARIO_CREACION" />
+          <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+          <ScalarProperty Name="USUARIO_MODIFICACION" ColumnName="USUARIO_MODIFICACION" />
+          <ScalarProperty Name="FECHA_MODIFICACION" ColumnName="FECHA_MODIFICACION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CIUDADES">
+      <EntityTypeMapping TypeName="Model.CIUDADES">
+        <MappingFragment StoreEntitySet="CIUDADES">
+          <ScalarProperty Name="CIUDAD_ID" ColumnName="CIUDAD_ID" />
+          <ScalarProperty Name="CIUDAD" ColumnName="CIUDAD" />
+          <ScalarProperty Name="USUARIO_CREACION" ColumnName="USUARIO_CREACION" />
+          <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+          <ScalarProperty Name="USUARIO_MODIFICACION" ColumnName="USUARIO_MODIFICACION" />
+          <ScalarProperty Name="FECHA_MODIFICACION" ColumnName="FECHA_MODIFICACION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CIUDADES_DEPARTAMENTOS">
+      <EntityTypeMapping TypeName="Model.CIUDADES_DEPARTAMENTOS">
+        <MappingFragment StoreEntitySet="CIUDADES_DEPARTAMENTOS">
+          <ScalarProperty Name="CIUDAD_DEPARTAMENTO_ID" ColumnName="CIUDAD_DEPARTAMENTO_ID" />
+          <ScalarProperty Name="DEPARTAMENTO_ID" ColumnName="DEPARTAMENTO_ID" />
+          <ScalarProperty Name="CIUDAD_ID" ColumnName="CIUDAD_ID" />
+          <ScalarProperty Name="CODIGO" ColumnName="CODIGO" />
+          <ScalarProperty Name="USUARIO_CREACION" ColumnName="USUARIO_CREACION" />
+          <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+          <ScalarProperty Name="USUARIO_MODIFICACION" ColumnName="USUARIO_MODIFICACION" />
+          <ScalarProperty Name="FECHA_MODIFCACION" ColumnName="FECHA_MODIFCACION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="COBROS">
+      <EntityTypeMapping TypeName="Model.COBROS">
+        <MappingFragment StoreEntitySet="COBROS">
+          <ScalarProperty Name="COBRO_ID" ColumnName="COBRO_ID" />
+          <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+          <ScalarProperty Name="SOCIO_NEGOCIO_ID" ColumnName="SOCIO_NEGOCIO_ID" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="TOTAL" ColumnName="TOTAL" />
+          <ScalarProperty Name="USUARIO_CREACION" ColumnName="USUARIO_CREACION" />
+          <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+          <ScalarProperty Name="USUARIO_MODIFICACION" ColumnName="USUARIO_MODIFICACION" />
+          <ScalarProperty Name="FECHA_MODIFICACION" ColumnName="FECHA_MODIFICACION" />
+          <ScalarProperty Name="OBSERVACION" ColumnName="OBSERVACION" />
+          <ScalarProperty Name="NUMERO_FACTURA" ColumnName="NUMERO_FACTURA" />
+          <ScalarProperty Name="FECHA_FACTURA" ColumnName="FECHA_FACTURA" />
+          <ScalarProperty Name="CONDICION" ColumnName="CONDICION" />
+          <ScalarProperty Name="NUMERO_DOCUMENTO_COBRO" ColumnName="NUMERO_DOCUMENTO_COBRO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="COBROS_DETALLES">
+      <EntityTypeMapping TypeName="Model.COBROS_DETALLES">
+        <MappingFragment StoreEntitySet="COBROS_DETALLES">
+          <ScalarProperty Name="COBRO_DETALLE_ID" ColumnName="COBRO_DETALLE_ID" />
+          <ScalarProperty Name="COBRO_ID" ColumnName="COBRO_ID" />
+          <ScalarProperty Name="NUMERO_ITEM" ColumnName="NUMERO_ITEM" />
+          <ScalarProperty Name="MONTO_DOCUMENTO" ColumnName="MONTO_DOCUMENTO" />
+          <ScalarProperty Name="TIPO_DOCUMENTO" ColumnName="TIPO_DOCUMENTO" />
+          <ScalarProperty Name="MONEDA_DOCUMENTO" ColumnName="MONEDA_DOCUMENTO" />
+          <ScalarProperty Name="MONTO_PAGADO" ColumnName="MONTO_PAGADO" />
+          <ScalarProperty Name="MONEDA_PAGO" ColumnName="MONEDA_PAGO" />
+          <ScalarProperty Name="FORMA_PAGO_ID" ColumnName="FORMA_PAGO_ID" />
+          <ScalarProperty Name="USUARIO_CREACION" ColumnName="USUARIO_CREACION" />
+          <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+          <ScalarProperty Name="USUARIO_MODIFICACION" ColumnName="USUARIO_MODIFICACION" />
+          <ScalarProperty Name="FECHA_MODIFICACION" ColumnName="FECHA_MODIFICACION" />
+          <ScalarProperty Name="OBSERVACION" ColumnName="OBSERVACION" />
+          <ScalarProperty Name="TASA_CAMBIO" ColumnName="TASA_CAMBIO" />
+          <ScalarProperty Name="DOCUMENTO_ID" ColumnName="DOCUMENTO_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CRONOGRAMAS_CUOTAS">
+      <EntityTypeMapping TypeName="Model.CRONOGRAMAS_CUOTAS">
+        <MappingFragment StoreEntitySet="CRONOGRAMAS_CUOTAS">
+          <ScalarProperty Name="CRONOGRAMA_CUOTA_ID" ColumnName="CRONOGRAMA_CUOTA_ID" />
+          <ScalarProperty Name="NUMERO_CUOTA" ColumnName="NUMERO_CUOTA" />
+          <ScalarProperty Name="FECHA_VENCIMIENTO" ColumnName="FECHA_VENCIMIENTO" />
+          <ScalarProperty Name="MONTO" ColumnName="MONTO" />
+          <ScalarProperty Name="OPERACION_PROPIEDAD_ID" ColumnName="OPERACION_PROPIEDAD_ID" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="USUARIO_CREACION" ColumnName="USUARIO_CREACION" />
+          <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+          <ScalarProperty Name="USUARIO_MODIFICACION" ColumnName="USUARIO_MODIFICACION" />
+          <ScalarProperty Name="FECHA_MODIFICACION" ColumnName="FECHA_MODIFICACION" />
+          <ScalarProperty Name="MONEDA_ID" ColumnName="MONEDA_ID" />
+          <ScalarProperty Name="FECHA_CANCELACION" ColumnName="FECHA_CANCELACION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DEPARTAMENTOS">
+      <EntityTypeMapping TypeName="Model.DEPARTAMENTOS">
+        <MappingFragment StoreEntitySet="DEPARTAMENTOS">
+          <ScalarProperty Name="DEPARTAMENTO_ID" ColumnName="DEPARTAMENTO_ID" />
+          <ScalarProperty Name="DEPARTAMENTO" ColumnName="DEPARTAMENTO" />
+          <ScalarProperty Name="USUARIO_CREACION" ColumnName="USUARIO_CREACION" />
+          <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+          <ScalarProperty Name="USUARIO_MODIFICACION" ColumnName="USUARIO_MODIFICACION" />
+          <ScalarProperty Name="FECHA_MODIFICACION" ColumnName="FECHA_MODIFICACION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DEPARTAMENTOS_PAISES">
+      <EntityTypeMapping TypeName="Model.DEPARTAMENTOS_PAISES">
+        <MappingFragment StoreEntitySet="DEPARTAMENTOS_PAISES">
+          <ScalarProperty Name="DEPARTAMENTO_PAIS_ID" ColumnName="DEPARTAMENTO_PAIS_ID" />
+          <ScalarProperty Name="PAIS_ID" ColumnName="PAIS_ID" />
+          <ScalarProperty Name="DEPARTAMENTO_ID" ColumnName="DEPARTAMENTO_ID" />
+          <ScalarProperty Name="CODIGO" ColumnName="CODIGO" />
+          <ScalarProperty Name="USUARIO_CREACION" ColumnName="USUARIO_CREACION" />
+          <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+          <ScalarProperty Name="USUARIO_MODIFICACION" ColumnName="USUARIO_MODIFICACION" />
+          <ScalarProperty Name="FECHA_MODIFICACION" ColumnName="FECHA_MODIFICACION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DOMINIOS">
+      <EntityTypeMapping TypeName="Model.DOMINIOS">
+        <MappingFragment StoreEntitySet="DOMINIOS">
+          <ScalarProperty Name="DOMINIO_ID" ColumnName="DOMINIO_ID" />
+          <ScalarProperty Name="DOMINIO" ColumnName="DOMINIO" />
+          <ScalarProperty Name="CODIGO_DOMINIO" ColumnName="CODIGO_DOMINIO" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="VALOR_DOMINIO" ColumnName="VALOR_DOMINIO" />
+          <ScalarProperty Name="USUARIO_CREACION" ColumnName="USUARIO_CREACION" />
+          <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+          <ScalarProperty Name="USUARIO_MODIFICACION" ColumnName="USUARIO_MODIFICACION" />
+          <ScalarProperty Name="FECHA_MODIFICACION" ColumnName="FECHA_MODIFICACION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EMPRESAS">
+      <EntityTypeMapping TypeName="Model.EMPRESAS">
+        <MappingFragment StoreEntitySet="EMPRESAS">
+          <ScalarProperty Name="EMPRESA_ID" ColumnName="EMPRESA_ID" />
+          <ScalarProperty Name="SOCIO_NEGOCIO_ID" ColumnName="SOCIO_NEGOCIO_ID" />
+          <ScalarProperty Name="RAZON_SOCIAL" ColumnName="RAZON_SOCIAL" />
+          <ScalarProperty Name="NOMBRE_CORTO" ColumnName="NOMBRE_CORTO" />
+          <ScalarProperty Name="NUMERO_DOCUMENTO" ColumnName="NUMERO_DOCUMENTO" />
+          <ScalarProperty Name="DIGITO_VERIFICADOR" ColumnName="DIGITO_VERIFICADOR" />
+          <ScalarProperty Name="TIPO_PERSONERIA" ColumnName="TIPO_PERSONERIA" />
+          <ScalarProperty Name="TIPO_DOCUMENTO" ColumnName="TIPO_DOCUMENTO" />
+          <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
+          <ScalarProperty Name="TELEFONO" ColumnName="TELEFONO" />
+          <ScalarProperty Name="ACTIVO" ColumnName="ACTIVO" />
+          <ScalarProperty Name="USUARIO_CREACION" ColumnName="USUARIO_CREACION" />
+          <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+          <ScalarProperty Name="USUARIO_MODIFICACION" ColumnName="USUARIO_MODIFICACION" />
+          <ScalarProperty Name="FECHA_MODIFICACION" ColumnName="FECHA_MODIFICACION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ENTIDADES_INMOBILIARIAS">
+      <EntityTypeMapping TypeName="Model.ENTIDADES_INMOBILIARIAS">
+        <MappingFragment StoreEntitySet="ENTIDADES_INMOBILIARIAS">
+          <ScalarProperty Name="ENTIDAD_INMOBILIARIA_ID" ColumnName="ENTIDAD_INMOBILIARIA_ID" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="EMPRESA_ID" ColumnName="EMPRESA_ID" />
+          <ScalarProperty Name="PAIS_ID" ColumnName="PAIS_ID" />
+          <ScalarProperty Name="DEPARTAMENTO_ID" ColumnName="DEPARTAMENTO_ID" />
+          <ScalarProperty Name="CIUDAD_ID" ColumnName="CIUDAD_ID" />
+          <ScalarProperty Name="BARRIO_ID" ColumnName="BARRIO_ID" />
+          <ScalarProperty Name="TIPO" ColumnName="TIPO" />
+          <ScalarProperty Name="CUENTA_CATASTRAL" ColumnName="CUENTA_CATASTRAL" />
+          <ScalarProperty Name="CANTIDAD_UNIDADES" ColumnName="CANTIDAD_UNIDADES" />
+          <ScalarProperty Name="ANO_CONSTRUCCION" ColumnName="ANO_CONSTRUCCION" />
+          <ScalarProperty Name="M2_CONSTRUCCION" ColumnName="M2_CONSTRUCCION" />
+          <ScalarProperty Name="MEDIDAS_LOTE" ColumnName="MEDIDAS_LOTE" />
+          <ScalarProperty Name="NUMERO_FINCA" ColumnName="NUMERO_FINCA" />
+          <ScalarProperty Name="CARACTERISTICA" ColumnName="CARACTERISTICA" />
+          <ScalarProperty Name="NATURALEZA" ColumnName="NATURALEZA" />
+          <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="USUARIO_CREACION" ColumnName="USUARIO_CREACION" />
+          <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+          <ScalarProperty Name="USUARIO_MODIFICACION" ColumnName="USUARIO_MODIFICACION" />
+          <ScalarProperty Name="FECHA_MODIFICACION" ColumnName="FECHA_MODIFICACION" />
+          <ScalarProperty Name="OBSERVACION" ColumnName="OBSERVACION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FORMAS_PAGOS">
+      <EntityTypeMapping TypeName="Model.FORMAS_PAGOS">
+        <MappingFragment StoreEntitySet="FORMAS_PAGOS">
+          <ScalarProperty Name="FORMA_PAGO_ID" ColumnName="FORMA_PAGO_ID" />
+          <ScalarProperty Name="FORMA_PAGO" ColumnName="FORMA_PAGO" />
+          <ScalarProperty Name="CODIGO" ColumnName="CODIGO" />
+          <ScalarProperty Name="DIAS" ColumnName="DIAS" />
+          <ScalarProperty Name="POR_DEFECTO" ColumnName="POR_DEFECTO" />
+          <ScalarProperty Name="REQUERE_BANCO" ColumnName="REQUERE_BANCO" />
+          <ScalarProperty Name="USUARIO_CREACION" ColumnName="USUARIO_CREACION" />
+          <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+          <ScalarProperty Name="USUARIO_MODIFICACION" ColumnName="USUARIO_MODIFICACION" />
+          <ScalarProperty Name="FECHA_MODIFICACION" ColumnName="FECHA_MODIFICACION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IBE_VERSION_HISTORY">
+      <EntityTypeMapping TypeName="Model.IBE_VERSION_HISTORY">
+        <MappingFragment StoreEntitySet="IBE$VERSION_HISTORY">
+          <ScalarProperty Name="IBE_VH_ID" ColumnName="IBE$VH_ID" />
+          <ScalarProperty Name="IBE_VH_MODIFY_DATE" ColumnName="IBE$VH_MODIFY_DATE" />
+          <ScalarProperty Name="IBE_VH_USER_NAME" ColumnName="IBE$VH_USER_NAME" />
+          <ScalarProperty Name="IBE_VH_OBJECT_TYPE" ColumnName="IBE$VH_OBJECT_TYPE" />
+          <ScalarProperty Name="IBE_VH_OBJECT_NAME" ColumnName="IBE$VH_OBJECT_NAME" />
+          <ScalarProperty Name="IBE_VH_HEADER" ColumnName="IBE$VH_HEADER" />
+          <ScalarProperty Name="IBE_VH_BODY" ColumnName="IBE$VH_BODY" />
+          <ScalarProperty Name="IBE_VH_DESCRIPTION" ColumnName="IBE$VH_DESCRIPTION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IMAGENES_ENTIDAD_INMOBILIARIA">
+      <EntityTypeMapping TypeName="Model.IMAGENES_ENTIDAD_INMOBILIARIA">
+        <MappingFragment StoreEntitySet="IMAGENES_ENTIDAD_INMOBILIARIA">
+          <ScalarProperty Name="IMAGEN_ENTIDAD_INMOBILIARIA_ID" ColumnName="IMAGEN_ENTIDAD_INMOBILIARIA_ID" />
+          <ScalarProperty Name="FOTO" ColumnName="FOTO" />
+          <ScalarProperty Name="ENTIDAD_INMOBILIARIA_ID" ColumnName="ENTIDAD_INMOBILIARIA_ID" />
+          <ScalarProperty Name="PROPIEDAD_ID" ColumnName="PROPIEDAD_ID" />
+          <ScalarProperty Name="USUARIO_CREACION" ColumnName="USUARIO_CREACION" />
+          <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+          <ScalarProperty Name="USUARIO_MODIFICACION" ColumnName="USUARIO_MODIFICACION" />
+          <ScalarProperty Name="FECHA_MODIFICACION" ColumnName="FECHA_MODIFICACION" />
+          <ScalarProperty Name="RUTA_IMAGEN" ColumnName="RUTA_IMAGEN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IMAGENES_OPERACIONES">
+      <EntityTypeMapping TypeName="Model.IMAGENES_OPERACIONES">
+        <MappingFragment StoreEntitySet="IMAGENES_OPERACIONES">
+          <ScalarProperty Name="IMAGEN_OPERACION_ID" ColumnName="IMAGEN_OPERACION_ID" />
+          <ScalarProperty Name="IMAGEN" ColumnName="IMAGEN" />
+          <ScalarProperty Name="OPERACION_ID" ColumnName="OPERACION_ID" />
+          <ScalarProperty Name="USUARIO_CREACION" ColumnName="USUARIO_CREACION" />
+          <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+          <ScalarProperty Name="USUARIO_MODIFICACION" ColumnName="USUARIO_MODIFICACION" />
+          <ScalarProperty Name="FECHA_MODIFICACION" ColumnName="FECHA_MODIFICACION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IMPUESTOS">
+      <EntityTypeMapping TypeName="Model.IMPUESTOS">
+        <MappingFragment StoreEntitySet="IMPUESTOS">
+          <ScalarProperty Name="IMPUESTO_ID" ColumnName="IMPUESTO_ID" />
+          <ScalarProperty Name="IMPUESTO" ColumnName="IMPUESTO" />
+          <ScalarProperty Name="PORCENTAJE_IMPUESTO" ColumnName="PORCENTAJE_IMPUESTO" />
+          <ScalarProperty Name="FACTOR_DISCRIMINADO" ColumnName="FACTOR_DISCRIMINADO" />
+          <ScalarProperty Name="FACTOR_IMPUESTO" ColumnName="FACTOR_IMPUESTO" />
+          <ScalarProperty Name="USUARIO_CREACION" ColumnName="USUARIO_CREACION" />
+          <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+          <ScalarProperty Name="USUARIO_MODIFICACION" ColumnName="USUARIO_MODIFICACION" />
+          <ScalarProperty Name="FECHA_MODIFICACION" ColumnName="FECHA_MODIFICACION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="INGRESOS_EGRESOS">
+      <EntityTypeMapping TypeName="Model.INGRESOS_EGRESOS">
+        <MappingFragment StoreEntitySet="INGRESOS_EGRESOS">
+          <ScalarProperty Name="INGRESO_EGRESO_ID" ColumnName="INGRESO_EGRESO_ID" />
+          <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+          <ScalarProperty Name="MONTO" ColumnName="MONTO" />
+          <ScalarProperty Name="SOCIO_NEGOCIO_ID" ColumnName="SOCIO_NEGOCIO_ID" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="ENTIDAD_INMOBILIARIA_ID" ColumnName="ENTIDAD_INMOBILIARIA_ID" />
+          <ScalarProperty Name="TIPO" ColumnName="TIPO" />
+          <ScalarProperty Name="PROPIEDAD_ID" ColumnName="PROPIEDAD_ID" />
+          <ScalarProperty Name="ITEM_INGRESO_EGRESO_ID" ColumnName="ITEM_INGRESO_EGRESO_ID" />
+          <ScalarProperty Name="NUMERO_FACTURA" ColumnName="NUMERO_FACTURA" />
+          <ScalarProperty Name="FECHA_FACTURA" ColumnName="FECHA_FACTURA" />
+          <ScalarProperty Name="SALDO" ColumnName="SALDO" />
+          <ScalarProperty Name="USUARIO_CREACION" ColumnName="USUARIO_CREACION" />
+          <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+          <ScalarProperty Name="USUARIO_MODIFICACION" ColumnName="USUARIO_MODIFICACION" />
+          <ScalarProperty Name="FECHA_MODIFICACION" ColumnName="FECHA_MODIFICACION" />
+          <ScalarProperty Name="OBSERVACION" ColumnName="OBSERVACION" />
+          <ScalarProperty Name="TIPO_IMPUTACION" ColumnName="TIPO_IMPUTACION" />
+          <ScalarProperty Name="FORMA_PAGO_ID" ColumnName="FORMA_PAGO_ID" />
+          <ScalarProperty Name="NUMERO_DOCUMENTO_PAGO" ColumnName="NUMERO_DOCUMENTO_PAGO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ITEMS_INGRESOS_EGRESOS">
+      <EntityTypeMapping TypeName="Model.ITEMS_INGRESOS_EGRESOS">
+        <MappingFragment StoreEntitySet="ITEMS_INGRESOS_EGRESOS">
+          <ScalarProperty Name="ITEM_INGRESO_EGRESO_ID" ColumnName="ITEM_INGRESO_EGRESO_ID" />
+          <ScalarProperty Name="ITEM" ColumnName="ITEM" />
+          <ScalarProperty Name="TIPO_ITEM" ColumnName="TIPO_ITEM" />
+          <ScalarProperty Name="TIPO" ColumnName="TIPO" />
+          <ScalarProperty Name="USUARIO_CREACION" ColumnName="USUARIO_CREACION" />
+          <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+          <ScalarProperty Name="USUARIO_MODIFICACION" ColumnName="USUARIO_MODIFICACION" />
+          <ScalarProperty Name="FECHA_MODIFICACION" ColumnName="FECHA_MODIFICACION" />
+          <ScalarProperty Name="MODIFICA_ESTADO" ColumnName="MODIFICA_ESTADO" />
+          <ScalarProperty Name="APLICACION" ColumnName="APLICACION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LIQUIDACIONES">
+      <EntityTypeMapping TypeName="Model.LIQUIDACIONES">
+        <MappingFragment StoreEntitySet="LIQUIDACIONES">
+          <ScalarProperty Name="LIQUIDACION_ID" ColumnName="LIQUIDACION_ID" />
+          <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+          <ScalarProperty Name="FECHA_FISCALIZACION" ColumnName="FECHA_FISCALIZACION" />
+          <ScalarProperty Name="NUMERO" ColumnName="NUMERO" />
+          <ScalarProperty Name="OPERACION_PROPIEDAD_ID" ColumnName="OPERACION_PROPIEDAD_ID" />
+          <ScalarProperty Name="ENTREGO_LLAVES" ColumnName="ENTREGO_LLAVES" />
+          <ScalarProperty Name="TOTAL_GARANTIA" ColumnName="TOTAL_GARANTIA" />
+          <ScalarProperty Name="MOTIVO_LIQUIDACION" ColumnName="MOTIVO_LIQUIDACION" />
+          <ScalarProperty Name="OBSERVACION" ColumnName="OBSERVACION" />
+          <ScalarProperty Name="TOTAL_GASTOS" ColumnName="TOTAL_GASTOS" />
+          <ScalarProperty Name="SALDO" ColumnName="SALDO" />
+          <ScalarProperty Name="USUARIO_CREACION" ColumnName="USUARIO_CREACION" />
+          <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+          <ScalarProperty Name="USUARIO_MODIFICACION" ColumnName="USUARIO_MODIFICACION" />
+          <ScalarProperty Name="FECHA_MODIFICACION" ColumnName="FECHA_MODIFICACION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LIQUIDACIONES_DETALLES">
+      <EntityTypeMapping TypeName="Model.LIQUIDACIONES_DETALLES">
+        <MappingFragment StoreEntitySet="LIQUIDACIONES_DETALLES">
+          <ScalarProperty Name="LIQUIDACION_DETALLE_ID" ColumnName="LIQUIDACION_DETALLE_ID" />
+          <ScalarProperty Name="LIQUIDACION_ID" ColumnName="LIQUIDACION_ID" />
+          <ScalarProperty Name="NUMERO_ITEM" ColumnName="NUMERO_ITEM" />
+          <ScalarProperty Name="ITEM_INGRESO_EGRESO_ID" ColumnName="ITEM_INGRESO_EGRESO_ID" />
+          <ScalarProperty Name="MONTO" ColumnName="MONTO" />
+          <ScalarProperty Name="USUARIO_CREACION" ColumnName="USUARIO_CREACION" />
+          <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+          <ScalarProperty Name="USUARIO_MODIFICACION" ColumnName="USUARIO_MODIFICACION" />
+          <ScalarProperty Name="FECHA_MODIFICACION" ColumnName="FECHA_MODIFICACION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MONEDAS">
+      <EntityTypeMapping TypeName="Model.MONEDAS">
+        <MappingFragment StoreEntitySet="MONEDAS">
+          <ScalarProperty Name="MONEDA_ID" ColumnName="MONEDA_ID" />
+          <ScalarProperty Name="MONEDA" ColumnName="MONEDA" />
+          <ScalarProperty Name="SIMBOLO" ColumnName="SIMBOLO" />
+          <ScalarProperty Name="SIMBOLO_SET" ColumnName="SIMBOLO_SET" />
+          <ScalarProperty Name="TIPO_MONEDA" ColumnName="TIPO_MONEDA" />
+          <ScalarProperty Name="PRECISION_DECIMALES" ColumnName="PRECISION_DECIMALES" />
+          <ScalarProperty Name="USUARIO_CREACION" ColumnName="USUARIO_CREACION" />
+          <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+          <ScalarProperty Name="USUARIO_MODIFICACION" ColumnName="USUARIO_MODIFICACION" />
+          <ScalarProperty Name="FECHA_MODIFICACION" ColumnName="FECHA_MODIFICACION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OPERACIONES_PROPIEDADES">
+      <EntityTypeMapping TypeName="Model.OPERACIONES_PROPIEDADES">
+        <MappingFragment StoreEntitySet="OPERACIONES_PROPIEDADES">
+          <ScalarProperty Name="TIPO_FINANCIACION" ColumnName="TIPO_FINANCIACION" />
+          <ScalarProperty Name="OPERACION_PROPIEDAD_ID" ColumnName="OPERACION_PROPIEDAD_ID" />
+          <ScalarProperty Name="FECHA_OPERACION" ColumnName="FECHA_OPERACION" />
+          <ScalarProperty Name="TIPO_OPERACION" ColumnName="TIPO_OPERACION" />
+          <ScalarProperty Name="SOCIO_NEGOCIO_ID" ColumnName="SOCIO_NEGOCIO_ID" />
+          <ScalarProperty Name="PROPIEDAD_ID" ColumnName="PROPIEDAD_ID" />
+          <ScalarProperty Name="FECHA_FINALIZACION" ColumnName="FECHA_FINALIZACION" />
+          <ScalarProperty Name="ENTIDAD_INMOBILIARIA_ID" ColumnName="ENTIDAD_INMOBILIARIA_ID" />
+          <ScalarProperty Name="FECHA_INICIO_CONTRATO" ColumnName="FECHA_INICIO_CONTRATO" />
+          <ScalarProperty Name="FECHA_FIN_CONTRATO" ColumnName="FECHA_FIN_CONTRATO" />
+          <ScalarProperty Name="PLAZO" ColumnName="PLAZO" />
+          <ScalarProperty Name="PRECIO" ColumnName="PRECIO" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="GARANTIA" ColumnName="GARANTIA" />
+          <ScalarProperty Name="SUCURSAL_ID" ColumnName="SUCURSAL_ID" />
+          <ScalarProperty Name="MONEDA_ID" ColumnName="MONEDA_ID" />
+          <ScalarProperty Name="TIPO_ENTIDAD" ColumnName="TIPO_ENTIDAD" />
+          <ScalarProperty Name="TIPO_CONTRATO" ColumnName="TIPO_CONTRATO" />
+          <ScalarProperty Name="CONDICION_OPERACION" ColumnName="CONDICION_OPERACION" />
+          <ScalarProperty Name="AVISO_RENOVACION" ColumnName="AVISO_RENOVACION" />
+          <ScalarProperty Name="FECHA_RENOVACION" ColumnName="FECHA_RENOVACION" />
+          <ScalarProperty Name="DIA_PAGO" ColumnName="DIA_PAGO" />
+          <ScalarProperty Name="MONTO_MORA" ColumnName="MONTO_MORA" />
+          <ScalarProperty Name="DIAS_GRACIA" ColumnName="DIAS_GRACIA" />
+          <ScalarProperty Name="USUARIO_CREACION" ColumnName="USUARIO_CREACION" />
+          <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+          <ScalarProperty Name="USUARIO_MODIFICACION" ColumnName="USUARIO_MODIFICACION" />
+          <ScalarProperty Name="FECHA_MODIFICACION" ColumnName="FECHA_MODIFICACION" />
+          <ScalarProperty Name="MONTO_TOTAL_OPERACION" ColumnName="MONTO_TOTAL_OPERACION" />
+          <ScalarProperty Name="MONTO_TOTAL_LETRAS" ColumnName="MONTO_TOTAL_LETRAS" />
+          <ScalarProperty Name="VENDEDOR_ID" ColumnName="VENDEDOR_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PAISES">
+      <EntityTypeMapping TypeName="Model.PAISES">
+        <MappingFragment StoreEntitySet="PAISES">
+          <ScalarProperty Name="PAIS_ID" ColumnName="PAIS_ID" />
+          <ScalarProperty Name="PAIS" ColumnName="PAIS" />
+          <ScalarProperty Name="CODIGO_ISO_2" ColumnName="CODIGO_ISO_2" />
+          <ScalarProperty Name="CODIGO_ISO_3" ColumnName="CODIGO_ISO_3" />
+          <ScalarProperty Name="NACIONALIDAD" ColumnName="NACIONALIDAD" />
+          <ScalarProperty Name="USUARIO_CREACION" ColumnName="USUARIO_CREACION" />
+          <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+          <ScalarProperty Name="USUARIO_MODIFICACION" ColumnName="USUARIO_MODIFICACION" />
+          <ScalarProperty Name="FECHA_MODIFICACION" ColumnName="FECHA_MODIFICACION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PROPIEDADES">
+      <EntityTypeMapping TypeName="Model.PROPIEDADES">
+        <MappingFragment StoreEntitySet="PROPIEDADES">
+          <ScalarProperty Name="PROPIEDAD_ID" ColumnName="PROPIEDAD_ID" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="TIPO" ColumnName="TIPO" />
+          <ScalarProperty Name="CUENTA_CATASTRAL" ColumnName="CUENTA_CATASTRAL" />
+          <ScalarProperty Name="ENTIDAD_INMOBILIARIA_ID" ColumnName="ENTIDAD_INMOBILIARIA_ID" />
+          <ScalarProperty Name="EMPRESA_ID" ColumnName="EMPRESA_ID" />
+          <ScalarProperty Name="PAIS_ID" ColumnName="PAIS_ID" />
+          <ScalarProperty Name="DEPARTAMENTO_ID" ColumnName="DEPARTAMENTO_ID" />
+          <ScalarProperty Name="CIUDAD_ID" ColumnName="CIUDAD_ID" />
+          <ScalarProperty Name="BARRIO_ID" ColumnName="BARRIO_ID" />
+          <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
+          <ScalarProperty Name="CARACTERISTICAS" ColumnName="CARACTERISTICAS" />
+          <ScalarProperty Name="TIENE_COCHERA" ColumnName="TIENE_COCHERA" />
+          <ScalarProperty Name="CANTIDAD_COCHERA" ColumnName="CANTIDAD_COCHERA" />
+          <ScalarProperty Name="M2_CONSTRUCCION" ColumnName="M2_CONSTRUCCION" />
+          <ScalarProperty Name="ANO_CONSTRUCCION" ColumnName="ANO_CONSTRUCCION" />
+          <ScalarProperty Name="MEDIDA_LOTE" ColumnName="MEDIDA_LOTE" />
+          <ScalarProperty Name="PRECIO_VENTA" ColumnName="PRECIO_VENTA" />
+          <ScalarProperty Name="COMISION_VENTA" ColumnName="COMISION_VENTA" />
+          <ScalarProperty Name="PRECIO_ALQUILER" ColumnName="PRECIO_ALQUILER" />
+          <ScalarProperty Name="COMISION_ALQUILER" ColumnName="COMISION_ALQUILER" />
+          <ScalarProperty Name="ALQUILADA" ColumnName="ALQUILADA" />
+          <ScalarProperty Name="VENDIDA" ColumnName="VENDIDA" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="NUMERO_FINCA" ColumnName="NUMERO_FINCA" />
+          <ScalarProperty Name="NIS" ColumnName="NIS" />
+          <ScalarProperty Name="NUMERO_MEDIDOR" ColumnName="NUMERO_MEDIDOR" />
+          <ScalarProperty Name="SENADO" ColumnName="SENADO" />
+          <ScalarProperty Name="USUARIO_CREACION" ColumnName="USUARIO_CREACION" />
+          <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+          <ScalarProperty Name="USUARIO_MODIFICACION" ColumnName="USUARIO_MODIFICACION" />
+          <ScalarProperty Name="FECHA_MODIFICACION" ColumnName="FECHA_MODIFICACION" />
+          <ScalarProperty Name="NUMERO_LOTE" ColumnName="NUMERO_LOTE" />
+          <ScalarProperty Name="NUMERO_MANZANA" ColumnName="NUMERO_MANZANA" />
+          <ScalarProperty Name="DIMENSIONES" ColumnName="DIMENSIONES" />
+          <ScalarProperty Name="PRECIO" ColumnName="PRECIO" />
+          <ScalarProperty Name="COMISION" ColumnName="COMISION" />
+          <ScalarProperty Name="RESOLUCION" ColumnName="RESOLUCION" />
+          <ScalarProperty Name="OBSERVACION" ColumnName="OBSERVACION" />
+          <ScalarProperty Name="NUMERO_MEDIDOR_ESSAP" ColumnName="NUMERO_MEDIDOR_ESSAP" />
+          <ScalarProperty Name="CTA_CTE_ESSAP" ColumnName="CTA_CTE_ESSAP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PROPIETARIOS_ENT_INMOB">
+      <EntityTypeMapping TypeName="Model.PROPIETARIOS_ENT_INMOB">
+        <MappingFragment StoreEntitySet="PROPIETARIOS_ENT_INMOB">
+          <ScalarProperty Name="PROPIETARIO_ENT_INMOB_ID" ColumnName="PROPIETARIO_ENT_INMOB_ID" />
+          <ScalarProperty Name="ENTIDAD_INMOBILIARIA_ID" ColumnName="ENTIDAD_INMOBILIARIA_ID" />
+          <ScalarProperty Name="PROPIEDAD_ID" ColumnName="PROPIEDAD_ID" />
+          <ScalarProperty Name="PROPIETARIO_ID" ColumnName="PROPIETARIO_ID" />
+          <ScalarProperty Name="USUARIO_CREACION" ColumnName="USUARIO_CREACION" />
+          <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+          <ScalarProperty Name="USUARIO_MODIFICACION" ColumnName="USUARIO_MODIFICACION" />
+          <ScalarProperty Name="FECHA_MODIFICACION" ColumnName="FECHA_MODIFICACION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RESCISIONES">
+      <EntityTypeMapping TypeName="Model.RESCISIONES">
+        <MappingFragment StoreEntitySet="RESCISIONES">
+          <ScalarProperty Name="RESCISION_ID" ColumnName="RESCISION_ID" />
+          <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+          <ScalarProperty Name="TIPO" ColumnName="TIPO" />
+          <ScalarProperty Name="MONTO" ColumnName="MONTO" />
+          <ScalarProperty Name="OPERACION_ID" ColumnName="OPERACION_ID" />
+          <ScalarProperty Name="OBSERVACION" ColumnName="OBSERVACION" />
+          <ScalarProperty Name="USUARIO_CREACION" ColumnName="USUARIO_CREACION" />
+          <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+          <ScalarProperty Name="USUARIO_MODIFICACION" ColumnName="USUARIO_MODIFICACION" />
+          <ScalarProperty Name="FECHA_MODIFICACION" ColumnName="FECHA_MODIFICACION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RUC">
+      <EntityTypeMapping TypeName="Model.RUC">
+        <MappingFragment StoreEntitySet="RUC">
+          <ScalarProperty Name="RUC1" ColumnName="RUC" />
+          <ScalarProperty Name="RAZON_SOCIAL" ColumnName="RAZON_SOCIAL" />
+          <ScalarProperty Name="DV" ColumnName="DV" />
+          <ScalarProperty Name="RUC_V" ColumnName="RUC_V" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SOCIOS_NEGOCIOS">
+      <EntityTypeMapping TypeName="Model.SOCIOS_NEGOCIOS">
+        <MappingFragment StoreEntitySet="SOCIOS_NEGOCIOS">
+          <ScalarProperty Name="SOCIO_NEGOCIO_ID" ColumnName="SOCIO_NEGOCIO_ID" />
+          <ScalarProperty Name="RAZON_SOCIAL" ColumnName="RAZON_SOCIAL" />
+          <ScalarProperty Name="NUMERO_DOCUMENTO" ColumnName="NUMERO_DOCUMENTO" />
+          <ScalarProperty Name="DIGITO_VERIFICADOR" ColumnName="DIGITO_VERIFICADOR" />
+          <ScalarProperty Name="CLASIFICACION_FISCAL" ColumnName="CLASIFICACION_FISCAL" />
+          <ScalarProperty Name="TIPO_DOCUMENTO" ColumnName="TIPO_DOCUMENTO" />
+          <ScalarProperty Name="TIPO_PERSONERIA" ColumnName="TIPO_PERSONERIA" />
+          <ScalarProperty Name="ACTIVO" ColumnName="ACTIVO" />
+          <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
+          <ScalarProperty Name="TELEFONO" ColumnName="TELEFONO" />
+          <ScalarProperty Name="ES_PROPIETARIO" ColumnName="ES_PROPIETARIO" />
+          <ScalarProperty Name="ES_INQUILINO" ColumnName="ES_INQUILINO" />
+          <ScalarProperty Name="ES_PORTERO" ColumnName="ES_PORTERO" />
+          <ScalarProperty Name="ES_ADMINISTRADOR" ColumnName="ES_ADMINISTRADOR" />
+          <ScalarProperty Name="ES_CLIENTE" ColumnName="ES_CLIENTE" />
+          <ScalarProperty Name="ES_PROVEEDOR" ColumnName="ES_PROVEEDOR" />
+          <ScalarProperty Name="ES_EMPRESA" ColumnName="ES_EMPRESA" />
+          <ScalarProperty Name="ES_VENDEDOR" ColumnName="ES_VENDEDOR" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="UBICACION" ColumnName="UBICACION" />
+          <ScalarProperty Name="ES_CONTRIBUYENTE" ColumnName="ES_CONTRIBUYENTE" />
+          <ScalarProperty Name="OBSERVACION" ColumnName="OBSERVACION" />
+          <ScalarProperty Name="USUARIO_CREACION" ColumnName="USUARIO_CREACION" />
+          <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+          <ScalarProperty Name="USUARIO_MODIFICACION" ColumnName="USUARIO_MODIFICACION" />
+          <ScalarProperty Name="FECHA_MODIFICACION" ColumnName="FECHA_MODIFICACION" />
+          <ScalarProperty Name="SEXO" ColumnName="SEXO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SUCURSALES">
+      <EntityTypeMapping TypeName="Model.SUCURSALES">
+        <MappingFragment StoreEntitySet="SUCURSALES">
+          <ScalarProperty Name="SUCURSAL_ID" ColumnName="SUCURSAL_ID" />
+          <ScalarProperty Name="SUCURSAL" ColumnName="SUCURSAL" />
+          <ScalarProperty Name="EMPRESA_ID" ColumnName="EMPRESA_ID" />
+          <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
+          <ScalarProperty Name="TELEFONO" ColumnName="TELEFONO" />
+          <ScalarProperty Name="USUARIO_CREACION" ColumnName="USUARIO_CREACION" />
+          <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+          <ScalarProperty Name="USUARIO_MODIFICACION" ColumnName="USUARIO_MODIFICACION" />
+          <ScalarProperty Name="FECHA_MODIFICACION" ColumnName="FECHA_MODIFICACION" />
+          <ScalarProperty Name="POR_DEFECTO" ColumnName="POR_DEFECTO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USUARIOS">
+      <EntityTypeMapping TypeName="Model.USUARIOS">
+        <MappingFragment StoreEntitySet="USUARIOS">
+          <ScalarProperty Name="PERFIL" ColumnName="PERFIL" />
+          <ScalarProperty Name="CODIGO_USUARIO" ColumnName="CODIGO_USUARIO" />
+          <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+          <ScalarProperty Name="ACTIVO" ColumnName="ACTIVO" />
+          <ScalarProperty Name="USUARIO_CREACION" ColumnName="USUARIO_CREACION" />
+          <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+          <ScalarProperty Name="USUARIO_MODIFICACION" ColumnName="USUARIO_MODIFICACION" />
+          <ScalarProperty Name="EMPRESA_ID" ColumnName="EMPRESA_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VARIABLES_ENTORNOS">
+      <EntityTypeMapping TypeName="Model.VARIABLES_ENTORNOS">
+        <MappingFragment StoreEntitySet="VARIABLES_ENTORNOS">
+          <ScalarProperty Name="VARIABLE_ENTORNO_ID" ColumnName="VARIABLE_ENTORNO_ID" />
+          <ScalarProperty Name="CODIGO_USUARIO" ColumnName="CODIGO_USUARIO" />
+          <ScalarProperty Name="CLAVE" ColumnName="CLAVE" />
+          <ScalarProperty Name="VALOR" ColumnName="VALOR" />
+          <ScalarProperty Name="USUARIO_CREACION" ColumnName="USUARIO_CREACION" />
+          <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+          <ScalarProperty Name="USUARIO_MODIFICACION" ColumnName="USUARIO_MODIFICACION" />
+          <ScalarProperty Name="FECHA_MODIFICACION" ColumnName="FECHA_MODIFICACION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BARRIOS_CIUDADES_VIEW">
+      <EntityTypeMapping TypeName="Model.BARRIOS_CIUDADES_VIEW">
+        <MappingFragment StoreEntitySet="BARRIOS_CIUDADES_VIEW">
+          <ScalarProperty Name="BARRIO_CIUDAD_ID" ColumnName="BARRIO_CIUDAD_ID" />
+          <ScalarProperty Name="CIUDAD_ID" ColumnName="CIUDAD_ID" />
+          <ScalarProperty Name="CIUDAD" ColumnName="CIUDAD" />
+          <ScalarProperty Name="BARRIO_ID" ColumnName="BARRIO_ID" />
+          <ScalarProperty Name="BARRIO" ColumnName="BARRIO" />
+          <ScalarProperty Name="CODIGO" ColumnName="CODIGO" />
+          <ScalarProperty Name="USUARIO_CREACION" ColumnName="USUARIO_CREACION" />
+          <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+          <ScalarProperty Name="USUARIO_MODIFICACION" ColumnName="USUARIO_MODIFICACION" />
+          <ScalarProperty Name="FECHA_MODIFICACION" ColumnName="FECHA_MODIFICACION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BARRIOS_VIEW">
+      <EntityTypeMapping TypeName="Model.BARRIOS_VIEW">
+        <MappingFragment StoreEntitySet="BARRIOS_VIEW">
+          <ScalarProperty Name="BARRIO_ID" ColumnName="BARRIO_ID" />
+          <ScalarProperty Name="BARRIO" ColumnName="BARRIO" />
+          <ScalarProperty Name="USUARIO_CREACION" ColumnName="USUARIO_CREACION" />
+          <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+          <ScalarProperty Name="USUARIO_MODIFICACION" ColumnName="USUARIO_MODIFICACION" />
+          <ScalarProperty Name="FECHA_MODIFICACION" ColumnName="FECHA_MODIFICACION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CIUDADES_DEPARTAMENTOS_VIEW">
+      <EntityTypeMapping TypeName="Model.CIUDADES_DEPARTAMENTOS_VIEW">
+        <MappingFragment StoreEntitySet="CIUDADES_DEPARTAMENTOS_VIEW">
+          <ScalarProperty Name="CIUDAD_DEPARTAMENTO_ID" ColumnName="CIUDAD_DEPARTAMENTO_ID" />
+          <ScalarProperty Name="DEPARTAMENTO_ID" ColumnName="DEPARTAMENTO_ID" />
+          <ScalarProperty Name="DEPARTAMENTO" ColumnName="DEPARTAMENTO" />
+          <ScalarProperty Name="CIUDAD_ID" ColumnName="CIUDAD_ID" />
+          <ScalarProperty Name="CIUDAD" ColumnName="CIUDAD" />
+          <ScalarProperty Name="CODIGO" ColumnName="CODIGO" />
+          <ScalarProperty Name="USUARIO_CREACION" ColumnName="USUARIO_CREACION" />
+          <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+          <ScalarProperty Name="USUARIO_MODIFICACION" ColumnName="USUARIO_MODIFICACION" />
+          <ScalarProperty Name="FECHA_MODIFICACION" ColumnName="FECHA_MODIFICACION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CIUDADES_VIEW">
+      <EntityTypeMapping TypeName="Model.CIUDADES_VIEW">
+        <MappingFragment StoreEntitySet="CIUDADES_VIEW">
+          <ScalarProperty Name="CIUDAD_ID" ColumnName="CIUDAD_ID" />
+          <ScalarProperty Name="CIUDAD" ColumnName="CIUDAD" />
+          <ScalarProperty Name="USUARIO_CREACION" ColumnName="USUARIO_CREACION" />
+          <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+          <ScalarProperty Name="USUARIO_MODIFICACION" ColumnName="USUARIO_MODIFICACION" />
+          <ScalarProperty Name="FECHA_MODIFICACION" ColumnName="FECHA_MODIFICACION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="COBROS_VIEW">
+      <EntityTypeMapping TypeName="Model.COBROS_VIEW">
+        <MappingFragment StoreEntitySet="COBROS_VIEW">
+          <ScalarProperty Name="NUMERO_FACTURA" ColumnName="NUMERO_FACTURA" />
+          <ScalarProperty Name="COBRO_ID" ColumnName="COBRO_ID" />
+          <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+          <ScalarProperty Name="SOCIO_NEGOCIO_ID" ColumnName="SOCIO_NEGOCIO_ID" />
+          <ScalarProperty Name="SOCIO_NEGOCIO" ColumnName="SOCIO_NEGOCIO" />
+          <ScalarProperty Name="RUC" ColumnName="RUC" />
+          <ScalarProperty Name="NUMERO_DOCUMENTO_COBRO" ColumnName="NUMERO_DOCUMENTO_COBRO" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="TOTAL" ColumnName="TOTAL" />
+          <ScalarProperty Name="OBSERVACION" ColumnName="OBSERVACION" />
+          <ScalarProperty Name="USUARIO_CREACION" ColumnName="USUARIO_CREACION" />
+          <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+          <ScalarProperty Name="USUARIO_MODIFICACION" ColumnName="USUARIO_MODIFICACION" />
+          <ScalarProperty Name="FECHA_MODIFICACION" ColumnName="FECHA_MODIFICACION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CRONOGRAMAS_CUOTAS_VIEW">
+      <EntityTypeMapping TypeName="Model.CRONOGRAMAS_CUOTAS_VIEW">
+        <MappingFragment StoreEntitySet="CRONOGRAMAS_CUOTAS_VIEW">
+          <ScalarProperty Name="CRONOGRAMA_CUOTA_ID" ColumnName="CRONOGRAMA_CUOTA_ID" />
+          <ScalarProperty Name="NUMERO_CUOTA" ColumnName="NUMERO_CUOTA" />
+          <ScalarProperty Name="FECHA_VENCIMIENTO" ColumnName="FECHA_VENCIMIENTO" />
+          <ScalarProperty Name="MONTO" ColumnName="MONTO" />
+          <ScalarProperty Name="OPERACION_PROPIEDAD_ID" ColumnName="OPERACION_PROPIEDAD_ID" />
+          <ScalarProperty Name="TIPO_OPERACION" ColumnName="TIPO_OPERACION" />
+          <ScalarProperty Name="SOCIO_NEGOCIO_ID" ColumnName="SOCIO_NEGOCIO_ID" />
+          <ScalarProperty Name="SOCIO_NEGOCIO" ColumnName="SOCIO_NEGOCIO" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="MONEDA_ID" ColumnName="MONEDA_ID" />
+          <ScalarProperty Name="MONEDA" ColumnName="MONEDA" />
+          <ScalarProperty Name="FECHA_CANCELACION" ColumnName="FECHA_CANCELACION" />
+          <ScalarProperty Name="USUARIO_CREACION" ColumnName="USUARIO_CREACION" />
+          <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+          <ScalarProperty Name="USUARIO_MODIFICACION" ColumnName="USUARIO_MODIFICACION" />
+          <ScalarProperty Name="FECHA_MODIFICACION" ColumnName="FECHA_MODIFICACION" />
+          <ScalarProperty Name="ENTIDAD_INMOBILIARIA_ID" ColumnName="ENTIDAD_INMOBILIARIA_ID" />
+          <ScalarProperty Name="ENTIDAD" ColumnName="ENTIDAD" />
+          <ScalarProperty Name="PROPIEDAD_ID" ColumnName="PROPIEDAD_ID" />
+          <ScalarProperty Name="PROPIEDAD" ColumnName="PROPIEDAD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DEPARTAMENTOS_PAISES_VIEW">
+      <EntityTypeMapping TypeName="Model.DEPARTAMENTOS_PAISES_VIEW">
+        <MappingFragment StoreEntitySet="DEPARTAMENTOS_PAISES_VIEW">
+          <ScalarProperty Name="DEPARTAMENTO_PAIS_ID" ColumnName="DEPARTAMENTO_PAIS_ID" />
+          <ScalarProperty Name="PAIS_ID" ColumnName="PAIS_ID" />
+          <ScalarProperty Name="PAIS" ColumnName="PAIS" />
+          <ScalarProperty Name="NACIONALIDAD" ColumnName="NACIONALIDAD" />
+          <ScalarProperty Name="CODIGO_ISO2" ColumnName="CODIGO_ISO2" />
+          <ScalarProperty Name="CODIGO_ISO3" ColumnName="CODIGO_ISO3" />
+          <ScalarProperty Name="DEPARTAMENTO_ID" ColumnName="DEPARTAMENTO_ID" />
+          <ScalarProperty Name="DEPARTAMENTO" ColumnName="DEPARTAMENTO" />
+          <ScalarProperty Name="CODIGO" ColumnName="CODIGO" />
+          <ScalarProperty Name="USUARIO_CREACION" ColumnName="USUARIO_CREACION" />
+          <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+          <ScalarProperty Name="USUARIO_MODIFICACION" ColumnName="USUARIO_MODIFICACION" />
+          <ScalarProperty Name="FECHA_MODIFICACION" ColumnName="FECHA_MODIFICACION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DEPARTAMENTOS_VIEW">
+      <EntityTypeMapping TypeName="Model.DEPARTAMENTOS_VIEW">
+        <MappingFragment StoreEntitySet="DEPARTAMENTOS_VIEW">
+          <ScalarProperty Name="DEPARTAMENTO_ID" ColumnName="DEPARTAMENTO_ID" />
+          <ScalarProperty Name="DEPARTAMENTO" ColumnName="DEPARTAMENTO" />
+          <ScalarProperty Name="USUARIO_CREACION" ColumnName="USUARIO_CREACION" />
+          <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+          <ScalarProperty Name="USUARIO_MODIFICACION" ColumnName="USUARIO_MODIFICACION" />
+          <ScalarProperty Name="FECHA_MODIFICACION" ColumnName="FECHA_MODIFICACION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EMPRESAS_VIEW">
+      <EntityTypeMapping TypeName="Model.EMPRESAS_VIEW">
+        <MappingFragment StoreEntitySet="EMPRESAS_VIEW">
+          <ScalarProperty Name="EMPRESA_ID" ColumnName="EMPRESA_ID" />
+          <ScalarProperty Name="EMPRESA" ColumnName="EMPRESA" />
+          <ScalarProperty Name="NOMBRE_CORTO" ColumnName="NOMBRE_CORTO" />
+          <ScalarProperty Name="SOCIO_NEGOCIO_ID" ColumnName="SOCIO_NEGOCIO_ID" />
+          <ScalarProperty Name="SOCIO_NEGOCIO" ColumnName="SOCIO_NEGOCIO" />
+          <ScalarProperty Name="NUMERO_DOCUMENTO" ColumnName="NUMERO_DOCUMENTO" />
+          <ScalarProperty Name="DIGITO_VERIFICADOR" ColumnName="DIGITO_VERIFICADOR" />
+          <ScalarProperty Name="RUC" ColumnName="RUC" />
+          <ScalarProperty Name="TIPO_PERSONERIA" ColumnName="TIPO_PERSONERIA" />
+          <ScalarProperty Name="TIPO_DOCUMENTO" ColumnName="TIPO_DOCUMENTO" />
+          <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
+          <ScalarProperty Name="TELEFONO" ColumnName="TELEFONO" />
+          <ScalarProperty Name="ACTIVO" ColumnName="ACTIVO" />
+          <ScalarProperty Name="USUARIO_CREACION" ColumnName="USUARIO_CREACION" />
+          <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+          <ScalarProperty Name="USUARIO_MODIFICACION" ColumnName="USUARIO_MODIFICACION" />
+          <ScalarProperty Name="FECHA_MODIFICACION" ColumnName="FECHA_MODIFICACION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ENTIDADES_INMOBILIARIAS_VIEW">
+      <EntityTypeMapping TypeName="Model.ENTIDADES_INMOBILIARIAS_VIEW">
+        <MappingFragment StoreEntitySet="ENTIDADES_INMOBILIARIAS_VIEW">
+          <ScalarProperty Name="ENTIDAD_INMOBILIARIA_ID" ColumnName="ENTIDAD_INMOBILIARIA_ID" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="TIPO" ColumnName="TIPO" />
+          <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
+          <ScalarProperty Name="CANTIDAD_UNIDADES" ColumnName="CANTIDAD_UNIDADES" />
+          <ScalarProperty Name="ANO_CONSTRUCCION" ColumnName="ANO_CONSTRUCCION" />
+          <ScalarProperty Name="M2_CONSTRUCCION" ColumnName="M2_CONSTRUCCION" />
+          <ScalarProperty Name="MEDIDAS_LOTE" ColumnName="MEDIDAS_LOTE" />
+          <ScalarProperty Name="CARACTERISTICAS" ColumnName="CARACTERISTICAS" />
+          <ScalarProperty Name="NUMERO_FINCA" ColumnName="NUMERO_FINCA" />
+          <ScalarProperty Name="CUENTA_CATASTRAL" ColumnName="CUENTA_CATASTRAL" />
+          <ScalarProperty Name="PAIS_ID" ColumnName="PAIS_ID" />
+          <ScalarProperty Name="PAIS" ColumnName="PAIS" />
+          <ScalarProperty Name="DEPARTAMENTO_ID" ColumnName="DEPARTAMENTO_ID" />
+          <ScalarProperty Name="DEPARTAMENTO" ColumnName="DEPARTAMENTO" />
+          <ScalarProperty Name="CIUDAD_ID" ColumnName="CIUDAD_ID" />
+          <ScalarProperty Name="CIUDAD" ColumnName="CIUDAD" />
+          <ScalarProperty Name="BARRIO_ID" ColumnName="BARRIO_ID" />
+          <ScalarProperty Name="BARRIO" ColumnName="BARRIO" />
+          <ScalarProperty Name="USUARIO_CREACION" ColumnName="USUARIO_CREACION" />
+          <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+          <ScalarProperty Name="USUARIO_MODIFICACION" ColumnName="USUARIO_MODIFICACION" />
+          <ScalarProperty Name="FECHA_MODIFICACION" ColumnName="FECHA_MODIFICACION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FORMAS_PAGOS_VIEW">
+      <EntityTypeMapping TypeName="Model.FORMAS_PAGOS_VIEW">
+        <MappingFragment StoreEntitySet="FORMAS_PAGOS_VIEW">
+          <ScalarProperty Name="FORMA_PAGO_ID" ColumnName="FORMA_PAGO_ID" />
+          <ScalarProperty Name="FORMA_PAGO" ColumnName="FORMA_PAGO" />
+          <ScalarProperty Name="CODIGO" ColumnName="CODIGO" />
+          <ScalarProperty Name="DIAS" ColumnName="DIAS" />
+          <ScalarProperty Name="POR_DEFECTO" ColumnName="POR_DEFECTO" />
+          <ScalarProperty Name="REQUERE_BANCO" ColumnName="REQUERE_BANCO" />
+          <ScalarProperty Name="USUARIO_CREACION" ColumnName="USUARIO_CREACION" />
+          <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+          <ScalarProperty Name="USUARIO_MODIFICACION" ColumnName="USUARIO_MODIFICACION" />
+          <ScalarProperty Name="FECHA_MODIFICACION" ColumnName="FECHA_MODIFICACION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IMAGENES_ENTIDAD_INMOB_VIEW">
+      <EntityTypeMapping TypeName="Model.IMAGENES_ENTIDAD_INMOB_VIEW">
+        <MappingFragment StoreEntitySet="IMAGENES_ENTIDAD_INMOB_VIEW">
+          <ScalarProperty Name="IMAGEN_ENTIDAD_INMOBILIARIA_ID" ColumnName="IMAGEN_ENTIDAD_INMOBILIARIA_ID" />
+          <ScalarProperty Name="FOTO" ColumnName="FOTO" />
+          <ScalarProperty Name="RUTA_IMAGEN" ColumnName="RUTA_IMAGEN" />
+          <ScalarProperty Name="ENTIDAD_INMOBILIARIA_ID" ColumnName="ENTIDAD_INMOBILIARIA_ID" />
+          <ScalarProperty Name="ENTIDAD_INMOBILIARIA" ColumnName="ENTIDAD_INMOBILIARIA" />
+          <ScalarProperty Name="PROPIEDAD_ID" ColumnName="PROPIEDAD_ID" />
+          <ScalarProperty Name="PROPIEDAD" ColumnName="PROPIEDAD" />
+          <ScalarProperty Name="USUARIO_CREACION" ColumnName="USUARIO_CREACION" />
+          <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+          <ScalarProperty Name="USUARIO_MODIFICACION" ColumnName="USUARIO_MODIFICACION" />
+          <ScalarProperty Name="FECHA_MODIFICACION" ColumnName="FECHA_MODIFICACION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IMAGENES_OPERACIONES_VIEW">
+      <EntityTypeMapping TypeName="Model.IMAGENES_OPERACIONES_VIEW">
+        <MappingFragment StoreEntitySet="IMAGENES_OPERACIONES_VIEW">
+          <ScalarProperty Name="IMAGEN_OPERACION_ID" ColumnName="IMAGEN_OPERACION_ID" />
+          <ScalarProperty Name="IMAGEN" ColumnName="IMAGEN" />
+          <ScalarProperty Name="OPERACION_ID" ColumnName="OPERACION_ID" />
+          <ScalarProperty Name="FECHA_OPERACION" ColumnName="FECHA_OPERACION" />
+          <ScalarProperty Name="TIPO_OPERACION" ColumnName="TIPO_OPERACION" />
+          <ScalarProperty Name="SOCIO_NEGOCIO" ColumnName="SOCIO_NEGOCIO" />
+          <ScalarProperty Name="USUARIO_CREACION" ColumnName="USUARIO_CREACION" />
+          <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+          <ScalarProperty Name="USUARIO_MODIFICACION" ColumnName="USUARIO_MODIFICACION" />
+          <ScalarProperty Name="FECHA_MODIFICACION" ColumnName="FECHA_MODIFICACION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IMPUESTOS_VIEW">
+      <EntityTypeMapping TypeName="Model.IMPUESTOS_VIEW">
+        <MappingFragment StoreEntitySet="IMPUESTOS_VIEW">
+          <ScalarProperty Name="IMPUESTO_ID" ColumnName="IMPUESTO_ID" />
+          <ScalarProperty Name="IMPUESTO" ColumnName="IMPUESTO" />
+          <ScalarProperty Name="PORCENTAJE_IMPUESTO" ColumnName="PORCENTAJE_IMPUESTO" />
+          <ScalarProperty Name="FACTOR_DISCRIMINADO" ColumnName="FACTOR_DISCRIMINADO" />
+          <ScalarProperty Name="FACTOR_IMPUESTO" ColumnName="FACTOR_IMPUESTO" />
+          <ScalarProperty Name="USUARIO_CREACION" ColumnName="USUARIO_CREACION" />
+          <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+          <ScalarProperty Name="USUARIO_MODIFICACION" ColumnName="USUARIO_MODIFICACION" />
+          <ScalarProperty Name="FECHA_MODIFICACION" ColumnName="FECHA_MODIFICACION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="INGRESOS_EGRESOS_VIEW">
+      <EntityTypeMapping TypeName="Model.INGRESOS_EGRESOS_VIEW">
+        <MappingFragment StoreEntitySet="INGRESOS_EGRESOS_VIEW">
+          <ScalarProperty Name="TIPO_IMPUTACION" ColumnName="TIPO_IMPUTACION" />
+          <ScalarProperty Name="INGRESO_EGRESO_ID" ColumnName="INGRESO_EGRESO_ID" />
+          <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+          <ScalarProperty Name="MONTO" ColumnName="MONTO" />
+          <ScalarProperty Name="SOCIO_NEGOCIO_ID" ColumnName="SOCIO_NEGOCIO_ID" />
+          <ScalarProperty Name="SOCIO_NEGOCIO" ColumnName="SOCIO_NEGOCIO" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="ENTIDAD_INMOBILIARIA_ID" ColumnName="ENTIDAD_INMOBILIARIA_ID" />
+          <ScalarProperty Name="ENTIDAD_INMOBILIARIA" ColumnName="ENTIDAD_INMOBILIARIA" />
+          <ScalarProperty Name="TIPO" ColumnName="TIPO" />
+          <ScalarProperty Name="PROPIEDAD_ID" ColumnName="PROPIEDAD_ID" />
+          <ScalarProperty Name="PROPIEDAD" ColumnName="PROPIEDAD" />
+          <ScalarProperty Name="ITEM_INGRESO_EGRESO_ID" ColumnName="ITEM_INGRESO_EGRESO_ID" />
+          <ScalarProperty Name="ITEM" ColumnName="ITEM" />
+          <ScalarProperty Name="NUMERO_FACTURA" ColumnName="NUMERO_FACTURA" />
+          <ScalarProperty Name="FECHA_FACTURA" ColumnName="FECHA_FACTURA" />
+          <ScalarProperty Name="SALDO" ColumnName="SALDO" />
+          <ScalarProperty Name="USUARIO_CREACION" ColumnName="USUARIO_CREACION" />
+          <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+          <ScalarProperty Name="USUARIO_MODIFICACION" ColumnName="USUARIO_MODIFICACION" />
+          <ScalarProperty Name="FECHA_MODIFICACION" ColumnName="FECHA_MODIFICACION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ITEMS_INGRESOS_EGRESOS_VIEW">
+      <EntityTypeMapping TypeName="Model.ITEMS_INGRESOS_EGRESOS_VIEW">
+        <MappingFragment StoreEntitySet="ITEMS_INGRESOS_EGRESOS_VIEW">
+          <ScalarProperty Name="ITEM_INGRESO_EGRESO_ID" ColumnName="ITEM_INGRESO_EGRESO_ID" />
+          <ScalarProperty Name="ITEM" ColumnName="ITEM" />
+          <ScalarProperty Name="TIPO_ITEM" ColumnName="TIPO_ITEM" />
+          <ScalarProperty Name="TIPO" ColumnName="TIPO" />
+          <ScalarProperty Name="USUARIO_CREACION" ColumnName="USUARIO_CREACION" />
+          <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+          <ScalarProperty Name="USUARIO_MODIFICACION" ColumnName="USUARIO_MODIFICACION" />
+          <ScalarProperty Name="FECHA_MODIFICACION" ColumnName="FECHA_MODIFICACION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LIQUIDACIONES_DETALLES_ITEMS">
+      <EntityTypeMapping TypeName="Model.LIQUIDACIONES_DETALLES_ITEMS">
+        <MappingFragment StoreEntitySet="LIQUIDACIONES_DETALLES_ITEMS">
+          <ScalarProperty Name="LIQUIDACION_DETALLE_ID" ColumnName="LIQUIDACION_DETALLE_ID" />
+          <ScalarProperty Name="LIQUIDACION_ID" ColumnName="LIQUIDACION_ID" />
+          <ScalarProperty Name="NUMERO_ITEM" ColumnName="NUMERO_ITEM" />
+          <ScalarProperty Name="MONTO" ColumnName="MONTO" />
+          <ScalarProperty Name="USUARIO_CREACION" ColumnName="USUARIO_CREACION" />
+          <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+          <ScalarProperty Name="ITEM_INGRESO_EGRESO_ID" ColumnName="ITEM_INGRESO_EGRESO_ID" />
+          <ScalarProperty Name="ITEM" ColumnName="ITEM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LIQUIDACIONES_VIEW">
+      <EntityTypeMapping TypeName="Model.LIQUIDACIONES_VIEW">
+        <MappingFragment StoreEntitySet="LIQUIDACIONES_VIEW">
+          <ScalarProperty Name="LIQUIDACION_ID" ColumnName="LIQUIDACION_ID" />
+          <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+          <ScalarProperty Name="NUMERO" ColumnName="NUMERO" />
+          <ScalarProperty Name="OPERACION_PROPIEDAD_ID" ColumnName="OPERACION_PROPIEDAD_ID" />
+          <ScalarProperty Name="CLIENTE" ColumnName="CLIENTE" />
+          <ScalarProperty Name="ENTIDAD_INMOBILIARIA_ID" ColumnName="ENTIDAD_INMOBILIARIA_ID" />
+          <ScalarProperty Name="ENTIDAD_INMOBILIARIA" ColumnName="ENTIDAD_INMOBILIARIA" />
+          <ScalarProperty Name="PROPIEDAD_ID" ColumnName="PROPIEDAD_ID" />
+          <ScalarProperty Name="PROPIEDAD" ColumnName="PROPIEDAD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MONEDAS_VIEW">
+      <EntityTypeMapping TypeName="Model.MONEDAS_VIEW">
+        <MappingFragment StoreEntitySet="MONEDAS_VIEW">
+          <ScalarProperty Name="MONEDA_ID" ColumnName="MONEDA_ID" />
+          <ScalarProperty Name="MONEDA" ColumnName="MONEDA" />
+          <ScalarProperty Name="SIMBOLO" ColumnName="SIMBOLO" />
+          <ScalarProperty Name="SIMBOLO_SET" ColumnName="SIMBOLO_SET" />
+          <ScalarProperty Name="TIPO_MONEDA" ColumnName="TIPO_MONEDA" />
+          <ScalarProperty Name="PRECISION_DECIMALES" ColumnName="PRECISION_DECIMALES" />
+          <ScalarProperty Name="USUARIO_CREACION" ColumnName="USUARIO_CREACION" />
+          <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+          <ScalarProperty Name="USUARIO_MODIFICACION" ColumnName="USUARIO_MODIFICACION" />
+          <ScalarProperty Name="FECHA_MODIFICACION" ColumnName="FECHA_MODIFICACION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OPERACIONES_CONTRATOS_VENCIDOS">
+      <EntityTypeMapping TypeName="Model.OPERACIONES_CONTRATOS_VENCIDOS">
+        <MappingFragment StoreEntitySet="OPERACIONES_CONTRATOS_VENCIDOS">
+          <ScalarProperty Name="OPERACION_PROPIEDAD_ID" ColumnName="OPERACION_PROPIEDAD_ID" />
+          <ScalarProperty Name="FECHA_OPERACION" ColumnName="FECHA_OPERACION" />
+          <ScalarProperty Name="FECHA_INICIO_CONTRATO" ColumnName="FECHA_INICIO_CONTRATO" />
+          <ScalarProperty Name="FECHA_FIN_CONTRATO" ColumnName="FECHA_FIN_CONTRATO" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="ENTIDAD_INMOBILIARIA_ID" ColumnName="ENTIDAD_INMOBILIARIA_ID" />
+          <ScalarProperty Name="UNIDAD_NEGOCIO" ColumnName="UNIDAD_NEGOCIO" />
+          <ScalarProperty Name="PROPIEDAD_ID" ColumnName="PROPIEDAD_ID" />
+          <ScalarProperty Name="INMUEBLE" ColumnName="INMUEBLE" />
+          <ScalarProperty Name="LOCATARIO" ColumnName="LOCATARIO" />
+          <ScalarProperty Name="RAZON_SOCIAL" ColumnName="RAZON_SOCIAL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OPERACIONES_PENDIENTES_VIEW">
+      <EntityTypeMapping TypeName="Model.OPERACIONES_PENDIENTES_VIEW">
+        <MappingFragment StoreEntitySet="OPERACIONES_PENDIENTES_VIEW">
+          <ScalarProperty Name="SOCIO_NEGOCIO_ID" ColumnName="SOCIO_NEGOCIO_ID" />
+          <ScalarProperty Name="RAZON_SOCIAL" ColumnName="RAZON_SOCIAL" />
+          <ScalarProperty Name="TIPO_DOCUMENTO" ColumnName="TIPO_DOCUMENTO" />
+          <ScalarProperty Name="NUMERO_DOCUMENTO" ColumnName="NUMERO_DOCUMENTO" />
+          <ScalarProperty Name="RUC" ColumnName="RUC" />
+          <ScalarProperty Name="OPERACION_PROPIEDAD_ID" ColumnName="OPERACION_PROPIEDAD_ID" />
+          <ScalarProperty Name="FECHA_OPERACION" ColumnName="FECHA_OPERACION" />
+          <ScalarProperty Name="ENTIDAD_INMOBILIARIA_ID" ColumnName="ENTIDAD_INMOBILIARIA_ID" />
+          <ScalarProperty Name="ENTIDAD_INMOBILIARIA" ColumnName="ENTIDAD_INMOBILIARIA" />
+          <ScalarProperty Name="PROPIEDAD_ID" ColumnName="PROPIEDAD_ID" />
+          <ScalarProperty Name="INMUEBLE" ColumnName="INMUEBLE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OPERACIONES_PROPIEDADES_VIEW">
+      <EntityTypeMapping TypeName="Model.OPERACIONES_PROPIEDADES_VIEW">
+        <MappingFragment StoreEntitySet="OPERACIONES_PROPIEDADES_VIEW">
+          <ScalarProperty Name="OPERACION_PROPIEDAD_ID" ColumnName="OPERACION_PROPIEDAD_ID" />
+          <ScalarProperty Name="FECHA_OPERACION" ColumnName="FECHA_OPERACION" />
+          <ScalarProperty Name="TIPO_OPERACION" ColumnName="TIPO_OPERACION" />
+          <ScalarProperty Name="SOCIO_NEGOCIO_ID" ColumnName="SOCIO_NEGOCIO_ID" />
+          <ScalarProperty Name="SOCIO_NEGOCIO" ColumnName="SOCIO_NEGOCIO" />
+          <ScalarProperty Name="PROPIEDAD_ID" ColumnName="PROPIEDAD_ID" />
+          <ScalarProperty Name="PROPIEDAD" ColumnName="PROPIEDAD" />
+          <ScalarProperty Name="FECHA_FINALIZACION" ColumnName="FECHA_FINALIZACION" />
+          <ScalarProperty Name="ENTIDAD_INMOBILIARIA_ID" ColumnName="ENTIDAD_INMOBILIARIA_ID" />
+          <ScalarProperty Name="ENTIDAD_INMOBILIARIA" ColumnName="ENTIDAD_INMOBILIARIA" />
+          <ScalarProperty Name="FECHA_INICIO_CONTRATO" ColumnName="FECHA_INICIO_CONTRATO" />
+          <ScalarProperty Name="FECHA_FIN_CONTRATO" ColumnName="FECHA_FIN_CONTRATO" />
+          <ScalarProperty Name="PLAZO" ColumnName="PLAZO" />
+          <ScalarProperty Name="PRECIO" ColumnName="PRECIO" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="GARANTIA" ColumnName="GARANTIA" />
+          <ScalarProperty Name="SUCURSAL_ID" ColumnName="SUCURSAL_ID" />
+          <ScalarProperty Name="SUCURSAL" ColumnName="SUCURSAL" />
+          <ScalarProperty Name="MONEDA_ID" ColumnName="MONEDA_ID" />
+          <ScalarProperty Name="MONEDA" ColumnName="MONEDA" />
+          <ScalarProperty Name="TIPO_ENTIDAD" ColumnName="TIPO_ENTIDAD" />
+          <ScalarProperty Name="TIPO_CONTRATO" ColumnName="TIPO_CONTRATO" />
+          <ScalarProperty Name="CONDICION_OPERACION" ColumnName="CONDICION_OPERACION" />
+          <ScalarProperty Name="AVISO_RENOVACION" ColumnName="AVISO_RENOVACION" />
+          <ScalarProperty Name="FECHA_RENOVACION" ColumnName="FECHA_RENOVACION" />
+          <ScalarProperty Name="USUARIO_CREACION" ColumnName="USUARIO_CREACION" />
+          <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+          <ScalarProperty Name="USUARIO_MODIFICACION" ColumnName="USUARIO_MODIFICACION" />
+          <ScalarProperty Name="FECHA_MODIFICACION" ColumnName="FECHA_MODIFICACION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PAISES_VIEW">
+      <EntityTypeMapping TypeName="Model.PAISES_VIEW">
+        <MappingFragment StoreEntitySet="PAISES_VIEW">
+          <ScalarProperty Name="PAIS_ID" ColumnName="PAIS_ID" />
+          <ScalarProperty Name="PAIS" ColumnName="PAIS" />
+          <ScalarProperty Name="CODIGO_ISO_2" ColumnName="CODIGO_ISO_2" />
+          <ScalarProperty Name="CODIGO_ISO_3" ColumnName="CODIGO_ISO_3" />
+          <ScalarProperty Name="NACIONALIDAD" ColumnName="NACIONALIDAD" />
+          <ScalarProperty Name="USUARIO_CREACION" ColumnName="USUARIO_CREACION" />
+          <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+          <ScalarProperty Name="USUARIO_MODIFICACION" ColumnName="USUARIO_MODIFICACION" />
+          <ScalarProperty Name="FECHA_MODIFICACION" ColumnName="FECHA_MODIFICACION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PROPIEDADES_VIEW">
+      <EntityTypeMapping TypeName="Model.PROPIEDADES_VIEW">
+        <MappingFragment StoreEntitySet="PROPIEDADES_VIEW">
+          <ScalarProperty Name="PROPIEDAD_ID" ColumnName="PROPIEDAD_ID" />
+          <ScalarProperty Name="PROPIEDAD" ColumnName="PROPIEDAD" />
+          <ScalarProperty Name="TIPO" ColumnName="TIPO" />
+          <ScalarProperty Name="CUENTA_CATASTRAL" ColumnName="CUENTA_CATASTRAL" />
+          <ScalarProperty Name="ENTIDAD_INMOBILIARIA_ID" ColumnName="ENTIDAD_INMOBILIARIA_ID" />
+          <ScalarProperty Name="ENTIDAD_INMOBILIARIA" ColumnName="ENTIDAD_INMOBILIARIA" />
+          <ScalarProperty Name="PAIS_ID" ColumnName="PAIS_ID" />
+          <ScalarProperty Name="PAIS" ColumnName="PAIS" />
+          <ScalarProperty Name="DEPARTAMENTO_ID" ColumnName="DEPARTAMENTO_ID" />
+          <ScalarProperty Name="DEPARTAMENTO" ColumnName="DEPARTAMENTO" />
+          <ScalarProperty Name="CIUDAD_ID" ColumnName="CIUDAD_ID" />
+          <ScalarProperty Name="CIUDAD" ColumnName="CIUDAD" />
+          <ScalarProperty Name="BARRIO_ID" ColumnName="BARRIO_ID" />
+          <ScalarProperty Name="BARRIO" ColumnName="BARRIO" />
+          <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
+          <ScalarProperty Name="CARACTERISTICAS" ColumnName="CARACTERISTICAS" />
+          <ScalarProperty Name="TIENE_COCHERA" ColumnName="TIENE_COCHERA" />
+          <ScalarProperty Name="CANTIDAD_COCHERA" ColumnName="CANTIDAD_COCHERA" />
+          <ScalarProperty Name="M2_CONSTRUCCION" ColumnName="M2_CONSTRUCCION" />
+          <ScalarProperty Name="ANO_CONSTRUCCION" ColumnName="ANO_CONSTRUCCION" />
+          <ScalarProperty Name="MEDIDA_LOTE" ColumnName="MEDIDA_LOTE" />
+          <ScalarProperty Name="COMISION" ColumnName="COMISION" />
+          <ScalarProperty Name="COMISION_VENTA" ColumnName="COMISION_VENTA" />
+          <ScalarProperty Name="COMISION_ALQUILER" ColumnName="COMISION_ALQUILER" />
+          <ScalarProperty Name="PRECIO" ColumnName="PRECIO" />
+          <ScalarProperty Name="PRECIO_VENTA" ColumnName="PRECIO_VENTA" />
+          <ScalarProperty Name="PRECIO_ALQUILER" ColumnName="PRECIO_ALQUILER" />
+          <ScalarProperty Name="ALQUILADA" ColumnName="ALQUILADA" />
+          <ScalarProperty Name="VENDIDA" ColumnName="VENDIDA" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="NUMERO_FINCA" ColumnName="NUMERO_FINCA" />
+          <ScalarProperty Name="NIS" ColumnName="NIS" />
+          <ScalarProperty Name="NUMERO_MEDIDOR" ColumnName="NUMERO_MEDIDOR" />
+          <ScalarProperty Name="SENADO" ColumnName="SENADO" />
+          <ScalarProperty Name="NUMERO_LOTE" ColumnName="NUMERO_LOTE" />
+          <ScalarProperty Name="NUMERO_MANZANA" ColumnName="NUMERO_MANZANA" />
+          <ScalarProperty Name="DIMENSIONES" ColumnName="DIMENSIONES" />
+          <ScalarProperty Name="OBSERVACION" ColumnName="OBSERVACION" />
+          <ScalarProperty Name="RESOLUCION" ColumnName="RESOLUCION" />
+          <ScalarProperty Name="USUARIO_CREACION" ColumnName="USUARIO_CREACION" />
+          <ScalarProperty Name="USUARIO_MODIFICACION" ColumnName="USUARIO_MODIFICACION" />
+          <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+          <ScalarProperty Name="FECHA_MODIFICACION" ColumnName="FECHA_MODIFICACION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PROPIETARIOS_ENT_INMOB_VIEW">
+      <EntityTypeMapping TypeName="Model.PROPIETARIOS_ENT_INMOB_VIEW">
+        <MappingFragment StoreEntitySet="PROPIETARIOS_ENT_INMOB_VIEW">
+          <ScalarProperty Name="PROPIETARIO_ENT_INMOB_ID" ColumnName="PROPIETARIO_ENT_INMOB_ID" />
+          <ScalarProperty Name="ENTIDAD_INMOBILIARIA_ID" ColumnName="ENTIDAD_INMOBILIARIA_ID" />
+          <ScalarProperty Name="ENTIDAD_INMOBILIARIA" ColumnName="ENTIDAD_INMOBILIARIA" />
+          <ScalarProperty Name="PROPIEDAD_ID" ColumnName="PROPIEDAD_ID" />
+          <ScalarProperty Name="PROPIEDAD" ColumnName="PROPIEDAD" />
+          <ScalarProperty Name="PROPIETARIO_ID" ColumnName="PROPIETARIO_ID" />
+          <ScalarProperty Name="PROPIETARIO" ColumnName="PROPIETARIO" />
+          <ScalarProperty Name="USUARIO_CREACION" ColumnName="USUARIO_CREACION" />
+          <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+          <ScalarProperty Name="USUARIO_MODIFICACION" ColumnName="USUARIO_MODIFICACION" />
+          <ScalarProperty Name="FECHA_MODIFICACION" ColumnName="FECHA_MODIFICACION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RESCISIONES_VIEW">
+      <EntityTypeMapping TypeName="Model.RESCISIONES_VIEW">
+        <MappingFragment StoreEntitySet="RESCISIONES_VIEW">
+          <ScalarProperty Name="RESCISION_ID" ColumnName="RESCISION_ID" />
+          <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+          <ScalarProperty Name="TIPO" ColumnName="TIPO" />
+          <ScalarProperty Name="MONTO" ColumnName="MONTO" />
+          <ScalarProperty Name="TIPO_OPERACION" ColumnName="TIPO_OPERACION" />
+          <ScalarProperty Name="OBSERVACION" ColumnName="OBSERVACION" />
+          <ScalarProperty Name="OPERACION_ID" ColumnName="OPERACION_ID" />
+          <ScalarProperty Name="PROPIEDAD_ID" ColumnName="PROPIEDAD_ID" />
+          <ScalarProperty Name="SOCIO_NEGOCIO_ID" ColumnName="SOCIO_NEGOCIO_ID" />
+          <ScalarProperty Name="SOCIO_NEGOCIO" ColumnName="SOCIO_NEGOCIO" />
+          <ScalarProperty Name="USUARIO_CREACION" ColumnName="USUARIO_CREACION" />
+          <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+          <ScalarProperty Name="USUARIO_MODIFICACION" ColumnName="USUARIO_MODIFICACION" />
+          <ScalarProperty Name="FECHA_MODIFICACION" ColumnName="FECHA_MODIFICACION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SOCIOS_NEGOCIOS_VIEW">
+      <EntityTypeMapping TypeName="Model.SOCIOS_NEGOCIOS_VIEW">
+        <MappingFragment StoreEntitySet="SOCIOS_NEGOCIOS_VIEW">
+          <ScalarProperty Name="SOCIO_NEGOCIO_ID" ColumnName="SOCIO_NEGOCIO_ID" />
+          <ScalarProperty Name="SOCIO_NEGOCIO" ColumnName="SOCIO_NEGOCIO" />
+          <ScalarProperty Name="NUMERO_DOCUMENTO" ColumnName="NUMERO_DOCUMENTO" />
+          <ScalarProperty Name="DIGITO_VERIFICADOR" ColumnName="DIGITO_VERIFICADOR" />
+          <ScalarProperty Name="RUC" ColumnName="RUC" />
+          <ScalarProperty Name="CLASIFICACION_FISCAL" ColumnName="CLASIFICACION_FISCAL" />
+          <ScalarProperty Name="TIPO_DOCUMENTO" ColumnName="TIPO_DOCUMENTO" />
+          <ScalarProperty Name="TIPO_PERSONERIA" ColumnName="TIPO_PERSONERIA" />
+          <ScalarProperty Name="ACTIVO" ColumnName="ACTIVO" />
+          <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
+          <ScalarProperty Name="TELEFONO" ColumnName="TELEFONO" />
+          <ScalarProperty Name="ES_PROPIETARIO" ColumnName="ES_PROPIETARIO" />
+          <ScalarProperty Name="ES_INQUILINO" ColumnName="ES_INQUILINO" />
+          <ScalarProperty Name="ES_PORTERO" ColumnName="ES_PORTERO" />
+          <ScalarProperty Name="ES_ADMINISTRADOR" ColumnName="ES_ADMINISTRADOR" />
+          <ScalarProperty Name="ES_CLIENTE" ColumnName="ES_CLIENTE" />
+          <ScalarProperty Name="ES_PROVEEDOR" ColumnName="ES_PROVEEDOR" />
+          <ScalarProperty Name="ES_EMPRESA" ColumnName="ES_EMPRESA" />
+          <ScalarProperty Name="ES_VENDEDOR" ColumnName="ES_VENDEDOR" />
+          <ScalarProperty Name="USUARIO_CREACION" ColumnName="USUARIO_CREACION" />
+          <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+          <ScalarProperty Name="USUARIO_MODIFICACION" ColumnName="USUARIO_MODIFICACION" />
+          <ScalarProperty Name="FECHA_MODIFICACION" ColumnName="FECHA_MODIFICACION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SUCURSALES_VIEW">
+      <EntityTypeMapping TypeName="Model.SUCURSALES_VIEW">
+        <MappingFragment StoreEntitySet="SUCURSALES_VIEW">
+          <ScalarProperty Name="SUCURSAL_ID" ColumnName="SUCURSAL_ID" />
+          <ScalarProperty Name="SUCURSAL" ColumnName="SUCURSAL" />
+          <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
+          <ScalarProperty Name="TELEFONO" ColumnName="TELEFONO" />
+          <ScalarProperty Name="EMPRESA_ID" ColumnName="EMPRESA_ID" />
+          <ScalarProperty Name="EMPRESA" ColumnName="EMPRESA" />
+          <ScalarProperty Name="USUARIO_CREACION" ColumnName="USUARIO_CREACION" />
+          <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+          <ScalarProperty Name="USUARIO_MODIFICACION" ColumnName="USUARIO_MODIFICACION" />
+          <ScalarProperty Name="FECHA_MODIFICACION" ColumnName="FECHA_MODIFICACION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USUARIOS_VIEW">
+      <EntityTypeMapping TypeName="Model.USUARIOS_VIEW">
+        <MappingFragment StoreEntitySet="USUARIOS_VIEW">
+          <ScalarProperty Name="PERFIL" ColumnName="PERFIL" />
+          <ScalarProperty Name="EMPRESA_ID" ColumnName="EMPRESA_ID" />
+          <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+          <ScalarProperty Name="USUARIO_CREACION" ColumnName="USUARIO_CREACION" />
+          <ScalarProperty Name="ACTIVO" ColumnName="ACTIVO" />
+          <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+          <ScalarProperty Name="CODIGO_USUARIO" ColumnName="CODIGO_USUARIO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.438
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inmobiliaria", "Inmobiliaria\Inmobiliaria.csproj", "{5681B300-BBEE-4CD1-8F36-8B2F478171DD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5681B300-BBEE-4CD1-8F36-8B2F478171DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5681B300-BBEE-4CD1-8F36-8B2F478171DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5681B300-BBEE-4CD1-8F36-8B2F478171DD}.Debug|x86.ActiveCfg = Debug|x86
+		{5681B300-BBEE-4CD1-8F36-8B2F478171DD}.Debug|x86.Build.0 = Debug|x86
+		{5681B300-BBEE-4CD1-8F36-8B2F478171DD}.Debug|x86.Deploy.0 = Debug|x86
+		{5681B300-BBEE-4CD1-8F36-8B2F478171DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5681B300-BBEE-4CD1-8F36-8B2F478171DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5681B300-BBEE-4CD1-8F36-8B2F478171DD}.Release|x86.ActiveCfg = Release|x86
+		{5681B300-BBEE-4CD1-8F36-8B2F478171DD}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {279D0657-BE27-4BFD-A928-8E2F63E3E914}
+		BuildVersion_StartDate = 2000/1/1
+	EndGlobalSection
+EndGlobal

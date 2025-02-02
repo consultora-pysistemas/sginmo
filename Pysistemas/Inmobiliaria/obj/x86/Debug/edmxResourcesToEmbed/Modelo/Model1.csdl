@@ -1,0 +1,1751 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityType Name="BARRIOS">
+    <Key>
+      <PropertyRef Name="BARRIO_ID" />
+    </Key>
+    <Property Name="BARRIO_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BARRIO" Type="String" MaxLength="120" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="DateTime" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="DateTime" />
+    <NavigationProperty Name="BARRIOS_CIUDADES" Relationship="Self.FK_BARRIOS_CIUDADES_BARRIOS" FromRole="BARRIOS" ToRole="BARRIOS_CIUDADES" />
+    <NavigationProperty Name="ENTIDADES_INMOBILIARIAS" Relationship="Self.FK_ENTIDADES_INMOBILIARIAS_1" FromRole="BARRIOS" ToRole="ENTIDADES_INMOBILIARIAS" />
+    <NavigationProperty Name="PROPIEDADES" Relationship="Self.FK_PROPIEDADES_BARRIOS" FromRole="BARRIOS" ToRole="PROPIEDADES" />
+  </EntityType>
+  <EntityType Name="BARRIOS_CIUDADES">
+    <Key>
+      <PropertyRef Name="BARRIO_CIUDAD_ID" />
+    </Key>
+    <Property Name="BARRIO_CIUDAD_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BARRIO_ID" Type="Int64" Nullable="false" />
+    <Property Name="CIUDAD_ID" Type="Int64" Nullable="false" />
+    <Property Name="CODIGO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="DateTime" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="DateTime" />
+    <NavigationProperty Name="BARRIOS" Relationship="Self.FK_BARRIOS_CIUDADES_BARRIOS" FromRole="BARRIOS_CIUDADES" ToRole="BARRIOS" />
+    <NavigationProperty Name="CIUDADES" Relationship="Self.FK_BARRIOS_CIUDADES_CIUDAD" FromRole="BARRIOS_CIUDADES" ToRole="CIUDADES" />
+  </EntityType>
+  <EntityType Name="CIUDADES">
+    <Key>
+      <PropertyRef Name="CIUDAD_ID" />
+    </Key>
+    <Property Name="CIUDAD_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CIUDAD" Type="String" MaxLength="120" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="DateTime" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="DateTime" />
+    <NavigationProperty Name="BARRIOS_CIUDADES" Relationship="Self.FK_BARRIOS_CIUDADES_CIUDAD" FromRole="CIUDADES" ToRole="BARRIOS_CIUDADES" />
+    <NavigationProperty Name="CIUDADES_DEPARTAMENTOS" Relationship="Self.FK_CIUDADES_DEPARTAMENTOS_CIUDA" FromRole="CIUDADES" ToRole="CIUDADES_DEPARTAMENTOS" />
+    <NavigationProperty Name="ENTIDADES_INMOBILIARIAS" Relationship="Self.FK_ENTIDADES_INMOBILIARIAS_CIUD" FromRole="CIUDADES" ToRole="ENTIDADES_INMOBILIARIAS" />
+    <NavigationProperty Name="PROPIEDADES" Relationship="Self.FK_PROPIEDADES_CIUDADES" FromRole="CIUDADES" ToRole="PROPIEDADES" />
+  </EntityType>
+  <EntityType Name="CIUDADES_DEPARTAMENTOS">
+    <Key>
+      <PropertyRef Name="CIUDAD_DEPARTAMENTO_ID" />
+    </Key>
+    <Property Name="CIUDAD_DEPARTAMENTO_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DEPARTAMENTO_ID" Type="Int64" Nullable="false" />
+    <Property Name="CIUDAD_ID" Type="Int64" Nullable="false" />
+    <Property Name="CODIGO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="DateTime" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="FECHA_MODIFCACION" Type="DateTime" />
+    <NavigationProperty Name="CIUDADES" Relationship="Self.FK_CIUDADES_DEPARTAMENTOS_CIUDA" FromRole="CIUDADES_DEPARTAMENTOS" ToRole="CIUDADES" />
+    <NavigationProperty Name="DEPARTAMENTOS" Relationship="Self.FK_CIUDADES_DEPARTAMENTOS_DEPAR" FromRole="CIUDADES_DEPARTAMENTOS" ToRole="DEPARTAMENTOS" />
+  </EntityType>
+  <EntityType Name="COBROS">
+    <Key>
+      <PropertyRef Name="COBRO_ID" />
+    </Key>
+    <Property Name="COBRO_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FECHA" Type="DateTime" Nullable="false" />
+    <Property Name="SOCIO_NEGOCIO_ID" Type="Int64" Nullable="false" />
+    <Property Name="ESTADO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TOTAL" Type="Decimal" Precision="15" Scale="0" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="DateTime" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="DateTime" />
+    <Property Name="OBSERVACION" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NUMERO_FACTURA" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="FECHA_FACTURA" Type="DateTime" />
+    <Property Name="CONDICION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="NUMERO_DOCUMENTO_COBRO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="COBROS_DETALLES">
+    <Key>
+      <PropertyRef Name="COBRO_DETALLE_ID" />
+    </Key>
+    <Property Name="COBRO_DETALLE_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="COBRO_ID" Type="Int64" Nullable="false" />
+    <Property Name="NUMERO_ITEM" Type="Int32" />
+    <Property Name="MONTO_DOCUMENTO" Type="Decimal" Precision="15" Scale="0" Nullable="false" />
+    <Property Name="TIPO_DOCUMENTO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MONEDA_DOCUMENTO" Type="Int64" Nullable="false" />
+    <Property Name="MONTO_PAGADO" Type="Decimal" Precision="15" Scale="0" Nullable="false" />
+    <Property Name="MONEDA_PAGO" Type="Int64" Nullable="false" />
+    <Property Name="FORMA_PAGO_ID" Type="Int64" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="DateTime" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="DateTime" />
+    <Property Name="OBSERVACION" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="TASA_CAMBIO" Type="Decimal" Precision="15" Scale="2" Nullable="false" />
+    <Property Name="DOCUMENTO_ID" Type="Int64" />
+  </EntityType>
+  <EntityType Name="CRONOGRAMAS_CUOTAS">
+    <Key>
+      <PropertyRef Name="CRONOGRAMA_CUOTA_ID" />
+    </Key>
+    <Property Name="CRONOGRAMA_CUOTA_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NUMERO_CUOTA" Type="Int32" />
+    <Property Name="FECHA_VENCIMIENTO" Type="DateTime" Nullable="false" />
+    <Property Name="MONTO" Type="Decimal" Precision="15" Scale="0" Nullable="false" />
+    <Property Name="OPERACION_PROPIEDAD_ID" Type="Int64" Nullable="false" />
+    <Property Name="ESTADO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="DateTime" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="DateTime" />
+    <Property Name="MONEDA_ID" Type="Int64" Nullable="false" />
+    <Property Name="FECHA_CANCELACION" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="DEPARTAMENTOS">
+    <Key>
+      <PropertyRef Name="DEPARTAMENTO_ID" />
+    </Key>
+    <Property Name="DEPARTAMENTO_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DEPARTAMENTO" Type="String" MaxLength="120" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="DateTime" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="DateTime" />
+    <NavigationProperty Name="CIUDADES_DEPARTAMENTOS" Relationship="Self.FK_CIUDADES_DEPARTAMENTOS_DEPAR" FromRole="DEPARTAMENTOS" ToRole="CIUDADES_DEPARTAMENTOS" />
+    <NavigationProperty Name="DEPARTAMENTOS_PAISES" Relationship="Self.FK_DEPARTAMENTOS_PAISES_DEPARTA" FromRole="DEPARTAMENTOS" ToRole="DEPARTAMENTOS_PAISES" />
+    <NavigationProperty Name="ENTIDADES_INMOBILIARIAS" Relationship="Self.FK_ENTIDADES_INMOBILIARIAS_DEPA" FromRole="DEPARTAMENTOS" ToRole="ENTIDADES_INMOBILIARIAS" />
+    <NavigationProperty Name="PROPIEDADES" Relationship="Self.FK_PROPIEDADES_DEPARTAMENTO" FromRole="DEPARTAMENTOS" ToRole="PROPIEDADES" />
+  </EntityType>
+  <EntityType Name="DEPARTAMENTOS_PAISES">
+    <Key>
+      <PropertyRef Name="DEPARTAMENTO_PAIS_ID" />
+    </Key>
+    <Property Name="DEPARTAMENTO_PAIS_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PAIS_ID" Type="Int64" Nullable="false" />
+    <Property Name="DEPARTAMENTO_ID" Type="Int64" Nullable="false" />
+    <Property Name="CODIGO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="DateTime" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="DateTime" />
+    <NavigationProperty Name="DEPARTAMENTOS" Relationship="Self.FK_DEPARTAMENTOS_PAISES_DEPARTA" FromRole="DEPARTAMENTOS_PAISES" ToRole="DEPARTAMENTOS" />
+    <NavigationProperty Name="PAISES" Relationship="Self.FK_DEPARTAMENTOS_PAISES_PAIS" FromRole="DEPARTAMENTOS_PAISES" ToRole="PAISES" />
+  </EntityType>
+  <EntityType Name="DOMINIOS">
+    <Key>
+      <PropertyRef Name="DOMINIO_ID" />
+    </Key>
+    <Property Name="DOMINIO_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DOMINIO" Type="String" MaxLength="120" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CODIGO_DOMINIO" Type="String" MaxLength="120" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="String" MaxLength="180" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="VALOR_DOMINIO" Type="String" MaxLength="120" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="DateTime" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="EMPRESAS">
+    <Key>
+      <PropertyRef Name="EMPRESA_ID" />
+    </Key>
+    <Property Name="EMPRESA_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SOCIO_NEGOCIO_ID" Type="Int64" />
+    <Property Name="RAZON_SOCIAL" Type="String" MaxLength="180" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NOMBRE_CORTO" Type="String" MaxLength="120" FixedLength="false" Unicode="true" />
+    <Property Name="NUMERO_DOCUMENTO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DIGITO_VERIFICADOR" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="TIPO_PERSONERIA" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TIPO_DOCUMENTO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DIRECCION" Type="String" MaxLength="180" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TELEFONO" Type="String" MaxLength="120" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ACTIVO" Type="String" MaxLength="2" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="DateTime" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="DateTime" />
+    <NavigationProperty Name="SOCIOS_NEGOCIOS" Relationship="Self.FK_EMPRESAS_SOCIO_NEGOCIO" FromRole="EMPRESAS" ToRole="SOCIOS_NEGOCIOS" />
+    <NavigationProperty Name="ENTIDADES_INMOBILIARIAS" Relationship="Self.FK_ENTIDADES_INMOBILIARIAS_EMPR" FromRole="EMPRESAS" ToRole="ENTIDADES_INMOBILIARIAS" />
+    <NavigationProperty Name="PROPIEDADES" Relationship="Self.FK_PROPIEDADES_EMPRESA" FromRole="EMPRESAS" ToRole="PROPIEDADES" />
+    <NavigationProperty Name="SUCURSALES" Relationship="Self.FK_SUCURSALES_EMPRESA" FromRole="EMPRESAS" ToRole="SUCURSALES" />
+    <NavigationProperty Name="USUARIOS" Relationship="Self.FK_USUARIOS_EMPRESA" FromRole="EMPRESAS" ToRole="USUARIOS" />
+  </EntityType>
+  <EntityType Name="ENTIDADES_INMOBILIARIAS">
+    <Key>
+      <PropertyRef Name="ENTIDAD_INMOBILIARIA_ID" />
+    </Key>
+    <Property Name="ENTIDAD_INMOBILIARIA_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOMBRE" Type="String" MaxLength="180" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EMPRESA_ID" Type="Int64" />
+    <Property Name="PAIS_ID" Type="Int64" />
+    <Property Name="DEPARTAMENTO_ID" Type="Int64" />
+    <Property Name="CIUDAD_ID" Type="Int64" />
+    <Property Name="BARRIO_ID" Type="Int64" />
+    <Property Name="TIPO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CUENTA_CATASTRAL" Type="String" MaxLength="120" FixedLength="false" Unicode="true" />
+    <Property Name="CANTIDAD_UNIDADES" Type="Int32" />
+    <Property Name="ANO_CONSTRUCCION" Type="Int32" />
+    <Property Name="M2_CONSTRUCCION" Type="Int32" />
+    <Property Name="MEDIDAS_LOTE" Type="String" MaxLength="120" FixedLength="false" Unicode="true" />
+    <Property Name="NUMERO_FINCA" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="CARACTERISTICA" Type="String" MaxLength="5000" FixedLength="false" Unicode="true" />
+    <Property Name="NATURALEZA" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DIRECCION" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="ESTADO" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="DateTime" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="DateTime" />
+    <Property Name="OBSERVACION" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="BARRIOS" Relationship="Self.FK_ENTIDADES_INMOBILIARIAS_1" FromRole="ENTIDADES_INMOBILIARIAS" ToRole="BARRIOS" />
+    <NavigationProperty Name="CIUDADES" Relationship="Self.FK_ENTIDADES_INMOBILIARIAS_CIUD" FromRole="ENTIDADES_INMOBILIARIAS" ToRole="CIUDADES" />
+    <NavigationProperty Name="DEPARTAMENTOS" Relationship="Self.FK_ENTIDADES_INMOBILIARIAS_DEPA" FromRole="ENTIDADES_INMOBILIARIAS" ToRole="DEPARTAMENTOS" />
+    <NavigationProperty Name="EMPRESAS" Relationship="Self.FK_ENTIDADES_INMOBILIARIAS_EMPR" FromRole="ENTIDADES_INMOBILIARIAS" ToRole="EMPRESAS" />
+    <NavigationProperty Name="PAISES" Relationship="Self.FK_ENTIDADES_INMOBILIARIAS_PAIS" FromRole="ENTIDADES_INMOBILIARIAS" ToRole="PAISES" />
+    <NavigationProperty Name="PROPIEDADES" Relationship="Self.FK_PROPIEDADES_ENTIDADES_INMOBI" FromRole="ENTIDADES_INMOBILIARIAS" ToRole="PROPIEDADES" />
+  </EntityType>
+  <EntityType Name="FORMAS_PAGOS">
+    <Key>
+      <PropertyRef Name="FORMA_PAGO_ID" />
+    </Key>
+    <Property Name="FORMA_PAGO_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FORMA_PAGO" Type="String" MaxLength="120" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CODIGO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DIAS" Type="Int32" />
+    <Property Name="POR_DEFECTO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="REQUERE_BANCO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="DateTime" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="IBE_VERSION_HISTORY">
+    <Key>
+      <PropertyRef Name="IBE_VH_ID" />
+    </Key>
+    <Property Name="IBE_VH_ID" Type="Int32" Nullable="false" />
+    <Property Name="IBE_VH_MODIFY_DATE" Type="DateTime" Nullable="false" />
+    <Property Name="IBE_VH_USER_NAME" Type="String" MaxLength="67" FixedLength="false" Unicode="true" />
+    <Property Name="IBE_VH_OBJECT_TYPE" Type="Int16" Nullable="false" />
+    <Property Name="IBE_VH_OBJECT_NAME" Type="String" MaxLength="67" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IBE_VH_HEADER" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="IBE_VH_BODY" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="IBE_VH_DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="IMAGENES_ENTIDAD_INMOBILIARIA">
+    <Key>
+      <PropertyRef Name="IMAGEN_ENTIDAD_INMOBILIARIA_ID" />
+    </Key>
+    <Property Name="IMAGEN_ENTIDAD_INMOBILIARIA_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FOTO" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="ENTIDAD_INMOBILIARIA_ID" Type="Int64" />
+    <Property Name="PROPIEDAD_ID" Type="Int64" />
+    <Property Name="USUARIO_CREACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="DateTime" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="DateTime" />
+    <Property Name="RUTA_IMAGEN" Type="String" MaxLength="5000" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="IMAGENES_OPERACIONES">
+    <Key>
+      <PropertyRef Name="IMAGEN_OPERACION_ID" />
+    </Key>
+    <Property Name="IMAGEN_OPERACION_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IMAGEN" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="OPERACION_ID" Type="Int64" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="DateTime" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="IMPUESTOS">
+    <Key>
+      <PropertyRef Name="IMPUESTO_ID" />
+    </Key>
+    <Property Name="IMPUESTO_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IMPUESTO" Type="String" MaxLength="120" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PORCENTAJE_IMPUESTO" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
+    <Property Name="FACTOR_DISCRIMINADO" Type="Decimal" Precision="15" Scale="2" Nullable="false" />
+    <Property Name="FACTOR_IMPUESTO" Type="Decimal" Precision="15" Scale="2" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="DateTime" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="INGRESOS_EGRESOS">
+    <Key>
+      <PropertyRef Name="INGRESO_EGRESO_ID" />
+    </Key>
+    <Property Name="INGRESO_EGRESO_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FECHA" Type="DateTime" Nullable="false" />
+    <Property Name="MONTO" Type="Decimal" Precision="15" Scale="0" Nullable="false" />
+    <Property Name="SOCIO_NEGOCIO_ID" Type="Int64" />
+    <Property Name="ESTADO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ENTIDAD_INMOBILIARIA_ID" Type="Int64" />
+    <Property Name="TIPO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PROPIEDAD_ID" Type="Int64" />
+    <Property Name="ITEM_INGRESO_EGRESO_ID" Type="Int64" Nullable="false" />
+    <Property Name="NUMERO_FACTURA" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="FECHA_FACTURA" Type="DateTime" />
+    <Property Name="SALDO" Type="Decimal" Precision="15" Scale="0" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="DateTime" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="DateTime" />
+    <Property Name="OBSERVACION" Type="String" MaxLength="5000" FixedLength="false" Unicode="true" />
+    <Property Name="TIPO_IMPUTACION" Type="String" MaxLength="120" FixedLength="false" Unicode="true" />
+    <Property Name="FORMA_PAGO_ID" Type="Int64" />
+    <Property Name="NUMERO_DOCUMENTO_PAGO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ITEMS_INGRESOS_EGRESOS">
+    <Key>
+      <PropertyRef Name="ITEM_INGRESO_EGRESO_ID" />
+    </Key>
+    <Property Name="ITEM_INGRESO_EGRESO_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ITEM" Type="String" MaxLength="180" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TIPO_ITEM" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TIPO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="DateTime" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="DateTime" />
+    <Property Name="MODIFICA_ESTADO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="APLICACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="LIQUIDACIONES">
+    <Key>
+      <PropertyRef Name="LIQUIDACION_ID" />
+    </Key>
+    <Property Name="LIQUIDACION_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FECHA" Type="DateTime" Nullable="false" />
+    <Property Name="FECHA_FISCALIZACION" Type="DateTime" Nullable="false" />
+    <Property Name="NUMERO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="OPERACION_PROPIEDAD_ID" Type="Int64" Nullable="false" />
+    <Property Name="ENTREGO_LLAVES" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TOTAL_GARANTIA" Type="Decimal" Precision="15" Scale="0" Nullable="false" />
+    <Property Name="MOTIVO_LIQUIDACION" Type="String" MaxLength="180" FixedLength="false" Unicode="true" />
+    <Property Name="OBSERVACION" Type="String" MaxLength="180" FixedLength="false" Unicode="true" />
+    <Property Name="TOTAL_GASTOS" Type="Decimal" Precision="15" Scale="0" Nullable="false" />
+    <Property Name="SALDO" Type="Decimal" Precision="15" Scale="0" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="DateTime" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="LIQUIDACIONES_DETALLES">
+    <Key>
+      <PropertyRef Name="LIQUIDACION_DETALLE_ID" />
+    </Key>
+    <Property Name="LIQUIDACION_DETALLE_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LIQUIDACION_ID" Type="Int64" Nullable="false" />
+    <Property Name="NUMERO_ITEM" Type="Int32" />
+    <Property Name="ITEM_INGRESO_EGRESO_ID" Type="Int64" Nullable="false" />
+    <Property Name="MONTO" Type="Decimal" Precision="15" Scale="0" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="DateTime" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="MONEDAS">
+    <Key>
+      <PropertyRef Name="MONEDA_ID" />
+    </Key>
+    <Property Name="MONEDA_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MONEDA" Type="String" MaxLength="120" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SIMBOLO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SIMBOLO_SET" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="TIPO_MONEDA" Type="String" MaxLength="120" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PRECISION_DECIMALES" Type="Int64" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="DateTime" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="OPERACIONES_PROPIEDADES">
+    <Key>
+      <PropertyRef Name="OPERACION_PROPIEDAD_ID" />
+    </Key>
+    <Property Name="OPERACION_PROPIEDAD_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FECHA_OPERACION" Type="DateTime" Nullable="false" />
+    <Property Name="TIPO_OPERACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SOCIO_NEGOCIO_ID" Type="Int64" Nullable="false" />
+    <Property Name="PROPIEDAD_ID" Type="Int64" />
+    <Property Name="FECHA_FINALIZACION" Type="DateTime" />
+    <Property Name="ENTIDAD_INMOBILIARIA_ID" Type="Int64" />
+    <Property Name="FECHA_INICIO_CONTRATO" Type="DateTime" Nullable="false" />
+    <Property Name="FECHA_FIN_CONTRATO" Type="DateTime" />
+    <Property Name="PLAZO" Type="Int32" />
+    <Property Name="PRECIO" Type="Decimal" Precision="15" Scale="0" Nullable="false" />
+    <Property Name="ESTADO" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="GARANTIA" Type="Decimal" Precision="15" Scale="0" Nullable="false" />
+    <Property Name="SUCURSAL_ID" Type="Int64" Nullable="false" />
+    <Property Name="MONEDA_ID" Type="Int64" Nullable="false" />
+    <Property Name="TIPO_ENTIDAD" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TIPO_CONTRATO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CONDICION_OPERACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AVISO_RENOVACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_RENOVACION" Type="DateTime" />
+    <Property Name="DIA_PAGO" Type="Int64" />
+    <Property Name="MONTO_MORA" Type="Decimal" Precision="15" Scale="0" Nullable="false" />
+    <Property Name="DIAS_GRACIA" Type="Int64" />
+    <Property Name="USUARIO_CREACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="DateTime" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="DateTime" />
+    <Property Name="MONTO_TOTAL_OPERACION" Type="Decimal" Precision="15" Scale="0" Nullable="false" />
+    <Property Name="MONTO_TOTAL_LETRAS" Type="String" MaxLength="5000" FixedLength="false" Unicode="true" />
+    <Property Name="VENDEDOR_ID" Type="Int64" />
+    <Property Name="TIPO_FINANCIACION" Type="String" MaxLength="120" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PAISES">
+    <Key>
+      <PropertyRef Name="PAIS_ID" />
+    </Key>
+    <Property Name="PAIS_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PAIS" Type="String" MaxLength="120" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CODIGO_ISO_2" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CODIGO_ISO_3" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NACIONALIDAD" Type="String" MaxLength="120" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="DateTime" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="DateTime" />
+    <NavigationProperty Name="DEPARTAMENTOS_PAISES" Relationship="Self.FK_DEPARTAMENTOS_PAISES_PAIS" FromRole="PAISES" ToRole="DEPARTAMENTOS_PAISES" />
+    <NavigationProperty Name="ENTIDADES_INMOBILIARIAS" Relationship="Self.FK_ENTIDADES_INMOBILIARIAS_PAIS" FromRole="PAISES" ToRole="ENTIDADES_INMOBILIARIAS" />
+    <NavigationProperty Name="PROPIEDADES" Relationship="Self.FK_PROPIEDADES_PAIS" FromRole="PAISES" ToRole="PROPIEDADES" />
+  </EntityType>
+  <EntityType Name="PROPIEDADES">
+    <Key>
+      <PropertyRef Name="PROPIEDAD_ID" />
+    </Key>
+    <Property Name="PROPIEDAD_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOMBRE" Type="String" MaxLength="180" FixedLength="false" Unicode="true" />
+    <Property Name="TIPO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CUENTA_CATASTRAL" Type="String" MaxLength="120" FixedLength="false" Unicode="true" />
+    <Property Name="ENTIDAD_INMOBILIARIA_ID" Type="Int64" />
+    <Property Name="EMPRESA_ID" Type="Int64" />
+    <Property Name="PAIS_ID" Type="Int64" Nullable="false" />
+    <Property Name="DEPARTAMENTO_ID" Type="Int64" Nullable="false" />
+    <Property Name="CIUDAD_ID" Type="Int64" Nullable="false" />
+    <Property Name="BARRIO_ID" Type="Int64" Nullable="false" />
+    <Property Name="DIRECCION" Type="String" MaxLength="180" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CARACTERISTICAS" Type="String" MaxLength="5000" FixedLength="false" Unicode="true" />
+    <Property Name="TIENE_COCHERA" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CANTIDAD_COCHERA" Type="Int32" />
+    <Property Name="M2_CONSTRUCCION" Type="Int32" />
+    <Property Name="ANO_CONSTRUCCION" Type="Int32" />
+    <Property Name="MEDIDA_LOTE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="PRECIO_VENTA" Type="Decimal" Precision="15" Scale="0" Nullable="false" />
+    <Property Name="COMISION_VENTA" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
+    <Property Name="PRECIO_ALQUILER" Type="Decimal" Precision="15" Scale="0" Nullable="false" />
+    <Property Name="COMISION_ALQUILER" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
+    <Property Name="ALQUILADA" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="VENDIDA" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ESTADO" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NUMERO_FINCA" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="NIS" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="NUMERO_MEDIDOR" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="SENADO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="DateTime" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="DateTime" />
+    <Property Name="NUMERO_LOTE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="NUMERO_MANZANA" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="DIMENSIONES" Type="String" MaxLength="5000" FixedLength="false" Unicode="true" />
+    <Property Name="PRECIO" Type="Decimal" Precision="15" Scale="0" Nullable="false" />
+    <Property Name="COMISION" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
+    <Property Name="RESOLUCION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="OBSERVACION" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="NUMERO_MEDIDOR_ESSAP" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="CTA_CTE_ESSAP" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="BARRIOS" Relationship="Self.FK_PROPIEDADES_BARRIOS" FromRole="PROPIEDADES" ToRole="BARRIOS" />
+    <NavigationProperty Name="CIUDADES" Relationship="Self.FK_PROPIEDADES_CIUDADES" FromRole="PROPIEDADES" ToRole="CIUDADES" />
+    <NavigationProperty Name="DEPARTAMENTOS" Relationship="Self.FK_PROPIEDADES_DEPARTAMENTO" FromRole="PROPIEDADES" ToRole="DEPARTAMENTOS" />
+    <NavigationProperty Name="EMPRESAS" Relationship="Self.FK_PROPIEDADES_EMPRESA" FromRole="PROPIEDADES" ToRole="EMPRESAS" />
+    <NavigationProperty Name="ENTIDADES_INMOBILIARIAS" Relationship="Self.FK_PROPIEDADES_ENTIDADES_INMOBI" FromRole="PROPIEDADES" ToRole="ENTIDADES_INMOBILIARIAS" />
+    <NavigationProperty Name="PAISES" Relationship="Self.FK_PROPIEDADES_PAIS" FromRole="PROPIEDADES" ToRole="PAISES" />
+  </EntityType>
+  <EntityType Name="PROPIETARIOS_ENT_INMOB">
+    <Key>
+      <PropertyRef Name="PROPIETARIO_ENT_INMOB_ID" />
+    </Key>
+    <Property Name="PROPIETARIO_ENT_INMOB_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ENTIDAD_INMOBILIARIA_ID" Type="Int64" />
+    <Property Name="PROPIEDAD_ID" Type="Int64" />
+    <Property Name="PROPIETARIO_ID" Type="Int64" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="DateTime" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="RESCISIONES">
+    <Key>
+      <PropertyRef Name="RESCISION_ID" />
+    </Key>
+    <Property Name="RESCISION_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FECHA" Type="DateTime" Nullable="false" />
+    <Property Name="TIPO" Type="String" MaxLength="120" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MONTO" Type="Decimal" Precision="15" Scale="0" Nullable="false" />
+    <Property Name="OPERACION_ID" Type="Int64" Nullable="false" />
+    <Property Name="OBSERVACION" Type="String" MaxLength="5000" FixedLength="false" Unicode="true" />
+    <Property Name="USUARIO_CREACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="DateTime" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="RUC">
+    <Key>
+      <PropertyRef Name="RUC1" />
+    </Key>
+    <Property Name="RUC1" Type="String" MaxLength="120" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RAZON_SOCIAL" Type="String" MaxLength="5000" FixedLength="false" Unicode="true" />
+    <Property Name="DV" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RUC_V" Type="String" MaxLength="120" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SOCIOS_NEGOCIOS">
+    <Key>
+      <PropertyRef Name="SOCIO_NEGOCIO_ID" />
+    </Key>
+    <Property Name="SOCIO_NEGOCIO_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RAZON_SOCIAL" Type="String" MaxLength="180" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NUMERO_DOCUMENTO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DIGITO_VERIFICADOR" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="CLASIFICACION_FISCAL" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TIPO_DOCUMENTO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TIPO_PERSONERIA" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ACTIVO" Type="String" MaxLength="2" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DIRECCION" Type="String" MaxLength="180" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TELEFONO" Type="String" MaxLength="120" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ES_PROPIETARIO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ES_INQUILINO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ES_PORTERO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ES_ADMINISTRADOR" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ES_CLIENTE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ES_PROVEEDOR" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ES_EMPRESA" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ES_VENDEDOR" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EMAIL" Type="String" MaxLength="180" FixedLength="false" Unicode="true" />
+    <Property Name="UBICACION" Type="String" MaxLength="120" FixedLength="false" Unicode="true" />
+    <Property Name="ES_CONTRIBUYENTE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="OBSERVACION" Type="String" MaxLength="5000" FixedLength="false" Unicode="true" />
+    <Property Name="USUARIO_CREACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="DateTime" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="DateTime" />
+    <Property Name="SEXO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="EMPRESAS" Relationship="Self.FK_EMPRESAS_SOCIO_NEGOCIO" FromRole="SOCIOS_NEGOCIOS" ToRole="EMPRESAS" />
+  </EntityType>
+  <EntityType Name="SUCURSALES">
+    <Key>
+      <PropertyRef Name="SUCURSAL_ID" />
+    </Key>
+    <Property Name="SUCURSAL_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SUCURSAL" Type="String" MaxLength="120" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EMPRESA_ID" Type="Int64" Nullable="false" />
+    <Property Name="DIRECCION" Type="String" MaxLength="180" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TELEFONO" Type="String" MaxLength="120" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="DateTime" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="DateTime" />
+    <Property Name="POR_DEFECTO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="EMPRESAS" Relationship="Self.FK_SUCURSALES_EMPRESA" FromRole="SUCURSALES" ToRole="EMPRESAS" />
+  </EntityType>
+  <EntityType Name="USUARIOS">
+    <Key>
+      <PropertyRef Name="CODIGO_USUARIO" />
+    </Key>
+    <Property Name="CODIGO_USUARIO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PASSWORD" Type="String" MaxLength="120" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ACTIVO" Type="String" MaxLength="2" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="DateTime" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="EMPRESA_ID" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="EMPRESAS" Relationship="Self.FK_USUARIOS_EMPRESA" FromRole="USUARIOS" ToRole="EMPRESAS" />
+    <Property Name="PERFIL" Type="String" Nullable="false" MaxLength="120" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="VARIABLES_ENTORNOS">
+    <Key>
+      <PropertyRef Name="VARIABLE_ENTORNO_ID" />
+    </Key>
+    <Property Name="VARIABLE_ENTORNO_ID" Type="Int64" Nullable="false" />
+    <Property Name="CODIGO_USUARIO" Type="String" MaxLength="120" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CLAVE" Type="String" MaxLength="120" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="VALOR" Type="String" MaxLength="120" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="String" MaxLength="120" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="DateTime" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="String" MaxLength="120" FixedLength="false" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="BARRIOS_CIUDADES_VIEW">
+    <Key>
+      <PropertyRef Name="BARRIO_CIUDAD_ID" />
+      <PropertyRef Name="CIUDAD_ID" />
+      <PropertyRef Name="CIUDAD" />
+      <PropertyRef Name="BARRIO_ID" />
+      <PropertyRef Name="BARRIO" />
+      <PropertyRef Name="CODIGO" />
+      <PropertyRef Name="USUARIO_CREACION" />
+      <PropertyRef Name="FECHA_CREACION" />
+    </Key>
+    <Property Name="BARRIO_CIUDAD_ID" Type="Int64" Nullable="false" />
+    <Property Name="CIUDAD_ID" Type="Int64" Nullable="false" />
+    <Property Name="CIUDAD" Type="String" MaxLength="120" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="BARRIO_ID" Type="Int64" Nullable="false" />
+    <Property Name="BARRIO" Type="String" MaxLength="120" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CODIGO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="DateTime" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="BARRIOS_VIEW">
+    <Key>
+      <PropertyRef Name="BARRIO_ID" />
+      <PropertyRef Name="BARRIO" />
+      <PropertyRef Name="USUARIO_CREACION" />
+      <PropertyRef Name="FECHA_CREACION" />
+    </Key>
+    <Property Name="BARRIO_ID" Type="Int64" Nullable="false" />
+    <Property Name="BARRIO" Type="String" MaxLength="120" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="DateTime" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="CIUDADES_DEPARTAMENTOS_VIEW">
+    <Key>
+      <PropertyRef Name="CIUDAD_DEPARTAMENTO_ID" />
+      <PropertyRef Name="DEPARTAMENTO_ID" />
+      <PropertyRef Name="DEPARTAMENTO" />
+      <PropertyRef Name="CIUDAD_ID" />
+      <PropertyRef Name="CIUDAD" />
+      <PropertyRef Name="CODIGO" />
+      <PropertyRef Name="USUARIO_CREACION" />
+      <PropertyRef Name="FECHA_CREACION" />
+    </Key>
+    <Property Name="CIUDAD_DEPARTAMENTO_ID" Type="Int64" Nullable="false" />
+    <Property Name="DEPARTAMENTO_ID" Type="Int64" Nullable="false" />
+    <Property Name="DEPARTAMENTO" Type="String" MaxLength="120" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CIUDAD_ID" Type="Int64" Nullable="false" />
+    <Property Name="CIUDAD" Type="String" MaxLength="120" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CODIGO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="DateTime" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="CIUDADES_VIEW">
+    <Key>
+      <PropertyRef Name="CIUDAD_ID" />
+      <PropertyRef Name="CIUDAD" />
+      <PropertyRef Name="USUARIO_CREACION" />
+      <PropertyRef Name="FECHA_CREACION" />
+    </Key>
+    <Property Name="CIUDAD_ID" Type="Int64" Nullable="false" />
+    <Property Name="CIUDAD" Type="String" MaxLength="120" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="DateTime" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="COBROS_VIEW">
+    <Key>
+      <PropertyRef Name="COBRO_ID" />
+      <PropertyRef Name="FECHA" />
+      <PropertyRef Name="SOCIO_NEGOCIO_ID" />
+      <PropertyRef Name="SOCIO_NEGOCIO" />
+      <PropertyRef Name="ESTADO" />
+      <PropertyRef Name="TOTAL" />
+      <PropertyRef Name="OBSERVACION" />
+      <PropertyRef Name="USUARIO_CREACION" />
+      <PropertyRef Name="FECHA_CREACION" />
+    </Key>
+    <Property Name="COBRO_ID" Type="Int64" Nullable="false" />
+    <Property Name="FECHA" Type="DateTime" Nullable="false" />
+    <Property Name="SOCIO_NEGOCIO_ID" Type="Int64" Nullable="false" />
+    <Property Name="SOCIO_NEGOCIO" Type="String" MaxLength="180" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RUC" Type="String" MaxLength="32765" FixedLength="false" Unicode="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="NUMERO_DOCUMENTO_COBRO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ESTADO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TOTAL" Type="Decimal" Precision="15" Scale="0" Nullable="false" />
+    <Property Name="OBSERVACION" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="DateTime" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="DateTime" />
+    <Property Name="NUMERO_FACTURA" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="CRONOGRAMAS_CUOTAS_VIEW">
+    <Key>
+      <PropertyRef Name="CRONOGRAMA_CUOTA_ID" />
+      <PropertyRef Name="MONTO" />
+      <PropertyRef Name="OPERACION_PROPIEDAD_ID" />
+      <PropertyRef Name="TIPO_OPERACION" />
+      <PropertyRef Name="SOCIO_NEGOCIO_ID" />
+      <PropertyRef Name="SOCIO_NEGOCIO" />
+      <PropertyRef Name="ESTADO" />
+      <PropertyRef Name="MONEDA_ID" />
+      <PropertyRef Name="MONEDA" />
+      <PropertyRef Name="USUARIO_CREACION" />
+      <PropertyRef Name="FECHA_CREACION" />
+      <PropertyRef Name="ENTIDAD_INMOBILIARIA_ID" />
+      <PropertyRef Name="ENTIDAD" />
+      <PropertyRef Name="PROPIEDAD_ID" />
+    </Key>
+    <Property Name="CRONOGRAMA_CUOTA_ID" Type="Int64" Nullable="false" />
+    <Property Name="NUMERO_CUOTA" Type="Int32" />
+    <Property Name="FECHA_VENCIMIENTO" Type="DateTime" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="MONTO" Type="Decimal" Precision="15" Scale="0" Nullable="false" />
+    <Property Name="OPERACION_PROPIEDAD_ID" Type="Int64" Nullable="false" />
+    <Property Name="TIPO_OPERACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SOCIO_NEGOCIO_ID" Type="Int64" Nullable="false" />
+    <Property Name="SOCIO_NEGOCIO" Type="String" MaxLength="180" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ESTADO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MONEDA_ID" Type="Int64" Nullable="false" />
+    <Property Name="MONEDA" Type="String" MaxLength="120" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CANCELACION" Type="DateTime" />
+    <Property Name="USUARIO_CREACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="DateTime" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="DateTime" />
+    <Property Name="ENTIDAD_INMOBILIARIA_ID" Type="Int64" Nullable="false" />
+    <Property Name="ENTIDAD" Type="String" MaxLength="180" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PROPIEDAD_ID" Type="Int64" Nullable="false" />
+    <Property Name="PROPIEDAD" Type="String" MaxLength="180" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="DEPARTAMENTOS_PAISES_VIEW">
+    <Key>
+      <PropertyRef Name="DEPARTAMENTO_PAIS_ID" />
+      <PropertyRef Name="PAIS_ID" />
+      <PropertyRef Name="PAIS" />
+      <PropertyRef Name="NACIONALIDAD" />
+      <PropertyRef Name="CODIGO_ISO2" />
+      <PropertyRef Name="CODIGO_ISO3" />
+      <PropertyRef Name="DEPARTAMENTO_ID" />
+      <PropertyRef Name="DEPARTAMENTO" />
+      <PropertyRef Name="CODIGO" />
+      <PropertyRef Name="USUARIO_CREACION" />
+      <PropertyRef Name="FECHA_CREACION" />
+    </Key>
+    <Property Name="DEPARTAMENTO_PAIS_ID" Type="Int64" Nullable="false" />
+    <Property Name="PAIS_ID" Type="Int64" Nullable="false" />
+    <Property Name="PAIS" Type="String" MaxLength="120" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NACIONALIDAD" Type="String" MaxLength="120" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CODIGO_ISO2" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CODIGO_ISO3" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DEPARTAMENTO_ID" Type="Int64" Nullable="false" />
+    <Property Name="DEPARTAMENTO" Type="String" MaxLength="120" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CODIGO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="DateTime" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="DEPARTAMENTOS_VIEW">
+    <Key>
+      <PropertyRef Name="DEPARTAMENTO_ID" />
+      <PropertyRef Name="DEPARTAMENTO" />
+      <PropertyRef Name="USUARIO_CREACION" />
+      <PropertyRef Name="FECHA_CREACION" />
+    </Key>
+    <Property Name="DEPARTAMENTO_ID" Type="Int64" Nullable="false" />
+    <Property Name="DEPARTAMENTO" Type="String" MaxLength="120" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="DateTime" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="EMPRESAS_VIEW">
+    <Key>
+      <PropertyRef Name="EMPRESA_ID" />
+      <PropertyRef Name="EMPRESA" />
+      <PropertyRef Name="SOCIO_NEGOCIO" />
+      <PropertyRef Name="NUMERO_DOCUMENTO" />
+      <PropertyRef Name="TIPO_PERSONERIA" />
+      <PropertyRef Name="TIPO_DOCUMENTO" />
+      <PropertyRef Name="DIRECCION" />
+      <PropertyRef Name="TELEFONO" />
+      <PropertyRef Name="ACTIVO" />
+      <PropertyRef Name="USUARIO_CREACION" />
+      <PropertyRef Name="FECHA_CREACION" />
+    </Key>
+    <Property Name="EMPRESA_ID" Type="Int64" Nullable="false" />
+    <Property Name="EMPRESA" Type="String" MaxLength="180" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NOMBRE_CORTO" Type="String" MaxLength="120" FixedLength="false" Unicode="true" />
+    <Property Name="SOCIO_NEGOCIO_ID" Type="Int64" />
+    <Property Name="SOCIO_NEGOCIO" Type="String" MaxLength="180" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NUMERO_DOCUMENTO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DIGITO_VERIFICADOR" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="RUC" Type="String" MaxLength="32765" FixedLength="false" Unicode="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="TIPO_PERSONERIA" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TIPO_DOCUMENTO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DIRECCION" Type="String" MaxLength="180" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TELEFONO" Type="String" MaxLength="120" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ACTIVO" Type="String" MaxLength="2" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="DateTime" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="ENTIDADES_INMOBILIARIAS_VIEW">
+    <Key>
+      <PropertyRef Name="ENTIDAD_INMOBILIARIA_ID" />
+      <PropertyRef Name="NOMBRE" />
+      <PropertyRef Name="PAIS_ID" />
+      <PropertyRef Name="PAIS" />
+      <PropertyRef Name="DEPARTAMENTO_ID" />
+      <PropertyRef Name="DEPARTAMENTO" />
+      <PropertyRef Name="CIUDAD_ID" />
+      <PropertyRef Name="CIUDAD" />
+      <PropertyRef Name="BARRIO_ID" />
+      <PropertyRef Name="BARRIO" />
+      <PropertyRef Name="USUARIO_CREACION" />
+      <PropertyRef Name="FECHA_CREACION" />
+    </Key>
+    <Property Name="ENTIDAD_INMOBILIARIA_ID" Type="Int64" Nullable="false" />
+    <Property Name="NOMBRE" Type="String" MaxLength="180" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TIPO" Type="String" MaxLength="32765" FixedLength="false" Unicode="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="DIRECCION" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="CANTIDAD_UNIDADES" Type="Int32" />
+    <Property Name="ANO_CONSTRUCCION" Type="Int32" />
+    <Property Name="M2_CONSTRUCCION" Type="Int32" />
+    <Property Name="MEDIDAS_LOTE" Type="String" MaxLength="120" FixedLength="false" Unicode="true" />
+    <Property Name="CARACTERISTICAS" Type="String" MaxLength="5000" FixedLength="false" Unicode="true" />
+    <Property Name="NUMERO_FINCA" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="CUENTA_CATASTRAL" Type="String" MaxLength="120" FixedLength="false" Unicode="true" />
+    <Property Name="PAIS_ID" Type="Int64" Nullable="false" />
+    <Property Name="PAIS" Type="String" MaxLength="120" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DEPARTAMENTO_ID" Type="Int64" Nullable="false" />
+    <Property Name="DEPARTAMENTO" Type="String" MaxLength="120" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CIUDAD_ID" Type="Int64" Nullable="false" />
+    <Property Name="CIUDAD" Type="String" MaxLength="120" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="BARRIO_ID" Type="Int64" Nullable="false" />
+    <Property Name="BARRIO" Type="String" MaxLength="120" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="DateTime" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="FORMAS_PAGOS_VIEW">
+    <Key>
+      <PropertyRef Name="FORMA_PAGO_ID" />
+      <PropertyRef Name="FORMA_PAGO" />
+      <PropertyRef Name="CODIGO" />
+      <PropertyRef Name="POR_DEFECTO" />
+      <PropertyRef Name="REQUERE_BANCO" />
+      <PropertyRef Name="USUARIO_CREACION" />
+      <PropertyRef Name="FECHA_CREACION" />
+    </Key>
+    <Property Name="FORMA_PAGO_ID" Type="Int64" Nullable="false" />
+    <Property Name="FORMA_PAGO" Type="String" MaxLength="120" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CODIGO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DIAS" Type="Int32" />
+    <Property Name="POR_DEFECTO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="REQUERE_BANCO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="DateTime" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="IMAGENES_ENTIDAD_INMOB_VIEW">
+    <Key>
+      <PropertyRef Name="IMAGEN_ENTIDAD_INMOBILIARIA_ID" />
+      <PropertyRef Name="ENTIDAD_INMOBILIARIA" />
+      <PropertyRef Name="USUARIO_CREACION" />
+      <PropertyRef Name="FECHA_CREACION" />
+    </Key>
+    <Property Name="IMAGEN_ENTIDAD_INMOBILIARIA_ID" Type="Int64" Nullable="false" />
+    <Property Name="FOTO" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="RUTA_IMAGEN" Type="String" MaxLength="5000" FixedLength="false" Unicode="true" />
+    <Property Name="ENTIDAD_INMOBILIARIA_ID" Type="Int64" />
+    <Property Name="ENTIDAD_INMOBILIARIA" Type="String" MaxLength="180" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PROPIEDAD_ID" Type="Int64" />
+    <Property Name="PROPIEDAD" Type="String" MaxLength="180" FixedLength="false" Unicode="true" />
+    <Property Name="USUARIO_CREACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="DateTime" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="IMAGENES_OPERACIONES_VIEW">
+    <Key>
+      <PropertyRef Name="IMAGEN_OPERACION_ID" />
+      <PropertyRef Name="OPERACION_ID" />
+      <PropertyRef Name="FECHA_OPERACION" />
+      <PropertyRef Name="TIPO_OPERACION" />
+      <PropertyRef Name="SOCIO_NEGOCIO" />
+      <PropertyRef Name="USUARIO_CREACION" />
+      <PropertyRef Name="FECHA_CREACION" />
+    </Key>
+    <Property Name="IMAGEN_OPERACION_ID" Type="Int64" Nullable="false" />
+    <Property Name="IMAGEN" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="OPERACION_ID" Type="Int64" Nullable="false" />
+    <Property Name="FECHA_OPERACION" Type="DateTime" Nullable="false" />
+    <Property Name="TIPO_OPERACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SOCIO_NEGOCIO" Type="String" MaxLength="180" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="DateTime" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="IMPUESTOS_VIEW">
+    <Key>
+      <PropertyRef Name="IMPUESTO_ID" />
+      <PropertyRef Name="IMPUESTO" />
+      <PropertyRef Name="PORCENTAJE_IMPUESTO" />
+      <PropertyRef Name="FACTOR_DISCRIMINADO" />
+      <PropertyRef Name="FACTOR_IMPUESTO" />
+      <PropertyRef Name="USUARIO_CREACION" />
+      <PropertyRef Name="FECHA_CREACION" />
+    </Key>
+    <Property Name="IMPUESTO_ID" Type="Int64" Nullable="false" />
+    <Property Name="IMPUESTO" Type="String" MaxLength="120" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PORCENTAJE_IMPUESTO" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
+    <Property Name="FACTOR_DISCRIMINADO" Type="Decimal" Precision="15" Scale="2" Nullable="false" />
+    <Property Name="FACTOR_IMPUESTO" Type="Decimal" Precision="15" Scale="2" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="DateTime" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="INGRESOS_EGRESOS_VIEW">
+    <Key>
+      <PropertyRef Name="INGRESO_EGRESO_ID" />
+      <PropertyRef Name="FECHA" />
+      <PropertyRef Name="MONTO" />
+      <PropertyRef Name="ENTIDAD_INMOBILIARIA" />
+      <PropertyRef Name="TIPO" />
+      <PropertyRef Name="ITEM_INGRESO_EGRESO_ID" />
+      <PropertyRef Name="ITEM" />
+      <PropertyRef Name="SALDO" />
+      <PropertyRef Name="USUARIO_CREACION" />
+      <PropertyRef Name="FECHA_CREACION" />
+    </Key>
+    <Property Name="INGRESO_EGRESO_ID" Type="Int64" Nullable="false" />
+    <Property Name="FECHA" Type="DateTime" Nullable="false" />
+    <Property Name="MONTO" Type="Decimal" Precision="15" Scale="0" Nullable="false" />
+    <Property Name="SOCIO_NEGOCIO_ID" Type="Int64" />
+    <Property Name="SOCIO_NEGOCIO" Type="String" MaxLength="32765" FixedLength="false" Unicode="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="ESTADO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ENTIDAD_INMOBILIARIA_ID" Type="Int64" />
+    <Property Name="ENTIDAD_INMOBILIARIA" Type="String" MaxLength="180" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TIPO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PROPIEDAD_ID" Type="Int64" />
+    <Property Name="PROPIEDAD" Type="String" MaxLength="32765" FixedLength="false" Unicode="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="ITEM_INGRESO_EGRESO_ID" Type="Int64" Nullable="false" />
+    <Property Name="ITEM" Type="String" MaxLength="180" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NUMERO_FACTURA" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="FECHA_FACTURA" Type="DateTime" />
+    <Property Name="SALDO" Type="Decimal" Precision="15" Scale="0" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="DateTime" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="DateTime" />
+    <Property Name="TIPO_IMPUTACION" Type="String" MaxLength="120" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ITEMS_INGRESOS_EGRESOS_VIEW">
+    <Key>
+      <PropertyRef Name="ITEM_INGRESO_EGRESO_ID" />
+      <PropertyRef Name="ITEM" />
+      <PropertyRef Name="TIPO_ITEM" />
+      <PropertyRef Name="TIPO" />
+      <PropertyRef Name="USUARIO_CREACION" />
+      <PropertyRef Name="FECHA_CREACION" />
+    </Key>
+    <Property Name="ITEM_INGRESO_EGRESO_ID" Type="Int64" Nullable="false" />
+    <Property Name="ITEM" Type="String" MaxLength="180" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TIPO_ITEM" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TIPO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="DateTime" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="LIQUIDACIONES_DETALLES_ITEMS">
+    <Key>
+      <PropertyRef Name="LIQUIDACION_DETALLE_ID" />
+      <PropertyRef Name="LIQUIDACION_ID" />
+      <PropertyRef Name="MONTO" />
+      <PropertyRef Name="USUARIO_CREACION" />
+      <PropertyRef Name="FECHA_CREACION" />
+      <PropertyRef Name="ITEM_INGRESO_EGRESO_ID" />
+      <PropertyRef Name="ITEM" />
+    </Key>
+    <Property Name="LIQUIDACION_DETALLE_ID" Type="Int64" Nullable="false" />
+    <Property Name="LIQUIDACION_ID" Type="Int64" Nullable="false" />
+    <Property Name="NUMERO_ITEM" Type="Int32" />
+    <Property Name="MONTO" Type="Decimal" Precision="15" Scale="0" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="DateTime" Nullable="false" />
+    <Property Name="ITEM_INGRESO_EGRESO_ID" Type="Int64" Nullable="false" />
+    <Property Name="ITEM" Type="String" MaxLength="180" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LIQUIDACIONES_VIEW">
+    <Key>
+      <PropertyRef Name="LIQUIDACION_ID" />
+      <PropertyRef Name="FECHA" />
+      <PropertyRef Name="OPERACION_PROPIEDAD_ID" />
+      <PropertyRef Name="CLIENTE" />
+      <PropertyRef Name="ENTIDAD_INMOBILIARIA_ID" />
+      <PropertyRef Name="ENTIDAD_INMOBILIARIA" />
+      <PropertyRef Name="PROPIEDAD_ID" />
+    </Key>
+    <Property Name="LIQUIDACION_ID" Type="Int64" Nullable="false" />
+    <Property Name="FECHA" Type="DateTime" Nullable="false" />
+    <Property Name="NUMERO" Type="String" MaxLength="32765" FixedLength="false" Unicode="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="OPERACION_PROPIEDAD_ID" Type="Int64" Nullable="false" />
+    <Property Name="CLIENTE" Type="String" MaxLength="180" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ENTIDAD_INMOBILIARIA_ID" Type="Int64" Nullable="false" />
+    <Property Name="ENTIDAD_INMOBILIARIA" Type="String" MaxLength="180" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PROPIEDAD_ID" Type="Int64" Nullable="false" />
+    <Property Name="PROPIEDAD" Type="String" MaxLength="180" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="MONEDAS_VIEW">
+    <Key>
+      <PropertyRef Name="MONEDA_ID" />
+      <PropertyRef Name="MONEDA" />
+      <PropertyRef Name="SIMBOLO" />
+      <PropertyRef Name="TIPO_MONEDA" />
+      <PropertyRef Name="PRECISION_DECIMALES" />
+      <PropertyRef Name="USUARIO_CREACION" />
+      <PropertyRef Name="FECHA_CREACION" />
+    </Key>
+    <Property Name="MONEDA_ID" Type="Int64" Nullable="false" />
+    <Property Name="MONEDA" Type="String" MaxLength="120" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SIMBOLO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SIMBOLO_SET" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="TIPO_MONEDA" Type="String" MaxLength="120" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PRECISION_DECIMALES" Type="Int64" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="DateTime" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="OPERACIONES_CONTRATOS_VENCIDOS">
+    <Key>
+      <PropertyRef Name="OPERACION_PROPIEDAD_ID" />
+      <PropertyRef Name="FECHA_OPERACION" />
+      <PropertyRef Name="FECHA_INICIO_CONTRATO" />
+      <PropertyRef Name="ESTADO" />
+      <PropertyRef Name="ENTIDAD_INMOBILIARIA_ID" />
+      <PropertyRef Name="UNIDAD_NEGOCIO" />
+      <PropertyRef Name="PROPIEDAD_ID" />
+      <PropertyRef Name="LOCATARIO" />
+      <PropertyRef Name="RAZON_SOCIAL" />
+    </Key>
+    <Property Name="OPERACION_PROPIEDAD_ID" Type="Int64" Nullable="false" />
+    <Property Name="FECHA_OPERACION" Type="DateTime" Nullable="false" />
+    <Property Name="FECHA_INICIO_CONTRATO" Type="DateTime" Nullable="false" />
+    <Property Name="FECHA_FIN_CONTRATO" Type="DateTime" />
+    <Property Name="ESTADO" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ENTIDAD_INMOBILIARIA_ID" Type="Int64" Nullable="false" />
+    <Property Name="UNIDAD_NEGOCIO" Type="String" MaxLength="180" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PROPIEDAD_ID" Type="Int64" Nullable="false" />
+    <Property Name="INMUEBLE" Type="String" MaxLength="180" FixedLength="false" Unicode="true" />
+    <Property Name="LOCATARIO" Type="Int64" Nullable="false" />
+    <Property Name="RAZON_SOCIAL" Type="String" MaxLength="180" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OPERACIONES_PENDIENTES_VIEW">
+    <Key>
+      <PropertyRef Name="SOCIO_NEGOCIO_ID" />
+      <PropertyRef Name="RAZON_SOCIAL" />
+      <PropertyRef Name="TIPO_DOCUMENTO" />
+      <PropertyRef Name="NUMERO_DOCUMENTO" />
+      <PropertyRef Name="OPERACION_PROPIEDAD_ID" />
+      <PropertyRef Name="FECHA_OPERACION" />
+      <PropertyRef Name="ENTIDAD_INMOBILIARIA_ID" />
+      <PropertyRef Name="ENTIDAD_INMOBILIARIA" />
+      <PropertyRef Name="PROPIEDAD_ID" />
+    </Key>
+    <Property Name="SOCIO_NEGOCIO_ID" Type="Int64" Nullable="false" />
+    <Property Name="RAZON_SOCIAL" Type="String" MaxLength="180" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TIPO_DOCUMENTO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NUMERO_DOCUMENTO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RUC" Type="String" MaxLength="32765" FixedLength="false" Unicode="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="OPERACION_PROPIEDAD_ID" Type="Int64" Nullable="false" />
+    <Property Name="FECHA_OPERACION" Type="DateTime" Nullable="false" />
+    <Property Name="ENTIDAD_INMOBILIARIA_ID" Type="Int64" Nullable="false" />
+    <Property Name="ENTIDAD_INMOBILIARIA" Type="String" MaxLength="180" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PROPIEDAD_ID" Type="Int64" Nullable="false" />
+    <Property Name="INMUEBLE" Type="String" MaxLength="180" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="OPERACIONES_PROPIEDADES_VIEW">
+    <Key>
+      <PropertyRef Name="OPERACION_PROPIEDAD_ID" />
+      <PropertyRef Name="FECHA_OPERACION" />
+      <PropertyRef Name="TIPO_OPERACION" />
+      <PropertyRef Name="SOCIO_NEGOCIO_ID" />
+      <PropertyRef Name="SOCIO_NEGOCIO" />
+      <PropertyRef Name="FECHA_INICIO_CONTRATO" />
+      <PropertyRef Name="PRECIO" />
+      <PropertyRef Name="ESTADO" />
+      <PropertyRef Name="GARANTIA" />
+      <PropertyRef Name="SUCURSAL_ID" />
+      <PropertyRef Name="SUCURSAL" />
+      <PropertyRef Name="MONEDA_ID" />
+      <PropertyRef Name="MONEDA" />
+      <PropertyRef Name="TIPO_ENTIDAD" />
+      <PropertyRef Name="TIPO_CONTRATO" />
+      <PropertyRef Name="CONDICION_OPERACION" />
+      <PropertyRef Name="AVISO_RENOVACION" />
+      <PropertyRef Name="USUARIO_CREACION" />
+      <PropertyRef Name="FECHA_CREACION" />
+    </Key>
+    <Property Name="OPERACION_PROPIEDAD_ID" Type="Int64" Nullable="false" />
+    <Property Name="FECHA_OPERACION" Type="DateTime" Nullable="false" />
+    <Property Name="TIPO_OPERACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SOCIO_NEGOCIO_ID" Type="Int64" Nullable="false" />
+    <Property Name="SOCIO_NEGOCIO" Type="String" MaxLength="180" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PROPIEDAD_ID" Type="Int64" />
+    <Property Name="PROPIEDAD" Type="String" MaxLength="180" FixedLength="false" Unicode="true" />
+    <Property Name="FECHA_FINALIZACION" Type="DateTime" />
+    <Property Name="ENTIDAD_INMOBILIARIA_ID" Type="Int64" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="ENTIDAD_INMOBILIARIA" Type="String" MaxLength="32765" FixedLength="false" Unicode="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="FECHA_INICIO_CONTRATO" Type="DateTime" Nullable="false" />
+    <Property Name="FECHA_FIN_CONTRATO" Type="DateTime" />
+    <Property Name="PLAZO" Type="Int32" />
+    <Property Name="PRECIO" Type="Decimal" Precision="15" Scale="0" Nullable="false" />
+    <Property Name="ESTADO" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="GARANTIA" Type="Decimal" Precision="15" Scale="0" Nullable="false" />
+    <Property Name="SUCURSAL_ID" Type="Int64" Nullable="false" />
+    <Property Name="SUCURSAL" Type="String" MaxLength="120" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MONEDA_ID" Type="Int64" Nullable="false" />
+    <Property Name="MONEDA" Type="String" MaxLength="120" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TIPO_ENTIDAD" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TIPO_CONTRATO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CONDICION_OPERACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AVISO_RENOVACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_RENOVACION" Type="DateTime" />
+    <Property Name="USUARIO_CREACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="DateTime" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="PAISES_VIEW">
+    <Key>
+      <PropertyRef Name="PAIS_ID" />
+      <PropertyRef Name="PAIS" />
+      <PropertyRef Name="CODIGO_ISO_2" />
+      <PropertyRef Name="CODIGO_ISO_3" />
+      <PropertyRef Name="NACIONALIDAD" />
+      <PropertyRef Name="USUARIO_CREACION" />
+      <PropertyRef Name="FECHA_CREACION" />
+    </Key>
+    <Property Name="PAIS_ID" Type="Int64" Nullable="false" />
+    <Property Name="PAIS" Type="String" MaxLength="120" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CODIGO_ISO_2" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CODIGO_ISO_3" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NACIONALIDAD" Type="String" MaxLength="120" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="DateTime" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="PROPIEDADES_VIEW">
+    <Key>
+      <PropertyRef Name="PROPIEDAD_ID" />
+      <PropertyRef Name="TIPO" />
+      <PropertyRef Name="PAIS_ID" />
+      <PropertyRef Name="PAIS" />
+      <PropertyRef Name="DEPARTAMENTO_ID" />
+      <PropertyRef Name="DEPARTAMENTO" />
+      <PropertyRef Name="CIUDAD_ID" />
+      <PropertyRef Name="CIUDAD" />
+      <PropertyRef Name="BARRIO_ID" />
+      <PropertyRef Name="BARRIO" />
+      <PropertyRef Name="DIRECCION" />
+      <PropertyRef Name="TIENE_COCHERA" />
+      <PropertyRef Name="COMISION" />
+      <PropertyRef Name="COMISION_VENTA" />
+      <PropertyRef Name="COMISION_ALQUILER" />
+      <PropertyRef Name="PRECIO" />
+      <PropertyRef Name="PRECIO_VENTA" />
+      <PropertyRef Name="PRECIO_ALQUILER" />
+      <PropertyRef Name="ALQUILADA" />
+      <PropertyRef Name="VENDIDA" />
+      <PropertyRef Name="ESTADO" />
+      <PropertyRef Name="SENADO" />
+      <PropertyRef Name="USUARIO_CREACION" />
+      <PropertyRef Name="FECHA_CREACION" />
+    </Key>
+    <Property Name="PROPIEDAD_ID" Type="Int64" Nullable="false" />
+    <Property Name="PROPIEDAD" Type="String" MaxLength="180" FixedLength="false" Unicode="true" />
+    <Property Name="TIPO" Type="String" MaxLength="120" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CUENTA_CATASTRAL" Type="String" MaxLength="120" FixedLength="false" Unicode="true" />
+    <Property Name="ENTIDAD_INMOBILIARIA_ID" Type="Int64" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="ENTIDAD_INMOBILIARIA" Type="String" MaxLength="32765" FixedLength="false" Unicode="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="PAIS_ID" Type="Int64" Nullable="false" />
+    <Property Name="PAIS" Type="String" MaxLength="120" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DEPARTAMENTO_ID" Type="Int64" Nullable="false" />
+    <Property Name="DEPARTAMENTO" Type="String" MaxLength="120" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CIUDAD_ID" Type="Int64" Nullable="false" />
+    <Property Name="CIUDAD" Type="String" MaxLength="120" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="BARRIO_ID" Type="Int64" Nullable="false" />
+    <Property Name="BARRIO" Type="String" MaxLength="120" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DIRECCION" Type="String" MaxLength="180" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CARACTERISTICAS" Type="String" MaxLength="5000" FixedLength="false" Unicode="true" />
+    <Property Name="TIENE_COCHERA" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CANTIDAD_COCHERA" Type="Int32" />
+    <Property Name="M2_CONSTRUCCION" Type="Int32" />
+    <Property Name="ANO_CONSTRUCCION" Type="Int32" />
+    <Property Name="MEDIDA_LOTE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="COMISION" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
+    <Property Name="COMISION_VENTA" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
+    <Property Name="COMISION_ALQUILER" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
+    <Property Name="PRECIO" Type="Decimal" Precision="15" Scale="0" Nullable="false" />
+    <Property Name="PRECIO_VENTA" Type="Decimal" Precision="15" Scale="0" Nullable="false" />
+    <Property Name="PRECIO_ALQUILER" Type="Decimal" Precision="15" Scale="0" Nullable="false" />
+    <Property Name="ALQUILADA" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="VENDIDA" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ESTADO" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NUMERO_FINCA" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="NIS" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="NUMERO_MEDIDOR" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="SENADO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NUMERO_LOTE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="NUMERO_MANZANA" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="DIMENSIONES" Type="String" MaxLength="5000" FixedLength="false" Unicode="true" />
+    <Property Name="OBSERVACION" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="RESOLUCION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="USUARIO_CREACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="FECHA_CREACION" Type="DateTime" Nullable="false" />
+    <Property Name="FECHA_MODIFICACION" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="PROPIETARIOS_ENT_INMOB_VIEW">
+    <Key>
+      <PropertyRef Name="PROPIETARIO_ENT_INMOB_ID" />
+      <PropertyRef Name="ENTIDAD_INMOBILIARIA" />
+      <PropertyRef Name="PROPIETARIO_ID" />
+      <PropertyRef Name="PROPIETARIO" />
+      <PropertyRef Name="USUARIO_CREACION" />
+      <PropertyRef Name="FECHA_CREACION" />
+    </Key>
+    <Property Name="PROPIETARIO_ENT_INMOB_ID" Type="Int64" Nullable="false" />
+    <Property Name="ENTIDAD_INMOBILIARIA_ID" Type="Int64" />
+    <Property Name="ENTIDAD_INMOBILIARIA" Type="String" MaxLength="180" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PROPIEDAD_ID" Type="Int64" />
+    <Property Name="PROPIEDAD" Type="String" MaxLength="180" FixedLength="false" Unicode="true" />
+    <Property Name="PROPIETARIO_ID" Type="Int64" Nullable="false" />
+    <Property Name="PROPIETARIO" Type="String" MaxLength="180" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="DateTime" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="RESCISIONES_VIEW">
+    <Key>
+      <PropertyRef Name="RESCISION_ID" />
+      <PropertyRef Name="FECHA" />
+      <PropertyRef Name="TIPO" />
+      <PropertyRef Name="MONTO" />
+      <PropertyRef Name="TIPO_OPERACION" />
+      <PropertyRef Name="OPERACION_ID" />
+      <PropertyRef Name="PROPIEDAD_ID" />
+      <PropertyRef Name="SOCIO_NEGOCIO_ID" />
+      <PropertyRef Name="SOCIO_NEGOCIO" />
+      <PropertyRef Name="USUARIO_CREACION" />
+      <PropertyRef Name="FECHA_CREACION" />
+    </Key>
+    <Property Name="RESCISION_ID" Type="Int64" Nullable="false" />
+    <Property Name="FECHA" Type="DateTime" Nullable="false" />
+    <Property Name="TIPO" Type="String" MaxLength="120" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MONTO" Type="Decimal" Precision="15" Scale="0" Nullable="false" />
+    <Property Name="TIPO_OPERACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="OBSERVACION" Type="String" MaxLength="5000" FixedLength="false" Unicode="true" />
+    <Property Name="OPERACION_ID" Type="Int64" Nullable="false" />
+    <Property Name="PROPIEDAD_ID" Type="Int64" Nullable="false" />
+    <Property Name="SOCIO_NEGOCIO_ID" Type="Int64" Nullable="false" />
+    <Property Name="SOCIO_NEGOCIO" Type="String" MaxLength="180" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="DateTime" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="SOCIOS_NEGOCIOS_VIEW">
+    <Key>
+      <PropertyRef Name="SOCIO_NEGOCIO_ID" />
+      <PropertyRef Name="SOCIO_NEGOCIO" />
+      <PropertyRef Name="NUMERO_DOCUMENTO" />
+      <PropertyRef Name="CLASIFICACION_FISCAL" />
+      <PropertyRef Name="TIPO_DOCUMENTO" />
+      <PropertyRef Name="TIPO_PERSONERIA" />
+      <PropertyRef Name="ACTIVO" />
+      <PropertyRef Name="DIRECCION" />
+      <PropertyRef Name="TELEFONO" />
+      <PropertyRef Name="ES_PROPIETARIO" />
+      <PropertyRef Name="ES_INQUILINO" />
+      <PropertyRef Name="ES_PORTERO" />
+      <PropertyRef Name="ES_ADMINISTRADOR" />
+      <PropertyRef Name="ES_CLIENTE" />
+      <PropertyRef Name="ES_PROVEEDOR" />
+      <PropertyRef Name="ES_EMPRESA" />
+      <PropertyRef Name="ES_VENDEDOR" />
+      <PropertyRef Name="USUARIO_CREACION" />
+      <PropertyRef Name="FECHA_CREACION" />
+    </Key>
+    <Property Name="SOCIO_NEGOCIO_ID" Type="Int64" Nullable="false" />
+    <Property Name="SOCIO_NEGOCIO" Type="String" MaxLength="180" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NUMERO_DOCUMENTO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DIGITO_VERIFICADOR" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="RUC" Type="String" MaxLength="32765" FixedLength="false" Unicode="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="CLASIFICACION_FISCAL" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TIPO_DOCUMENTO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TIPO_PERSONERIA" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ACTIVO" Type="String" MaxLength="2" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DIRECCION" Type="String" MaxLength="180" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TELEFONO" Type="String" MaxLength="120" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ES_PROPIETARIO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ES_INQUILINO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ES_PORTERO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ES_ADMINISTRADOR" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ES_CLIENTE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ES_PROVEEDOR" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ES_EMPRESA" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ES_VENDEDOR" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="DateTime" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="SUCURSALES_VIEW">
+    <Key>
+      <PropertyRef Name="SUCURSAL_ID" />
+      <PropertyRef Name="SUCURSAL" />
+      <PropertyRef Name="DIRECCION" />
+      <PropertyRef Name="TELEFONO" />
+      <PropertyRef Name="EMPRESA_ID" />
+      <PropertyRef Name="EMPRESA" />
+      <PropertyRef Name="USUARIO_CREACION" />
+      <PropertyRef Name="FECHA_CREACION" />
+    </Key>
+    <Property Name="SUCURSAL_ID" Type="Int64" Nullable="false" />
+    <Property Name="SUCURSAL" Type="String" MaxLength="120" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DIRECCION" Type="String" MaxLength="180" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TELEFONO" Type="String" MaxLength="120" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EMPRESA_ID" Type="Int64" Nullable="false" />
+    <Property Name="EMPRESA" Type="String" MaxLength="180" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="USUARIO_CREACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="DateTime" Nullable="false" />
+    <Property Name="USUARIO_MODIFICACION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="DateTime" />
+  </EntityType>
+  <Association Name="FK_BARRIOS_CIUDADES_BARRIOS">
+    <End Role="BARRIOS" Type="Self.BARRIOS" Multiplicity="1" />
+    <End Role="BARRIOS_CIUDADES" Type="Self.BARRIOS_CIUDADES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BARRIOS">
+        <PropertyRef Name="BARRIO_ID" />
+      </Principal>
+      <Dependent Role="BARRIOS_CIUDADES">
+        <PropertyRef Name="BARRIO_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ENTIDADES_INMOBILIARIAS_1">
+    <End Role="BARRIOS" Type="Self.BARRIOS" Multiplicity="0..1" />
+    <End Role="ENTIDADES_INMOBILIARIAS" Type="Self.ENTIDADES_INMOBILIARIAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BARRIOS">
+        <PropertyRef Name="BARRIO_ID" />
+      </Principal>
+      <Dependent Role="ENTIDADES_INMOBILIARIAS">
+        <PropertyRef Name="BARRIO_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PROPIEDADES_BARRIOS">
+    <End Role="BARRIOS" Type="Self.BARRIOS" Multiplicity="1" />
+    <End Role="PROPIEDADES" Type="Self.PROPIEDADES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BARRIOS">
+        <PropertyRef Name="BARRIO_ID" />
+      </Principal>
+      <Dependent Role="PROPIEDADES">
+        <PropertyRef Name="BARRIO_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BARRIOS_CIUDADES_CIUDAD">
+    <End Role="CIUDADES" Type="Self.CIUDADES" Multiplicity="1" />
+    <End Role="BARRIOS_CIUDADES" Type="Self.BARRIOS_CIUDADES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CIUDADES">
+        <PropertyRef Name="CIUDAD_ID" />
+      </Principal>
+      <Dependent Role="BARRIOS_CIUDADES">
+        <PropertyRef Name="CIUDAD_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CIUDADES_DEPARTAMENTOS_CIUDA">
+    <End Role="CIUDADES" Type="Self.CIUDADES" Multiplicity="1" />
+    <End Role="CIUDADES_DEPARTAMENTOS" Type="Self.CIUDADES_DEPARTAMENTOS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CIUDADES">
+        <PropertyRef Name="CIUDAD_ID" />
+      </Principal>
+      <Dependent Role="CIUDADES_DEPARTAMENTOS">
+        <PropertyRef Name="CIUDAD_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ENTIDADES_INMOBILIARIAS_CIUD">
+    <End Role="CIUDADES" Type="Self.CIUDADES" Multiplicity="0..1" />
+    <End Role="ENTIDADES_INMOBILIARIAS" Type="Self.ENTIDADES_INMOBILIARIAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CIUDADES">
+        <PropertyRef Name="CIUDAD_ID" />
+      </Principal>
+      <Dependent Role="ENTIDADES_INMOBILIARIAS">
+        <PropertyRef Name="CIUDAD_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PROPIEDADES_CIUDADES">
+    <End Role="CIUDADES" Type="Self.CIUDADES" Multiplicity="1" />
+    <End Role="PROPIEDADES" Type="Self.PROPIEDADES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CIUDADES">
+        <PropertyRef Name="CIUDAD_ID" />
+      </Principal>
+      <Dependent Role="PROPIEDADES">
+        <PropertyRef Name="CIUDAD_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CIUDADES_DEPARTAMENTOS_DEPAR">
+    <End Role="DEPARTAMENTOS" Type="Self.DEPARTAMENTOS" Multiplicity="1" />
+    <End Role="CIUDADES_DEPARTAMENTOS" Type="Self.CIUDADES_DEPARTAMENTOS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DEPARTAMENTOS">
+        <PropertyRef Name="DEPARTAMENTO_ID" />
+      </Principal>
+      <Dependent Role="CIUDADES_DEPARTAMENTOS">
+        <PropertyRef Name="DEPARTAMENTO_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DEPARTAMENTOS_PAISES_DEPARTA">
+    <End Role="DEPARTAMENTOS" Type="Self.DEPARTAMENTOS" Multiplicity="1" />
+    <End Role="DEPARTAMENTOS_PAISES" Type="Self.DEPARTAMENTOS_PAISES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DEPARTAMENTOS">
+        <PropertyRef Name="DEPARTAMENTO_ID" />
+      </Principal>
+      <Dependent Role="DEPARTAMENTOS_PAISES">
+        <PropertyRef Name="DEPARTAMENTO_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ENTIDADES_INMOBILIARIAS_DEPA">
+    <End Role="DEPARTAMENTOS" Type="Self.DEPARTAMENTOS" Multiplicity="0..1" />
+    <End Role="ENTIDADES_INMOBILIARIAS" Type="Self.ENTIDADES_INMOBILIARIAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DEPARTAMENTOS">
+        <PropertyRef Name="DEPARTAMENTO_ID" />
+      </Principal>
+      <Dependent Role="ENTIDADES_INMOBILIARIAS">
+        <PropertyRef Name="DEPARTAMENTO_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PROPIEDADES_DEPARTAMENTO">
+    <End Role="DEPARTAMENTOS" Type="Self.DEPARTAMENTOS" Multiplicity="1" />
+    <End Role="PROPIEDADES" Type="Self.PROPIEDADES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DEPARTAMENTOS">
+        <PropertyRef Name="DEPARTAMENTO_ID" />
+      </Principal>
+      <Dependent Role="PROPIEDADES">
+        <PropertyRef Name="DEPARTAMENTO_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DEPARTAMENTOS_PAISES_PAIS">
+    <End Role="PAISES" Type="Self.PAISES" Multiplicity="1" />
+    <End Role="DEPARTAMENTOS_PAISES" Type="Self.DEPARTAMENTOS_PAISES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PAISES">
+        <PropertyRef Name="PAIS_ID" />
+      </Principal>
+      <Dependent Role="DEPARTAMENTOS_PAISES">
+        <PropertyRef Name="PAIS_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EMPRESAS_SOCIO_NEGOCIO">
+    <End Role="SOCIOS_NEGOCIOS" Type="Self.SOCIOS_NEGOCIOS" Multiplicity="0..1" />
+    <End Role="EMPRESAS" Type="Self.EMPRESAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SOCIOS_NEGOCIOS">
+        <PropertyRef Name="SOCIO_NEGOCIO_ID" />
+      </Principal>
+      <Dependent Role="EMPRESAS">
+        <PropertyRef Name="SOCIO_NEGOCIO_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ENTIDADES_INMOBILIARIAS_EMPR">
+    <End Role="EMPRESAS" Type="Self.EMPRESAS" Multiplicity="0..1" />
+    <End Role="ENTIDADES_INMOBILIARIAS" Type="Self.ENTIDADES_INMOBILIARIAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EMPRESAS">
+        <PropertyRef Name="EMPRESA_ID" />
+      </Principal>
+      <Dependent Role="ENTIDADES_INMOBILIARIAS">
+        <PropertyRef Name="EMPRESA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PROPIEDADES_EMPRESA">
+    <End Role="EMPRESAS" Type="Self.EMPRESAS" Multiplicity="0..1" />
+    <End Role="PROPIEDADES" Type="Self.PROPIEDADES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EMPRESAS">
+        <PropertyRef Name="EMPRESA_ID" />
+      </Principal>
+      <Dependent Role="PROPIEDADES">
+        <PropertyRef Name="EMPRESA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SUCURSALES_EMPRESA">
+    <End Role="EMPRESAS" Type="Self.EMPRESAS" Multiplicity="1" />
+    <End Role="SUCURSALES" Type="Self.SUCURSALES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EMPRESAS">
+        <PropertyRef Name="EMPRESA_ID" />
+      </Principal>
+      <Dependent Role="SUCURSALES">
+        <PropertyRef Name="EMPRESA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_USUARIOS_EMPRESA">
+    <End Role="EMPRESAS" Type="Self.EMPRESAS" Multiplicity="1" />
+    <End Role="USUARIOS" Type="Self.USUARIOS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EMPRESAS">
+        <PropertyRef Name="EMPRESA_ID" />
+      </Principal>
+      <Dependent Role="USUARIOS">
+        <PropertyRef Name="EMPRESA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ENTIDADES_INMOBILIARIAS_PAIS">
+    <End Role="PAISES" Type="Self.PAISES" Multiplicity="0..1" />
+    <End Role="ENTIDADES_INMOBILIARIAS" Type="Self.ENTIDADES_INMOBILIARIAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PAISES">
+        <PropertyRef Name="PAIS_ID" />
+      </Principal>
+      <Dependent Role="ENTIDADES_INMOBILIARIAS">
+        <PropertyRef Name="PAIS_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PROPIEDADES_ENTIDADES_INMOBI">
+    <End Role="ENTIDADES_INMOBILIARIAS" Type="Self.ENTIDADES_INMOBILIARIAS" Multiplicity="0..1" />
+    <End Role="PROPIEDADES" Type="Self.PROPIEDADES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ENTIDADES_INMOBILIARIAS">
+        <PropertyRef Name="ENTIDAD_INMOBILIARIA_ID" />
+      </Principal>
+      <Dependent Role="PROPIEDADES">
+        <PropertyRef Name="ENTIDAD_INMOBILIARIA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PROPIEDADES_PAIS">
+    <End Role="PAISES" Type="Self.PAISES" Multiplicity="1" />
+    <End Role="PROPIEDADES" Type="Self.PROPIEDADES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PAISES">
+        <PropertyRef Name="PAIS_ID" />
+      </Principal>
+      <Dependent Role="PROPIEDADES">
+        <PropertyRef Name="PAIS_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="InmobiliariaEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BARRIOS" EntityType="Self.BARRIOS" />
+    <EntitySet Name="BARRIOS_CIUDADES" EntityType="Self.BARRIOS_CIUDADES" />
+    <EntitySet Name="CIUDADES" EntityType="Self.CIUDADES" />
+    <EntitySet Name="CIUDADES_DEPARTAMENTOS" EntityType="Self.CIUDADES_DEPARTAMENTOS" />
+    <EntitySet Name="COBROS" EntityType="Self.COBROS" />
+    <EntitySet Name="COBROS_DETALLES" EntityType="Self.COBROS_DETALLES" />
+    <EntitySet Name="CRONOGRAMAS_CUOTAS" EntityType="Self.CRONOGRAMAS_CUOTAS" />
+    <EntitySet Name="DEPARTAMENTOS" EntityType="Self.DEPARTAMENTOS" />
+    <EntitySet Name="DEPARTAMENTOS_PAISES" EntityType="Self.DEPARTAMENTOS_PAISES" />
+    <EntitySet Name="DOMINIOS" EntityType="Self.DOMINIOS" />
+    <EntitySet Name="EMPRESAS" EntityType="Self.EMPRESAS" />
+    <EntitySet Name="ENTIDADES_INMOBILIARIAS" EntityType="Self.ENTIDADES_INMOBILIARIAS" />
+    <EntitySet Name="FORMAS_PAGOS" EntityType="Self.FORMAS_PAGOS" />
+    <EntitySet Name="IBE_VERSION_HISTORY" EntityType="Self.IBE_VERSION_HISTORY" />
+    <EntitySet Name="IMAGENES_ENTIDAD_INMOBILIARIA" EntityType="Self.IMAGENES_ENTIDAD_INMOBILIARIA" />
+    <EntitySet Name="IMAGENES_OPERACIONES" EntityType="Self.IMAGENES_OPERACIONES" />
+    <EntitySet Name="IMPUESTOS" EntityType="Self.IMPUESTOS" />
+    <EntitySet Name="INGRESOS_EGRESOS" EntityType="Self.INGRESOS_EGRESOS" />
+    <EntitySet Name="ITEMS_INGRESOS_EGRESOS" EntityType="Self.ITEMS_INGRESOS_EGRESOS" />
+    <EntitySet Name="LIQUIDACIONES" EntityType="Self.LIQUIDACIONES" />
+    <EntitySet Name="LIQUIDACIONES_DETALLES" EntityType="Self.LIQUIDACIONES_DETALLES" />
+    <EntitySet Name="MONEDAS" EntityType="Self.MONEDAS" />
+    <EntitySet Name="OPERACIONES_PROPIEDADES" EntityType="Self.OPERACIONES_PROPIEDADES" />
+    <EntitySet Name="PAISES" EntityType="Self.PAISES" />
+    <EntitySet Name="PROPIEDADES" EntityType="Self.PROPIEDADES" />
+    <EntitySet Name="PROPIETARIOS_ENT_INMOB" EntityType="Self.PROPIETARIOS_ENT_INMOB" />
+    <EntitySet Name="RESCISIONES" EntityType="Self.RESCISIONES" />
+    <EntitySet Name="RUC" EntityType="Self.RUC" />
+    <EntitySet Name="SOCIOS_NEGOCIOS" EntityType="Self.SOCIOS_NEGOCIOS" />
+    <EntitySet Name="SUCURSALES" EntityType="Self.SUCURSALES" />
+    <EntitySet Name="USUARIOS" EntityType="Self.USUARIOS" />
+    <EntitySet Name="VARIABLES_ENTORNOS" EntityType="Self.VARIABLES_ENTORNOS" />
+    <EntitySet Name="BARRIOS_CIUDADES_VIEW" EntityType="Self.BARRIOS_CIUDADES_VIEW" />
+    <EntitySet Name="BARRIOS_VIEW" EntityType="Self.BARRIOS_VIEW" />
+    <EntitySet Name="CIUDADES_DEPARTAMENTOS_VIEW" EntityType="Self.CIUDADES_DEPARTAMENTOS_VIEW" />
+    <EntitySet Name="CIUDADES_VIEW" EntityType="Self.CIUDADES_VIEW" />
+    <EntitySet Name="COBROS_VIEW" EntityType="Self.COBROS_VIEW" />
+    <EntitySet Name="CRONOGRAMAS_CUOTAS_VIEW" EntityType="Self.CRONOGRAMAS_CUOTAS_VIEW" />
+    <EntitySet Name="DEPARTAMENTOS_PAISES_VIEW" EntityType="Self.DEPARTAMENTOS_PAISES_VIEW" />
+    <EntitySet Name="DEPARTAMENTOS_VIEW" EntityType="Self.DEPARTAMENTOS_VIEW" />
+    <EntitySet Name="EMPRESAS_VIEW" EntityType="Self.EMPRESAS_VIEW" />
+    <EntitySet Name="ENTIDADES_INMOBILIARIAS_VIEW" EntityType="Self.ENTIDADES_INMOBILIARIAS_VIEW" />
+    <EntitySet Name="FORMAS_PAGOS_VIEW" EntityType="Self.FORMAS_PAGOS_VIEW" />
+    <EntitySet Name="IMAGENES_ENTIDAD_INMOB_VIEW" EntityType="Self.IMAGENES_ENTIDAD_INMOB_VIEW" />
+    <EntitySet Name="IMAGENES_OPERACIONES_VIEW" EntityType="Self.IMAGENES_OPERACIONES_VIEW" />
+    <EntitySet Name="IMPUESTOS_VIEW" EntityType="Self.IMPUESTOS_VIEW" />
+    <EntitySet Name="INGRESOS_EGRESOS_VIEW" EntityType="Self.INGRESOS_EGRESOS_VIEW" />
+    <EntitySet Name="ITEMS_INGRESOS_EGRESOS_VIEW" EntityType="Self.ITEMS_INGRESOS_EGRESOS_VIEW" />
+    <EntitySet Name="LIQUIDACIONES_DETALLES_ITEMS" EntityType="Self.LIQUIDACIONES_DETALLES_ITEMS" />
+    <EntitySet Name="LIQUIDACIONES_VIEW" EntityType="Self.LIQUIDACIONES_VIEW" />
+    <EntitySet Name="MONEDAS_VIEW" EntityType="Self.MONEDAS_VIEW" />
+    <EntitySet Name="OPERACIONES_CONTRATOS_VENCIDOS" EntityType="Self.OPERACIONES_CONTRATOS_VENCIDOS" />
+    <EntitySet Name="OPERACIONES_PENDIENTES_VIEW" EntityType="Self.OPERACIONES_PENDIENTES_VIEW" />
+    <EntitySet Name="OPERACIONES_PROPIEDADES_VIEW" EntityType="Self.OPERACIONES_PROPIEDADES_VIEW" />
+    <EntitySet Name="PAISES_VIEW" EntityType="Self.PAISES_VIEW" />
+    <EntitySet Name="PROPIEDADES_VIEW" EntityType="Self.PROPIEDADES_VIEW" />
+    <EntitySet Name="PROPIETARIOS_ENT_INMOB_VIEW" EntityType="Self.PROPIETARIOS_ENT_INMOB_VIEW" />
+    <EntitySet Name="RESCISIONES_VIEW" EntityType="Self.RESCISIONES_VIEW" />
+    <EntitySet Name="SOCIOS_NEGOCIOS_VIEW" EntityType="Self.SOCIOS_NEGOCIOS_VIEW" />
+    <EntitySet Name="SUCURSALES_VIEW" EntityType="Self.SUCURSALES_VIEW" />
+    <AssociationSet Name="FK_BARRIOS_CIUDADES_BARRIOS" Association="Self.FK_BARRIOS_CIUDADES_BARRIOS">
+      <End Role="BARRIOS" EntitySet="BARRIOS" />
+      <End Role="BARRIOS_CIUDADES" EntitySet="BARRIOS_CIUDADES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ENTIDADES_INMOBILIARIAS_1" Association="Self.FK_ENTIDADES_INMOBILIARIAS_1">
+      <End Role="BARRIOS" EntitySet="BARRIOS" />
+      <End Role="ENTIDADES_INMOBILIARIAS" EntitySet="ENTIDADES_INMOBILIARIAS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PROPIEDADES_BARRIOS" Association="Self.FK_PROPIEDADES_BARRIOS">
+      <End Role="BARRIOS" EntitySet="BARRIOS" />
+      <End Role="PROPIEDADES" EntitySet="PROPIEDADES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BARRIOS_CIUDADES_CIUDAD" Association="Self.FK_BARRIOS_CIUDADES_CIUDAD">
+      <End Role="CIUDADES" EntitySet="CIUDADES" />
+      <End Role="BARRIOS_CIUDADES" EntitySet="BARRIOS_CIUDADES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CIUDADES_DEPARTAMENTOS_CIUDA" Association="Self.FK_CIUDADES_DEPARTAMENTOS_CIUDA">
+      <End Role="CIUDADES" EntitySet="CIUDADES" />
+      <End Role="CIUDADES_DEPARTAMENTOS" EntitySet="CIUDADES_DEPARTAMENTOS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ENTIDADES_INMOBILIARIAS_CIUD" Association="Self.FK_ENTIDADES_INMOBILIARIAS_CIUD">
+      <End Role="CIUDADES" EntitySet="CIUDADES" />
+      <End Role="ENTIDADES_INMOBILIARIAS" EntitySet="ENTIDADES_INMOBILIARIAS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PROPIEDADES_CIUDADES" Association="Self.FK_PROPIEDADES_CIUDADES">
+      <End Role="CIUDADES" EntitySet="CIUDADES" />
+      <End Role="PROPIEDADES" EntitySet="PROPIEDADES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CIUDADES_DEPARTAMENTOS_DEPAR" Association="Self.FK_CIUDADES_DEPARTAMENTOS_DEPAR">
+      <End Role="DEPARTAMENTOS" EntitySet="DEPARTAMENTOS" />
+      <End Role="CIUDADES_DEPARTAMENTOS" EntitySet="CIUDADES_DEPARTAMENTOS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DEPARTAMENTOS_PAISES_DEPARTA" Association="Self.FK_DEPARTAMENTOS_PAISES_DEPARTA">
+      <End Role="DEPARTAMENTOS" EntitySet="DEPARTAMENTOS" />
+      <End Role="DEPARTAMENTOS_PAISES" EntitySet="DEPARTAMENTOS_PAISES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ENTIDADES_INMOBILIARIAS_DEPA" Association="Self.FK_ENTIDADES_INMOBILIARIAS_DEPA">
+      <End Role="DEPARTAMENTOS" EntitySet="DEPARTAMENTOS" />
+      <End Role="ENTIDADES_INMOBILIARIAS" EntitySet="ENTIDADES_INMOBILIARIAS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PROPIEDADES_DEPARTAMENTO" Association="Self.FK_PROPIEDADES_DEPARTAMENTO">
+      <End Role="DEPARTAMENTOS" EntitySet="DEPARTAMENTOS" />
+      <End Role="PROPIEDADES" EntitySet="PROPIEDADES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DEPARTAMENTOS_PAISES_PAIS" Association="Self.FK_DEPARTAMENTOS_PAISES_PAIS">
+      <End Role="PAISES" EntitySet="PAISES" />
+      <End Role="DEPARTAMENTOS_PAISES" EntitySet="DEPARTAMENTOS_PAISES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EMPRESAS_SOCIO_NEGOCIO" Association="Self.FK_EMPRESAS_SOCIO_NEGOCIO">
+      <End Role="SOCIOS_NEGOCIOS" EntitySet="SOCIOS_NEGOCIOS" />
+      <End Role="EMPRESAS" EntitySet="EMPRESAS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ENTIDADES_INMOBILIARIAS_EMPR" Association="Self.FK_ENTIDADES_INMOBILIARIAS_EMPR">
+      <End Role="EMPRESAS" EntitySet="EMPRESAS" />
+      <End Role="ENTIDADES_INMOBILIARIAS" EntitySet="ENTIDADES_INMOBILIARIAS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PROPIEDADES_EMPRESA" Association="Self.FK_PROPIEDADES_EMPRESA">
+      <End Role="EMPRESAS" EntitySet="EMPRESAS" />
+      <End Role="PROPIEDADES" EntitySet="PROPIEDADES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SUCURSALES_EMPRESA" Association="Self.FK_SUCURSALES_EMPRESA">
+      <End Role="EMPRESAS" EntitySet="EMPRESAS" />
+      <End Role="SUCURSALES" EntitySet="SUCURSALES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_USUARIOS_EMPRESA" Association="Self.FK_USUARIOS_EMPRESA">
+      <End Role="EMPRESAS" EntitySet="EMPRESAS" />
+      <End Role="USUARIOS" EntitySet="USUARIOS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ENTIDADES_INMOBILIARIAS_PAIS" Association="Self.FK_ENTIDADES_INMOBILIARIAS_PAIS">
+      <End Role="PAISES" EntitySet="PAISES" />
+      <End Role="ENTIDADES_INMOBILIARIAS" EntitySet="ENTIDADES_INMOBILIARIAS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PROPIEDADES_ENTIDADES_INMOBI" Association="Self.FK_PROPIEDADES_ENTIDADES_INMOBI">
+      <End Role="ENTIDADES_INMOBILIARIAS" EntitySet="ENTIDADES_INMOBILIARIAS" />
+      <End Role="PROPIEDADES" EntitySet="PROPIEDADES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PROPIEDADES_PAIS" Association="Self.FK_PROPIEDADES_PAIS">
+      <End Role="PAISES" EntitySet="PAISES" />
+      <End Role="PROPIEDADES" EntitySet="PROPIEDADES" />
+    </AssociationSet>
+    <EntitySet Name="USUARIOS_VIEW" EntityType="Model.USUARIOS_VIEW" />
+  </EntityContainer>
+  <EntityType Name="USUARIOS_VIEW">
+    <Key>
+      <PropertyRef Name="CODIGO_USUARIO" />
+      <PropertyRef Name="PASSWORD" />
+      <PropertyRef Name="ACTIVO" />
+      <PropertyRef Name="USUARIO_CREACION" />
+      <PropertyRef Name="FECHA_CREACION" />
+      <PropertyRef Name="EMPRESA_ID" />
+      <PropertyRef Name="PERFIL" />
+    </Key>
+    <Property Name="CODIGO_USUARIO" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="PASSWORD" Type="String" Nullable="false" MaxLength="120" FixedLength="false" Unicode="true" />
+    <Property Name="ACTIVO" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="USUARIO_CREACION" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="FECHA_CREACION" Type="DateTime" Nullable="false" />
+    <Property Name="EMPRESA_ID" Type="Int64" Nullable="false" />
+    <Property Name="PERFIL" Type="String" Nullable="false" MaxLength="120" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>
